@@ -13,6 +13,8 @@
 		3C72DA1425A9F1C4001567B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA1225A9F1C4001567B4 /* Main.storyboard */; };
 		3C72DA1625A9F1C5001567B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA1525A9F1C5001567B4 /* Assets.xcassets */; };
 		3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA1725A9F1C5001567B4 /* LaunchScreen.storyboard */; };
+		3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2525A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf */; };
+		3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3C72DA1525A9F1C5001567B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C72DA1825A9F1C5001567B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C72DA1A25A9F1C5001567B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C72DA2525A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +67,18 @@
 				3C72DA1525A9F1C5001567B4 /* Assets.xcassets */,
 				3C72DA1725A9F1C5001567B4 /* LaunchScreen.storyboard */,
 				3C72DA1A25A9F1C5001567B4 /* Info.plist */,
+				3C72DA2A25A9F5C7001567B4 /* font */,
 			);
 			path = zipkok;
+			sourceTree = "<group>";
+		};
+		3C72DA2A25A9F5C7001567B4 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */,
+				3C72DA2525A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf */,
+			);
+			path = font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +139,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */,
+				3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */,
 				3C72DA1625A9F1C5001567B4 /* Assets.xcassets in Resources */,
 				3C72DA1425A9F1C4001567B4 /* Main.storyboard in Resources */,
+				3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
