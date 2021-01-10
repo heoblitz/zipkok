@@ -22,4 +22,12 @@ class MainViewController: UIViewController {
         loginVc.modalPresentationStyle = .fullScreen
         present(loginVc, animated: false)
     }
+    
+    @IBAction func locationButtonTapped() {
+        guard let loginVc = UIStoryboard(name: "Location", bundle: nil).instantiateInitialViewController() as? LocationViewController else {
+            fatalError()
+        }
+        loginVc.modalPresentationStyle = .fullScreen
+        present(loginVc, animated: false)
+    }
 }

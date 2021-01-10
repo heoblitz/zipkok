@@ -16,19 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ft-w9-dDg">
-                                <rect key="frame" x="188" y="438" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="loginButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zzu-1P-jrB"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rh8-OT-ghA">
+                                <rect key="frame" x="177.5" y="414.5" width="59" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ft-w9-dDg">
+                                        <rect key="frame" x="10.5" y="0.0" width="38" height="30"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zzu-1P-jrB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Au-Zt-Rbh">
+                                        <rect key="frame" x="0.0" y="47" width="59" height="30"/>
+                                        <state key="normal" title="Location"/>
+                                        <connections>
+                                            <action selector="locationButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="8b3-Dx-xfc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2ft-w9-dDg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AKh-8F-3zI"/>
-                            <constraint firstItem="2ft-w9-dDg" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fWj-P6-LDK"/>
+                            <constraint firstItem="Rh8-OT-ghA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="VNT-qR-7pI"/>
+                            <constraint firstItem="Rh8-OT-ghA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iVW-bc-dSd"/>
                         </constraints>
                     </view>
                 </viewController>

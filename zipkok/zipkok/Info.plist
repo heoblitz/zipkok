@@ -7,6 +7,7 @@
 		<string>THEFACESHOP+INKLIPQUID</string>
 		<string>NotoSansCJKkr-Medium</string>
 		<string>NotoSansCJKkr-Regular</string>
+		<string>NotoSansCJKkr-Bold</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
