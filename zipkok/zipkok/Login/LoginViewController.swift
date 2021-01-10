@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         prepareIconTextLabel()
         prepareKakaoLoginView()
+        prepareKakaoLoginViewTapGesture()
     }
     
     func prepareIconTextLabel() {
@@ -29,5 +30,19 @@ class LoginViewController: UIViewController {
         kakaoLoginView.layer.shadowOffset = CGSize(width: 0, height: 12)
         kakaoLoginView.layer.shadowOpacity = 0.25
         kakaoLoginView.layer.shadowRadius = 14
+    }
+    
+    func prepareKakaoLoginViewTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(kakaoLoginViewTapped))
+        kakaoLoginView.isUserInteractionEnabled = true
+        kakaoLoginView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func kakaoLoginViewTapped() {
+        guard let locationVc = UIStoryboard(name: "Location", bundle: nil).instantiateInitialViewController() as? LocationViewController else {
+            fatalError()
+        }
+    
+        navigationController?.pushViewController(locationVc, animated: true)
     }
 }

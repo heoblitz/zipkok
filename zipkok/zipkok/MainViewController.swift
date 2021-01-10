@@ -16,18 +16,26 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped() {
-        guard let loginVc = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as? LoginViewController else {
+        guard let loginNavVc = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as? UINavigationController else {
             fatalError()
         }
-        loginVc.modalPresentationStyle = .fullScreen
-        present(loginVc, animated: false)
+        loginNavVc.modalPresentationStyle = .fullScreen
+        present(loginNavVc, animated: false)
     }
     
     @IBAction func locationButtonTapped() {
-        guard let loginVc = UIStoryboard(name: "Location", bundle: nil).instantiateInitialViewController() as? LocationViewController else {
+        guard let locationVc = UIStoryboard(name: "Location", bundle: nil).instantiateInitialViewController() as? LocationViewController else {
             fatalError()
         }
-        loginVc.modalPresentationStyle = .fullScreen
-        present(loginVc, animated: false)
+        locationVc.modalPresentationStyle = .fullScreen
+        present(locationVc, animated: false)
+    }
+    
+    @IBAction func locationWebButtonTapped() {
+        guard let locationWebVc = UIStoryboard(name: "LocationWeb", bundle: nil).instantiateInitialViewController() as? LocationWebViewController else {
+            fatalError()
+        }
+        // loginVc.modalPresentationStyle = .fullScreen
+        present(locationWebVc, animated: false)
     }
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E0125AAA1F300629143 /* LocationViewController.swift */; };
 		3C356E0525AAB96A00629143 /* CustomSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E0425AAB96A00629143 /* CustomSearchTextField.swift */; };
 		3C356E0C25AAC78D00629143 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C356E0B25AAC78D00629143 /* NotoSansCJKkr-Bold.otf */; };
+		3C356E1925AAE1F100629143 /* LocationWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E1825AAE1F100629143 /* LocationWebViewController.swift */; };
+		3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C356E1B25AAE20300629143 /* LocationWeb.storyboard */; };
+		3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E1F25AAEF4B00629143 /* LoginNavigationViewController.swift */; };
+		3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */; };
 		3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */; };
 		3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */; };
 		3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA1025A9F1C4001567B4 /* ViewController.swift */; };
@@ -23,15 +27,22 @@
 		3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */; };
 		3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2C25A9FAE1001567B4 /* Login.storyboard */; };
 		3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */; };
+		FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		028033563880B20D59FAA30C /* Pods-zipkok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zipkok.release.xcconfig"; path = "Target Support Files/Pods-zipkok/Pods-zipkok.release.xcconfig"; sourceTree = "<group>"; };
+		3B0AFF769C981269E21538EA /* Pods-zipkok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zipkok.debug.xcconfig"; path = "Target Support Files/Pods-zipkok/Pods-zipkok.debug.xcconfig"; sourceTree = "<group>"; };
 		3C356DF625AA9A5200629143 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3C356DF925AA9BA600629143 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3C356DFC25AA9F3000629143 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 		3C356E0125AAA1F300629143 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		3C356E0425AAB96A00629143 /* CustomSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTextField.swift; sourceTree = "<group>"; };
 		3C356E0B25AAC78D00629143 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		3C356E1825AAE1F100629143 /* LocationWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWebViewController.swift; sourceTree = "<group>"; };
+		3C356E1B25AAE20300629143 /* LocationWeb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationWeb.storyboard; sourceTree = "<group>"; };
+		3C356E1F25AAEF4B00629143 /* LoginNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationViewController.swift; sourceTree = "<group>"; };
+		3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewSimpleBar.swift; sourceTree = "<group>"; };
 		3C72DA0925A9F1C4001567B4 /* zipkok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zipkok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +55,7 @@
 		3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		3C72DA2C25A9FAE1001567B4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "THEFACESHOP+INKLIPQUID.otf"; sourceTree = "<group>"; };
+		F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zipkok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +63,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E54305CEF3744EDADB6BFAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3C356DF425AA990F00629143 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				3C72DA2C25A9FAE1001567B4 /* Login.storyboard */,
 				3C356DF625AA9A5200629143 /* LoginViewController.swift */,
+				3C356E1F25AAEF4B00629143 /* LoginNavigationViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -71,6 +93,8 @@
 			children = (
 				3C356DFC25AA9F3000629143 /* Location.storyboard */,
 				3C356E0125AAA1F300629143 /* LocationViewController.swift */,
+				3C356E1B25AAE20300629143 /* LocationWeb.storyboard */,
+				3C356E1825AAE1F100629143 /* LocationWebViewController.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -87,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				3C356E0425AAB96A00629143 /* CustomSearchTextField.swift */,
+				3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +121,8 @@
 			children = (
 				3C72DA0B25A9F1C4001567B4 /* zipkok */,
 				3C72DA0A25A9F1C4001567B4 /* Products */,
+				5453E39C72D8147997ADA637 /* Pods */,
+				0E54305CEF3744EDADB6BFAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +164,15 @@
 			path = font;
 			sourceTree = "<group>";
 		};
+		5453E39C72D8147997ADA637 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B0AFF769C981269E21538EA /* Pods-zipkok.debug.xcconfig */,
+				028033563880B20D59FAA30C /* Pods-zipkok.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C72DA1D25A9F1C5001567B4 /* Build configuration list for PBXNativeTarget "zipkok" */;
 			buildPhases = (
+				37673C472B8967E0C18B9464 /* [CP] Check Pods Manifest.lock */,
 				3C72DA0525A9F1C4001567B4 /* Sources */,
 				3C72DA0625A9F1C4001567B4 /* Frameworks */,
 				3C72DA0725A9F1C4001567B4 /* Resources */,
+				691ECAC5E7BBBC182298E60A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +234,7 @@
 			files = (
 				3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */,
 				3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */,
+				3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */,
 				3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */,
 				3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */,
 				3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */,
@@ -208,18 +247,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		37673C472B8967E0C18B9464 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zipkok-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		691ECAC5E7BBBC182298E60A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zipkok/Pods-zipkok-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zipkok/Pods-zipkok-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zipkok/Pods-zipkok-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3C72DA0525A9F1C4001567B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C356E1925AAE1F100629143 /* LocationWebViewController.swift in Sources */,
 				3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */,
 				3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */,
 				3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */,
+				3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */,
 				3C356E0525AAB96A00629143 /* CustomSearchTextField.swift in Sources */,
 				3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */,
 				3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */,
 				3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */,
+				3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -351,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -363,11 +447,13 @@
 		};
 		3C72DA1E25A9F1C5001567B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B0AFF769C981269E21538EA /* Pods-zipkok.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = zipkok/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,11 +467,13 @@
 		};
 		3C72DA1F25A9F1C5001567B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 028033563880B20D59FAA30C /* Pods-zipkok.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = zipkok/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

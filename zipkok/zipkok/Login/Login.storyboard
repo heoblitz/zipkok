@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u29-rC-q8P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="txG-ud-Itd">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWG-7g-T2b">
-                                <rect key="frame" x="23.999999999999986" y="164" width="240.66666666666663" height="77"/>
+                                <rect key="frame" x="23.999999999999986" y="208" width="240.66666666666663" height="77"/>
                                 <string key="text">우리 같이 집콕 챌린지,
 시작해볼까요?</string>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="26"/>
@@ -86,6 +87,7 @@
                             <constraint firstItem="oZU-gI-eSh" firstAttribute="leading" secondItem="Ecx-ug-X8E" secondAttribute="leading" constant="24" id="uzK-IM-2p5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ugv-MQ-SWh"/>
                     <connections>
                         <outlet property="iconTextLabel" destination="Swu-pJ-Bfl" id="m6s-05-Yak"/>
                         <outlet property="kakaoLoginView" destination="oZU-gI-eSh" id="xNm-8S-KYG"/>
@@ -93,10 +95,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qik-ru-Fd5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44.927536231884062" y="83.705357142857139"/>
+            <point key="canvasLocation" x="944.85981308411215" y="83.585313174946009"/>
+        </scene>
+        <!--Login Navigation View Controller-->
+        <scene sceneID="9cD-L3-o6p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="txG-ud-Itd" customClass="LoginNavigationViewController" customModule="zipkok" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="Backward arrow" backIndicatorTransitionMaskImage="Backward arrow" id="aAg-m8-pWz">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u29-rC-q8P" kind="relationship" relationship="rootViewController" id="tRn-wA-D96"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mOU-KQ-CQK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.859813084112147" y="83.585313174946009"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Backward arrow" width="16" height="16"/>
         <image name="free-icon-kakao-talk-2111466" width="85.333335876464844" height="85.333335876464844"/>
         <image name="그룹 129" width="207.33332824707031" height="169"/>
         <systemColor name="systemBackgroundColor">

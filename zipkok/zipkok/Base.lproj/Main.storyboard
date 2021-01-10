@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,20 +18,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rh8-OT-ghA">
-                                <rect key="frame" x="177.5" y="414.5" width="59" height="77"/>
+                                <rect key="frame" x="162.5" y="391" width="89" height="124"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ft-w9-dDg">
-                                        <rect key="frame" x="10.5" y="0.0" width="38" height="30"/>
+                                        <rect key="frame" x="25.5" y="0.0" width="38" height="30"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zzu-1P-jrB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Au-Zt-Rbh">
-                                        <rect key="frame" x="0.0" y="47" width="59" height="30"/>
+                                        <rect key="frame" x="15" y="47" width="59" height="30"/>
                                         <state key="normal" title="Location"/>
                                         <connections>
                                             <action selector="locationButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="8b3-Dx-xfc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVh-ad-WQ7">
+                                        <rect key="frame" x="0.0" y="94" width="89" height="30"/>
+                                        <state key="normal" title="LocationWeb"/>
+                                        <connections>
+                                            <action selector="locationWebButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="T46-BW-oIv"/>
                                         </connections>
                                     </button>
                                 </subviews>
