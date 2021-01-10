@@ -10,6 +10,8 @@ import WebKit
 
 class LocationWebViewController: UIViewController {
     
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    
     private var webView: WkWebViewSimpleBar?
     var address: String = "https://heoblitz.github.io/Kakao_postcode/"
     
@@ -28,9 +30,10 @@ class LocationWebViewController: UIViewController {
         let configuration = WKWebViewConfiguration()
         configuration.userContentController = contentController
         webView = WkWebViewSimpleBar(frame: .zero, configuration: configuration)
-        webView?.backgroundColor = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1)
         webView?.navigationDelegate = self
+        webView?.scrollView.delegate = self
         webView?.scrollView.contentInsetAdjustmentBehavior = .never
+        webView?.scrollView.backgroundColor = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1)
         
         guard let url = URL(string: address) else { return }
         let request = URLRequest(url: url)
@@ -76,12 +79,18 @@ extension LocationWebViewController: WKNavigationDelegate {
         // guard let previousVC = presentingViewController as? ViewController else { return }
         
         alertMessage(for: address)
-        
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
     }
 }
 
 extension LocationWebViewController: WKScriptMessageHandler {
-//    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-//
-//    }
+}
+
+extension LocationWebViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        scrollView.pinchGestureRecognizer?.isEnabled = false
+    }
 }
