@@ -28,7 +28,9 @@ class LocationWebViewController: UIViewController {
         let configuration = WKWebViewConfiguration()
         configuration.userContentController = contentController
         webView = WkWebViewSimpleBar(frame: .zero, configuration: configuration)
+        webView?.backgroundColor = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1)
         webView?.navigationDelegate = self
+        webView?.scrollView.contentInsetAdjustmentBehavior = .never
         
         guard let url = URL(string: address) else { return }
         let request = URLRequest(url: url)
@@ -37,13 +39,14 @@ class LocationWebViewController: UIViewController {
     
     private func setConstraints() {
         guard let webView = webView else { return }
+        let safeArea = view.safeAreaLayoutGuide
         view.addSubview(webView)
         webView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            webView.topAnchor.constraint(equalTo: view.topAnchor),
+            webView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
