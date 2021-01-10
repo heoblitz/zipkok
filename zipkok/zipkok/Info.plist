@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>THEFACESHOP+INKLIPQUID</string>
 		<string>NotoSansCJKkr-Medium</string>
 		<string>NotoSansCJKkr-Regular</string>
 	</array>

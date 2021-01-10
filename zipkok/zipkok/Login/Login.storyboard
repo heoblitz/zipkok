@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u29-rC-q8P">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Medium.otf">
+            <string>NotoSansCJKkr-Medium</string>
+        </array>
+        <array key="THEFACESHOP+INKLIPQUID.otf">
+            <string>THEFACESHOP</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="QDJ-Dc-LPK">
+            <objects>
+                <viewController id="u29-rC-q8P" customClass="LoginViewController" customModule="zipkok" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fGJ-Gq-zcB">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWG-7g-T2b">
+                                <rect key="frame" x="23.999999999999986" y="164" width="240.66666666666663" height="77"/>
+                                <string key="text">우리 같이 집콕 챌린지,
+시작해볼까요?</string>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="그룹 129" translatesAutoresizingMaskIntoConstraints="NO" id="94m-cR-Z9c">
+                                <rect key="frame" x="196" y="526.33333333333337" width="208" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="1NC-k3-0Nh"/>
+                                    <constraint firstAttribute="width" constant="208" id="R5w-tI-5bU"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZU-gI-eSh">
+                                <rect key="frame" x="24" y="756" width="380" height="56"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="free-icon-kakao-talk-2111466" translatesAutoresizingMaskIntoConstraints="NO" id="B3i-sg-fW2">
+                                        <rect key="frame" x="96" y="13" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="KEH-pa-is5"/>
+                                            <constraint firstAttribute="height" constant="30" id="YMf-I7-TQf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오톡으로 로그인하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rb5-yl-qeI">
+                                        <rect key="frame" x="141" y="18" width="136" height="20"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.8901960784313725" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="rb5-yl-qeI" firstAttribute="leading" secondItem="B3i-sg-fW2" secondAttribute="trailing" constant="15" id="PXc-DZ-jGI"/>
+                                    <constraint firstAttribute="height" constant="56" id="hKt-vK-dLB"/>
+                                    <constraint firstItem="B3i-sg-fW2" firstAttribute="centerY" secondItem="rb5-yl-qeI" secondAttribute="centerY" id="hu5-5x-ero"/>
+                                    <constraint firstItem="rb5-yl-qeI" firstAttribute="centerX" secondItem="oZU-gI-eSh" secondAttribute="centerX" multiplier="1.1" id="mjm-2p-TMC"/>
+                                    <constraint firstItem="rb5-yl-qeI" firstAttribute="centerY" secondItem="oZU-gI-eSh" secondAttribute="centerY" id="s0D-IN-MUc"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Start!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swu-pJ-Bfl">
+                                <rect key="frame" x="161.33333333333334" y="484.33333333333331" width="122.00000000000003" height="35.999999999999943"/>
+                                <fontDescription key="fontDescription" name="THEFACESHOP" family="THEFACESHOP INKLIPQUID" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ecx-ug-X8E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ecx-ug-X8E" firstAttribute="bottom" secondItem="oZU-gI-eSh" secondAttribute="bottom" constant="80" id="BRc-aO-7q3"/>
+                            <constraint firstItem="Swu-pJ-Bfl" firstAttribute="trailing" secondItem="94m-cR-Z9c" secondAttribute="leading" constant="87.299999999999997" id="HpL-wF-YHv"/>
+                            <constraint firstItem="cWG-7g-T2b" firstAttribute="leading" secondItem="Ecx-ug-X8E" secondAttribute="leading" constant="24" id="IZq-F0-bKO"/>
+                            <constraint firstItem="Ecx-ug-X8E" firstAttribute="trailing" secondItem="94m-cR-Z9c" secondAttribute="trailing" constant="24" id="OS3-T2-HG1"/>
+                            <constraint firstItem="Ecx-ug-X8E" firstAttribute="trailing" secondItem="oZU-gI-eSh" secondAttribute="trailing" constant="24" id="Qhg-83-0HH"/>
+                            <constraint firstItem="94m-cR-Z9c" firstAttribute="top" secondItem="Swu-pJ-Bfl" secondAttribute="bottom" constant="6" id="eXM-NF-TPv"/>
+                            <constraint firstItem="cWG-7g-T2b" firstAttribute="top" secondItem="Ecx-ug-X8E" secondAttribute="top" constant="120" id="gsG-Fq-Y6f"/>
+                            <constraint firstItem="oZU-gI-eSh" firstAttribute="top" secondItem="94m-cR-Z9c" secondAttribute="bottom" constant="60.799999999999997" id="lqI-pr-hzg"/>
+                            <constraint firstItem="oZU-gI-eSh" firstAttribute="leading" secondItem="Ecx-ug-X8E" secondAttribute="leading" constant="24" id="uzK-IM-2p5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iconTextLabel" destination="Swu-pJ-Bfl" id="m6s-05-Yak"/>
+                        <outlet property="kakaoLoginView" destination="oZU-gI-eSh" id="xNm-8S-KYG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qik-ru-Fd5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="free-icon-kakao-talk-2111466" width="85.333335876464844" height="85.333335876464844"/>
+        <image name="그룹 129" width="207.33332824707031" height="169"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

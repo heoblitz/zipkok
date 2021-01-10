@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF625AA9A5200629143 /* LoginViewController.swift */; };
+		3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF925AA9BA600629143 /* MainViewController.swift */; };
 		3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */; };
 		3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */; };
 		3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA1025A9F1C4001567B4 /* ViewController.swift */; };
@@ -15,9 +17,13 @@
 		3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA1725A9F1C5001567B4 /* LaunchScreen.storyboard */; };
 		3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2525A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf */; };
 		3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */; };
+		3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2C25A9FAE1001567B4 /* Login.storyboard */; };
+		3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C356DF625AA9A5200629143 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3C356DF925AA9BA600629143 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3C72DA0925A9F1C4001567B4 /* zipkok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zipkok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +34,8 @@
 		3C72DA1A25A9F1C5001567B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C72DA2525A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
 		3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		3C72DA2C25A9FAE1001567B4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "THEFACESHOP+INKLIPQUID.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C356DF425AA990F00629143 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3C72DA2C25A9FAE1001567B4 /* Login.storyboard */,
+				3C356DF625AA9A5200629143 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		3C72DA0025A9F1C4001567B4 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +81,8 @@
 				3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */,
 				3C72DA1025A9F1C4001567B4 /* ViewController.swift */,
 				3C72DA1225A9F1C4001567B4 /* Main.storyboard */,
+				3C356DF925AA9BA600629143 /* MainViewController.swift */,
+				3C356DF425AA990F00629143 /* Login */,
 				3C72DA1525A9F1C5001567B4 /* Assets.xcassets */,
 				3C72DA1725A9F1C5001567B4 /* LaunchScreen.storyboard */,
 				3C72DA1A25A9F1C5001567B4 /* Info.plist */,
@@ -75,6 +94,7 @@
 		3C72DA2A25A9F5C7001567B4 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */,
 				3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */,
 				3C72DA2525A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf */,
 			);
@@ -140,6 +160,8 @@
 			files = (
 				3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */,
 				3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */,
+				3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */,
+				3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */,
 				3C72DA1625A9F1C5001567B4 /* Assets.xcassets in Resources */,
 				3C72DA1425A9F1C4001567B4 /* Main.storyboard in Resources */,
 				3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */,
@@ -153,9 +175,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */,
 				3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */,
 				3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */,
 				3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */,
+				3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
