@@ -27,6 +27,11 @@
 		3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */; };
 		3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2C25A9FAE1001567B4 /* Login.storyboard */; };
 		3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */; };
+		3CB0614825AB404D0088ACFD /* LocationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0614725AB404D0088ACFD /* LocationAlertView.swift */; };
+		3CB0614B25AB405E0088ACFD /* LocationAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0614A25AB405E0088ACFD /* LocationAlertView.xib */; };
+		3CB0614E25ABE41C0088ACFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */; };
+		3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0615225ABE4330088ACFD /* Home.storyboard */; };
+		3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0615525ABEAFB0088ACFD /* HomeNavigationViewController.swift */; };
 		FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +60,11 @@
 		3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		3C72DA2C25A9FAE1001567B4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "THEFACESHOP+INKLIPQUID.otf"; sourceTree = "<group>"; };
+		3CB0614725AB404D0088ACFD /* LocationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertView.swift; sourceTree = "<group>"; };
+		3CB0614A25AB405E0088ACFD /* LocationAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationAlertView.xib; sourceTree = "<group>"; };
+		3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3CB0615225ABE4330088ACFD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		3CB0615525ABEAFB0088ACFD /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
 		F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zipkok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -112,6 +122,8 @@
 			children = (
 				3C356E0425AAB96A00629143 /* CustomSearchTextField.swift */,
 				3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */,
+				3CB0614725AB404D0088ACFD /* LocationAlertView.swift */,
+				3CB0614A25AB405E0088ACFD /* LocationAlertView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,6 +154,7 @@
 				3C72DA1025A9F1C4001567B4 /* ViewController.swift */,
 				3C72DA1225A9F1C4001567B4 /* Main.storyboard */,
 				3C356DF925AA9BA600629143 /* MainViewController.swift */,
+				3CB0615025ABE4250088ACFD /* Home */,
 				3C356DF425AA990F00629143 /* Login */,
 				3C356DFF25AAA1E700629143 /* Location */,
 				3C72DA1525A9F1C5001567B4 /* Assets.xcassets */,
@@ -162,6 +175,16 @@
 				3C72DA2525A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		3CB0615025ABE4250088ACFD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3CB0615525ABEAFB0088ACFD /* HomeNavigationViewController.swift */,
+				3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */,
+				3CB0615225ABE4330088ACFD /* Home.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		5453E39C72D8147997ADA637 /* Pods */ = {
@@ -233,7 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */,
+				3CB0614B25AB405E0088ACFD /* LocationAlertView.xib in Resources */,
 				3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */,
+				3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */,
 				3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */,
 				3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */,
 				3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */,
@@ -302,8 +327,11 @@
 				3C356E0525AAB96A00629143 /* CustomSearchTextField.swift in Sources */,
 				3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */,
 				3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */,
+				3CB0614825AB404D0088ACFD /* LocationAlertView.swift in Sources */,
+				3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */,
 				3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */,
 				3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */,
+				3CB0614E25ABE41C0088ACFD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

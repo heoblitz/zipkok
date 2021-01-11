@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import CoreLocation
 
 class LocationViewController: UIViewController {
 
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet private weak var currentLocationButtonView: UIView!
-        
+    
+    lazy var locationManager: CLLocationManager = {
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        return locationManager
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNavigationTitle()
@@ -36,6 +44,9 @@ class LocationViewController: UIViewController {
     }
 
     private func prepareCurrentLocationButtonView() {
+        let tapGusture = UITapGestureRecognizer(target: self, action: #selector(currentLocationButtonViewTapped))
+        currentLocationButtonView.isUserInteractionEnabled = true
+        currentLocationButtonView.addGestureRecognizer(tapGusture)
         currentLocationButtonView.layer.masksToBounds = false
         currentLocationButtonView.layer.cornerRadius = 8
     }
@@ -51,10 +62,30 @@ class LocationViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NotoSansCJKkr-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)]
     }
     
+    private func alertMessage(for message: String) {
+        let alert = UIAlertController(title: "test", message: message, preferredStyle: .alert)
+        let admit = UIAlertAction(title: "확인", style: .default, handler: { _ in
+            // self.dismiss(animated: true, completion: nil)
+        })
+        
+        alert.addAction(admit)
+        present(alert, animated: true, completion: nil)
+    }
+    
     @objc private func viewTapped() {
         searchTextField.resignFirstResponder()
     }
 
+    @objc private func currentLocationButtonViewTapped() {
+        locationManager.requestWhenInUseAuthorization()
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .restricted, .denied:
+            print("no permisson")
+        default:
+            locationManager.requestLocation()
+        }
+    }
 }
 
 extension LocationViewController: UITextFieldDelegate {
@@ -65,5 +96,17 @@ extension LocationViewController: UITextFieldDelegate {
         
         viewTapped()
         navigationController?.pushViewController(locationWebVc, animated: true)
+    }
+}
+
+extension LocationViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let coor = manager.location?.coordinate{
+            alertMessage(for: "\(coor.latitude), \(coor.longitude)")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+         print("error:: \(error.localizedDescription)")
     }
 }

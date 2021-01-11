@@ -38,4 +38,11 @@ class MainViewController: UIViewController {
         // loginVc.modalPresentationStyle = .fullScreen
         present(locationWebVc, animated: false)
     }
+    
+    @IBAction func homeButtonTapped() {
+        guard let homeVc = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as? UINavigationController else { fatalError() }
+        
+        homeVc.modalPresentationStyle = .fullScreen
+        present(homeVc, animated: true)
+    }
 }
