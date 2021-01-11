@@ -32,6 +32,12 @@
 		3CB0614E25ABE41C0088ACFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */; };
 		3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0615225ABE4330088ACFD /* Home.storyboard */; };
 		3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0615525ABEAFB0088ACFD /* HomeNavigationViewController.swift */; };
+		3CB0615A25ABEF9D0088ACFD /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0615925ABEF9D0088ACFD /* SettingViewController.swift */; };
+		3CB0615F25ABEFB10088ACFD /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0615E25ABEFB10088ACFD /* Setting.storyboard */; };
+		3CB0616425ABFDE80088ACFD /* SettingProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0616225ABFDE80088ACFD /* SettingProfileCell.swift */; };
+		3CB0616525ABFDE80088ACFD /* SettingProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0616325ABFDE80088ACFD /* SettingProfileCell.xib */; };
+		3CB0616C25AC08100088ACFD /* SettingNavigatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0616A25AC08100088ACFD /* SettingNavigatorCell.swift */; };
+		3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */; };
 		FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +71,12 @@
 		3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3CB0615225ABE4330088ACFD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3CB0615525ABEAFB0088ACFD /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
+		3CB0615925ABEF9D0088ACFD /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		3CB0615E25ABEFB10088ACFD /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		3CB0616225ABFDE80088ACFD /* SettingProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileCell.swift; sourceTree = "<group>"; };
+		3CB0616325ABFDE80088ACFD /* SettingProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingProfileCell.xib; sourceTree = "<group>"; };
+		3CB0616A25AC08100088ACFD /* SettingNavigatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNavigatorCell.swift; sourceTree = "<group>"; };
+		3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNavigatorCell.xib; sourceTree = "<group>"; };
 		F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zipkok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,6 +167,7 @@
 				3C72DA1225A9F1C4001567B4 /* Main.storyboard */,
 				3C356DF925AA9BA600629143 /* MainViewController.swift */,
 				3CB0615025ABE4250088ACFD /* Home */,
+				3CB0615C25ABEFA20088ACFD /* Setting */,
 				3C356DF425AA990F00629143 /* Login */,
 				3C356DFF25AAA1E700629143 /* Location */,
 				3C72DA1525A9F1C5001567B4 /* Assets.xcassets */,
@@ -185,6 +198,27 @@
 				3CB0615225ABE4330088ACFD /* Home.storyboard */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		3CB0615C25ABEFA20088ACFD /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				3CB0616725ABFDED0088ACFD /* View */,
+				3CB0615925ABEF9D0088ACFD /* SettingViewController.swift */,
+				3CB0615E25ABEFB10088ACFD /* Setting.storyboard */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		3CB0616725ABFDED0088ACFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CB0616225ABFDE80088ACFD /* SettingProfileCell.swift */,
+				3CB0616325ABFDE80088ACFD /* SettingProfileCell.xib */,
+				3CB0616A25AC08100088ACFD /* SettingNavigatorCell.swift */,
+				3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5453E39C72D8147997ADA637 /* Pods */ = {
@@ -258,6 +292,7 @@
 				3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */,
 				3CB0614B25AB405E0088ACFD /* LocationAlertView.xib in Resources */,
 				3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */,
+				3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */,
 				3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */,
 				3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */,
 				3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */,
@@ -265,8 +300,10 @@
 				3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */,
 				3C72DA1625A9F1C5001567B4 /* Assets.xcassets in Resources */,
 				3C72DA1425A9F1C4001567B4 /* Main.storyboard in Resources */,
+				3CB0616525ABFDE80088ACFD /* SettingProfileCell.xib in Resources */,
 				3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */,
 				3C356E0C25AAC78D00629143 /* NotoSansCJKkr-Bold.otf in Resources */,
+				3CB0615F25ABEFB10088ACFD /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,13 +361,16 @@
 				3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */,
 				3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */,
 				3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */,
+				3CB0615A25ABEF9D0088ACFD /* SettingViewController.swift in Sources */,
 				3C356E0525AAB96A00629143 /* CustomSearchTextField.swift in Sources */,
 				3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */,
 				3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */,
 				3CB0614825AB404D0088ACFD /* LocationAlertView.swift in Sources */,
 				3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */,
 				3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */,
+				3CB0616425ABFDE80088ACFD /* SettingProfileCell.swift in Sources */,
 				3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */,
+				3CB0616C25AC08100088ACFD /* SettingNavigatorCell.swift in Sources */,
 				3CB0614E25ABE41C0088ACFD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

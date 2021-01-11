@@ -41,4 +41,12 @@ class HomeViewController: UIViewController {
         shareBarButtonItem.image = UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal)
         settingBarButtonItem.image = UIImage(named: "그룹 113")?.withRenderingMode(.alwaysOriginal)
     }
+    
+    @IBAction func settingBarButtonItemTapped(_ sender: UIBarButtonItem) {
+        guard let settingVc = UIStoryboard(name: "Setting", bundle: nil).instantiateInitialViewController() as? SettingViewController else {
+            fatalError()
+        }
+        
+        navigationController?.pushViewController(settingVc, animated: true)
+    }
 }
