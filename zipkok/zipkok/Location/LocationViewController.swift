@@ -102,6 +102,7 @@ extension LocationViewController: UITextFieldDelegate {
 extension LocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let coor = manager.location?.coordinate{
+            print("\(coor.latitude), \(coor.longitude)")
             alertMessage(for: "\(coor.latitude), \(coor.longitude)")
         }
     }

@@ -73,6 +73,7 @@ extension LocationWebViewController: WKNavigationDelegate {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
         if let data = message.body as? [String: Any] {
+            print(data)
             address = data["roadAddress"] as? String ?? ""
         }
         // guard let previousVC = presentingViewController as? ViewController else { return }

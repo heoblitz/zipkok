@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var profileBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var shareBarButtonItem: UIBarButtonItem!
     @IBOutlet private weak var settingBarButtonItem: UIBarButtonItem!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareStartButtonView()
@@ -23,11 +23,15 @@ class HomeViewController: UIViewController {
         prepareBarButtonItems()
     }
     
-    private func prepareStartButtonView() {
+    private func prepareIconTextLabel() {
         iconTextLabel.transform = CGAffineTransform(rotationAngle: -(.pi/8))
     }
     
-    private func prepareIconTextLabel() {
+    private func prepareStartButtonView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(startButtonViewTapped))
+        startButtonView.isUserInteractionEnabled = true
+        startButtonView.addGestureRecognizer(tapGesture)
+        
         startButtonView.layer.masksToBounds = false
         startButtonView.layer.cornerRadius = 8
         startButtonView.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -48,5 +52,11 @@ class HomeViewController: UIViewController {
         }
         
         navigationController?.pushViewController(settingVc, animated: true)
+    }
+    
+    @objc private func startButtonViewTapped() {
+        guard let timerSettingVc = UIStoryboard(name: "TimerSetting", bundle: nil).instantiateInitialViewController() as? TimerSettingViewController else { fatalError() }
+        
+        navigationController?.pushViewController(timerSettingVc, animated: true)
     }
 }
