@@ -3,19 +3,65 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C15519825AD3CF90030949D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C15519725AD3CF90030949D /* TimerViewController.swift */; };
+		3C15519B25AD3D010030949D /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C15519A25AD3D010030949D /* Timer.storyboard */; };
+		3C1551A125AD6D260030949D /* ChallengeSuccessAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */; };
+		3C1551A425AD6D5E0030949D /* ChallengeSuccessAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */; };
+		3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF625AA9A5200629143 /* LoginViewController.swift */; };
+		3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF925AA9BA600629143 /* MainViewController.swift */; };
+		3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C356DFC25AA9F3000629143 /* Location.storyboard */; };
+		3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E0125AAA1F300629143 /* LocationViewController.swift */; };
+		3C356E0C25AAC78D00629143 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C356E0B25AAC78D00629143 /* NotoSansCJKkr-Bold.otf */; };
+		3C356E1925AAE1F100629143 /* LocationWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E1825AAE1F100629143 /* LocationWebViewController.swift */; };
+		3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C356E1B25AAE20300629143 /* LocationWeb.storyboard */; };
+		3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E1F25AAEF4B00629143 /* LoginNavigationViewController.swift */; };
+		3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */; };
 		3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */; };
 		3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */; };
 		3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA1025A9F1C4001567B4 /* ViewController.swift */; };
 		3C72DA1425A9F1C4001567B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA1225A9F1C4001567B4 /* Main.storyboard */; };
 		3C72DA1625A9F1C5001567B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA1525A9F1C5001567B4 /* Assets.xcassets */; };
 		3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA1725A9F1C5001567B4 /* LaunchScreen.storyboard */; };
+		3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2525A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf */; };
+		3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */; };
+		3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2C25A9FAE1001567B4 /* Login.storyboard */; };
+		3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */; };
+		3CB0614825AB404D0088ACFD /* ChallengeQuitAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */; };
+		3CB0614B25AB405E0088ACFD /* ChallengeQuitAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */; };
+		3CB0614E25ABE41C0088ACFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */; };
+		3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0615225ABE4330088ACFD /* Home.storyboard */; };
+		3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0615525ABEAFB0088ACFD /* HomeNavigationViewController.swift */; };
+		3CB0615A25ABEF9D0088ACFD /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0615925ABEF9D0088ACFD /* SettingViewController.swift */; };
+		3CB0615F25ABEFB10088ACFD /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0615E25ABEFB10088ACFD /* Setting.storyboard */; };
+		3CB0616425ABFDE80088ACFD /* SettingProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0616225ABFDE80088ACFD /* SettingProfileCell.swift */; };
+		3CB0616525ABFDE80088ACFD /* SettingProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0616325ABFDE80088ACFD /* SettingProfileCell.xib */; };
+		3CB0616C25AC08100088ACFD /* SettingNavigatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0616A25AC08100088ACFD /* SettingNavigatorCell.swift */; };
+		3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */; };
+		3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */; };
+		3CB0618025AC18BF0088ACFD /* TimerSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */; };
+		FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		028033563880B20D59FAA30C /* Pods-zipkok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zipkok.release.xcconfig"; path = "Target Support Files/Pods-zipkok/Pods-zipkok.release.xcconfig"; sourceTree = "<group>"; };
+		3B0AFF769C981269E21538EA /* Pods-zipkok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zipkok.debug.xcconfig"; path = "Target Support Files/Pods-zipkok/Pods-zipkok.debug.xcconfig"; sourceTree = "<group>"; };
+		3C15519725AD3CF90030949D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		3C15519A25AD3D010030949D /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
+		3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeSuccessAlertView.swift; sourceTree = "<group>"; };
+		3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeSuccessAlertView.xib; sourceTree = "<group>"; };
+		3C356DF625AA9A5200629143 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3C356DF925AA9BA600629143 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3C356DFC25AA9F3000629143 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		3C356E0125AAA1F300629143 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		3C356E0B25AAC78D00629143 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		3C356E1825AAE1F100629143 /* LocationWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWebViewController.swift; sourceTree = "<group>"; };
+		3C356E1B25AAE20300629143 /* LocationWeb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationWeb.storyboard; sourceTree = "<group>"; };
+		3C356E1F25AAEF4B00629143 /* LoginNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationViewController.swift; sourceTree = "<group>"; };
+		3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewSimpleBar.swift; sourceTree = "<group>"; };
 		3C72DA0925A9F1C4001567B4 /* zipkok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zipkok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +70,24 @@
 		3C72DA1525A9F1C5001567B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C72DA1825A9F1C5001567B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C72DA1A25A9F1C5001567B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C72DA2525A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		3C72DA2C25A9FAE1001567B4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "THEFACESHOP+INKLIPQUID.otf"; sourceTree = "<group>"; };
+		3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeQuitAlertView.swift; sourceTree = "<group>"; };
+		3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeQuitAlertView.xib; sourceTree = "<group>"; };
+		3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3CB0615225ABE4330088ACFD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		3CB0615525ABEAFB0088ACFD /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
+		3CB0615925ABEF9D0088ACFD /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		3CB0615E25ABEFB10088ACFD /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		3CB0616225ABFDE80088ACFD /* SettingProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileCell.swift; sourceTree = "<group>"; };
+		3CB0616325ABFDE80088ACFD /* SettingProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingProfileCell.xib; sourceTree = "<group>"; };
+		3CB0616A25AC08100088ACFD /* SettingNavigatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNavigatorCell.swift; sourceTree = "<group>"; };
+		3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNavigatorCell.xib; sourceTree = "<group>"; };
+		3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingViewController.swift; sourceTree = "<group>"; };
+		3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerSetting.storyboard; sourceTree = "<group>"; };
+		F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zipkok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +95,69 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E54305CEF3744EDADB6BFAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C356DF425AA990F00629143 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3C72DA2C25A9FAE1001567B4 /* Login.storyboard */,
+				3C356DF625AA9A5200629143 /* LoginViewController.swift */,
+				3C356E1F25AAEF4B00629143 /* LoginNavigationViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3C356DFF25AAA1E700629143 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				3C356DFC25AA9F3000629143 /* Location.storyboard */,
+				3C356E0125AAA1F300629143 /* LocationViewController.swift */,
+				3C356E1B25AAE20300629143 /* LocationWeb.storyboard */,
+				3C356E1825AAE1F100629143 /* LocationWebViewController.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		3C356E0725AAB97500629143 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				3C356E0925AAB98100629143 /* View */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		3C356E0925AAB98100629143 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */,
+				3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */,
+				3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */,
+				3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */,
+				3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3C72DA0025A9F1C4001567B4 = {
 			isa = PBXGroup;
 			children = (
 				3C72DA0B25A9F1C4001567B4 /* zipkok */,
 				3C72DA0A25A9F1C4001567B4 /* Products */,
+				5453E39C72D8147997ADA637 /* Pods */,
+				0E54305CEF3744EDADB6BFAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +176,81 @@
 				3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */,
 				3C72DA1025A9F1C4001567B4 /* ViewController.swift */,
 				3C72DA1225A9F1C4001567B4 /* Main.storyboard */,
+				3C356DF925AA9BA600629143 /* MainViewController.swift */,
+				3CB0615025ABE4250088ACFD /* Home */,
+				3CB0617D25AC18AF0088ACFD /* Timer */,
+				3CB0615C25ABEFA20088ACFD /* Setting */,
+				3C356DF425AA990F00629143 /* Login */,
+				3C356DFF25AAA1E700629143 /* Location */,
 				3C72DA1525A9F1C5001567B4 /* Assets.xcassets */,
 				3C72DA1725A9F1C5001567B4 /* LaunchScreen.storyboard */,
 				3C72DA1A25A9F1C5001567B4 /* Info.plist */,
+				3C356E0725AAB97500629143 /* Support */,
+				3C72DA2A25A9F5C7001567B4 /* font */,
 			);
 			path = zipkok;
+			sourceTree = "<group>";
+		};
+		3C72DA2A25A9F5C7001567B4 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */,
+				3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */,
+				3C356E0B25AAC78D00629143 /* NotoSansCJKkr-Bold.otf */,
+				3C72DA2525A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
+		3CB0615025ABE4250088ACFD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3CB0615525ABEAFB0088ACFD /* HomeNavigationViewController.swift */,
+				3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */,
+				3CB0615225ABE4330088ACFD /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3CB0615C25ABEFA20088ACFD /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				3CB0616725ABFDED0088ACFD /* View */,
+				3CB0615925ABEF9D0088ACFD /* SettingViewController.swift */,
+				3CB0615E25ABEFB10088ACFD /* Setting.storyboard */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		3CB0616725ABFDED0088ACFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CB0616225ABFDE80088ACFD /* SettingProfileCell.swift */,
+				3CB0616325ABFDE80088ACFD /* SettingProfileCell.xib */,
+				3CB0616A25AC08100088ACFD /* SettingNavigatorCell.swift */,
+				3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CB0617D25AC18AF0088ACFD /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */,
+				3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */,
+				3C15519725AD3CF90030949D /* TimerViewController.swift */,
+				3C15519A25AD3D010030949D /* Timer.storyboard */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		5453E39C72D8147997ADA637 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B0AFF769C981269E21538EA /* Pods-zipkok.debug.xcconfig */,
+				028033563880B20D59FAA30C /* Pods-zipkok.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C72DA1D25A9F1C5001567B4 /* Build configuration list for PBXNativeTarget "zipkok" */;
 			buildPhases = (
+				37673C472B8967E0C18B9464 /* [CP] Check Pods Manifest.lock */,
 				3C72DA0525A9F1C4001567B4 /* Sources */,
 				3C72DA0625A9F1C4001567B4 /* Frameworks */,
 				3C72DA0725A9F1C4001567B4 /* Resources */,
+				691ECAC5E7BBBC182298E60A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,21 +313,93 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */,
+				3C1551A425AD6D5E0030949D /* ChallengeSuccessAlertView.xib in Resources */,
+				3CB0614B25AB405E0088ACFD /* ChallengeQuitAlertView.xib in Resources */,
+				3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */,
+				3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */,
+				3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */,
+				3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */,
+				3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */,
+				3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */,
+				3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */,
 				3C72DA1625A9F1C5001567B4 /* Assets.xcassets in Resources */,
 				3C72DA1425A9F1C4001567B4 /* Main.storyboard in Resources */,
+				3CB0616525ABFDE80088ACFD /* SettingProfileCell.xib in Resources */,
+				3C15519B25AD3D010030949D /* Timer.storyboard in Resources */,
+				3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */,
+				3CB0618025AC18BF0088ACFD /* TimerSetting.storyboard in Resources */,
+				3C356E0C25AAC78D00629143 /* NotoSansCJKkr-Bold.otf in Resources */,
+				3CB0615F25ABEFB10088ACFD /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37673C472B8967E0C18B9464 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zipkok-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		691ECAC5E7BBBC182298E60A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zipkok/Pods-zipkok-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zipkok/Pods-zipkok-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zipkok/Pods-zipkok-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C72DA0525A9F1C4001567B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C356E1925AAE1F100629143 /* LocationWebViewController.swift in Sources */,
+				3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */,
 				3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */,
 				3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */,
+				3C1551A125AD6D260030949D /* ChallengeSuccessAlertView.swift in Sources */,
+				3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */,
+				3CB0615A25ABEF9D0088ACFD /* SettingViewController.swift in Sources */,
+				3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */,
 				3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */,
+				3CB0614825AB404D0088ACFD /* ChallengeQuitAlertView.swift in Sources */,
+				3C15519825AD3CF90030949D /* TimerViewController.swift in Sources */,
+				3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */,
+				3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */,
+				3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */,
+				3CB0616425ABFDE80088ACFD /* SettingProfileCell.swift in Sources */,
+				3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */,
+				3CB0616C25AC08100088ACFD /* SettingNavigatorCell.swift in Sources */,
+				3CB0614E25ABE41C0088ACFD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -283,11 +543,14 @@
 		};
 		3C72DA1E25A9F1C5001567B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B0AFF769C981269E21538EA /* Pods-zipkok.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HK54HM2TC6;
 				INFOPLIST_FILE = zipkok/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,11 +564,14 @@
 		};
 		3C72DA1F25A9F1C5001567B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 028033563880B20D59FAA30C /* Pods-zipkok.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HK54HM2TC6;
 				INFOPLIST_FILE = zipkok/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
