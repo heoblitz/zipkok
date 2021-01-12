@@ -8,6 +8,11 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    lazy var alertView: LocationAlertView = {
+        let alert = LocationAlertView.loadViewFromNib()
+        return alert
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,5 +49,16 @@ class MainViewController: UIViewController {
         
         homeVc.modalPresentationStyle = .fullScreen
         present(homeVc, animated: true)
+    }
+    
+    @IBAction func alertButtonTapped() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cacelButtonTapped))
+        alertView.cancelButtonView.isUserInteractionEnabled = true
+        alertView.cancelButtonView.addGestureRecognizer(tapGesture)
+        view.addSubview(alertView)
+    }
+    
+    @objc func cacelButtonTapped() {
+        alertView.removeFromSuperview()
     }
 }

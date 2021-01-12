@@ -8,20 +8,30 @@
 import UIKit
 
 class LocationAlertView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        let nib = UINib(nibName: "LocationAlertView", bundle: Bundle.main)
-        
-        guard let xibView = nib.instantiate(withOwner: self, options: nil).first as? UIView else { return }
-        
-        xibView.frame = self.bounds
-        xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(xibView)
-        
+    @IBOutlet weak var alertContentView: UIView!
+    @IBOutlet weak var cancelButtonView: UIView!
+    @IBOutlet weak var quitButtonView: UIView!
+    
+    static func loadViewFromNib() -> LocationAlertView {
+        let bundle = Bundle(for: self)
+        let nib = UINib(nibName: "LocationAlertView", bundle: bundle)
+        let locationView = nib.instantiate(withOwner: nil, options: nil).first as! LocationAlertView
+        locationView.prepareComponents()
+        return locationView
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private func prepareComponents() {
+        alertContentView.layer.masksToBounds = false
+        alertContentView.layer.cornerRadius = 8
+        
+        cancelButtonView.layer.masksToBounds = false
+        cancelButtonView.layer.cornerRadius = 8
+        cancelButtonView.layer.borderWidth = 1
+        cancelButtonView.layer.borderColor = CGColor(red: 187/255, green: 187/255, blue: 187/255, alpha: 1)
+        
+        quitButtonView.layer.masksToBounds = false
+        quitButtonView.layer.cornerRadius = 8
+        quitButtonView.layer.borderWidth = 1
+        quitButtonView.layer.borderColor = CGColor(red: 255/255, green: 105/255, blue: 28/255, alpha: 1)
     }
 }

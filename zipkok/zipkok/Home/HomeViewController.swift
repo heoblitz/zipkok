@@ -57,6 +57,8 @@ class HomeViewController: UIViewController {
     @objc private func startButtonViewTapped() {
         guard let timerSettingVc = UIStoryboard(name: "TimerSetting", bundle: nil).instantiateInitialViewController() as? TimerSettingViewController else { fatalError() }
         
-        navigationController?.pushViewController(timerSettingVc, animated: true)
+        addChild(timerSettingVc)
+        view.addSubview(timerSettingVc.view)
+        timerSettingVc.didMove(toParent: self)
     }
 }

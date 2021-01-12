@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C15519825AD3CF90030949D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C15519725AD3CF90030949D /* TimerViewController.swift */; };
+		3C15519B25AD3D010030949D /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C15519A25AD3D010030949D /* Timer.storyboard */; };
 		3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF625AA9A5200629143 /* LoginViewController.swift */; };
 		3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF925AA9BA600629143 /* MainViewController.swift */; };
 		3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C356DFC25AA9F3000629143 /* Location.storyboard */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		028033563880B20D59FAA30C /* Pods-zipkok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zipkok.release.xcconfig"; path = "Target Support Files/Pods-zipkok/Pods-zipkok.release.xcconfig"; sourceTree = "<group>"; };
 		3B0AFF769C981269E21538EA /* Pods-zipkok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zipkok.debug.xcconfig"; path = "Target Support Files/Pods-zipkok/Pods-zipkok.debug.xcconfig"; sourceTree = "<group>"; };
+		3C15519725AD3CF90030949D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		3C15519A25AD3D010030949D /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
 		3C356DF625AA9A5200629143 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3C356DF925AA9BA600629143 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3C356DFC25AA9F3000629143 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 			children = (
 				3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */,
 				3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */,
+				3C15519725AD3CF90030949D /* TimerViewController.swift */,
+				3C15519A25AD3D010030949D /* Timer.storyboard */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				3C72DA1625A9F1C5001567B4 /* Assets.xcassets in Resources */,
 				3C72DA1425A9F1C4001567B4 /* Main.storyboard in Resources */,
 				3CB0616525ABFDE80088ACFD /* SettingProfileCell.xib in Resources */,
+				3C15519B25AD3D010030949D /* Timer.storyboard in Resources */,
 				3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */,
 				3CB0618025AC18BF0088ACFD /* TimerSetting.storyboard in Resources */,
 				3C356E0C25AAC78D00629143 /* NotoSansCJKkr-Bold.otf in Resources */,
@@ -381,6 +388,7 @@
 				3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */,
 				3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */,
 				3CB0614825AB404D0088ACFD /* LocationAlertView.swift in Sources */,
+				3C15519825AD3CF90030949D /* TimerViewController.swift in Sources */,
 				3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */,
 				3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */,
 				3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */,
