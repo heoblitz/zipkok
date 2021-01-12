@@ -7,15 +7,15 @@
 
 import UIKit
 
-class LocationAlertView: UIView {
+class ChallengeQuitAlertView: UIView {
     @IBOutlet weak var alertContentView: UIView!
     @IBOutlet weak var cancelButtonView: UIView!
     @IBOutlet weak var quitButtonView: UIView!
     
-    static func loadViewFromNib() -> LocationAlertView {
+    static func loadViewFromNib() -> ChallengeQuitAlertView {
         let bundle = Bundle(for: self)
-        let nib = UINib(nibName: "LocationAlertView", bundle: bundle)
-        let locationView = nib.instantiate(withOwner: nil, options: nil).first as! LocationAlertView
+        let nib = UINib(nibName: "ChallengeQuitAlertView", bundle: bundle)
+        let locationView = nib.instantiate(withOwner: nil, options: nil).first as! ChallengeQuitAlertView
         locationView.prepareComponents()
         return locationView
     }

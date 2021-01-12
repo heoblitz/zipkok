@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		3C15519825AD3CF90030949D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C15519725AD3CF90030949D /* TimerViewController.swift */; };
 		3C15519B25AD3D010030949D /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C15519A25AD3D010030949D /* Timer.storyboard */; };
+		3C1551A125AD6D260030949D /* ChallengeSuccessAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */; };
+		3C1551A425AD6D5E0030949D /* ChallengeSuccessAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */; };
 		3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF625AA9A5200629143 /* LoginViewController.swift */; };
 		3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF925AA9BA600629143 /* MainViewController.swift */; };
 		3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C356DFC25AA9F3000629143 /* Location.storyboard */; };
 		3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E0125AAA1F300629143 /* LocationViewController.swift */; };
-		3C356E0525AAB96A00629143 /* CustomSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E0425AAB96A00629143 /* CustomSearchTextField.swift */; };
 		3C356E0C25AAC78D00629143 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C356E0B25AAC78D00629143 /* NotoSansCJKkr-Bold.otf */; };
 		3C356E1925AAE1F100629143 /* LocationWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E1825AAE1F100629143 /* LocationWebViewController.swift */; };
 		3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C356E1B25AAE20300629143 /* LocationWeb.storyboard */; };
@@ -29,8 +30,8 @@
 		3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */; };
 		3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2C25A9FAE1001567B4 /* Login.storyboard */; };
 		3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */; };
-		3CB0614825AB404D0088ACFD /* LocationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0614725AB404D0088ACFD /* LocationAlertView.swift */; };
-		3CB0614B25AB405E0088ACFD /* LocationAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0614A25AB405E0088ACFD /* LocationAlertView.xib */; };
+		3CB0614825AB404D0088ACFD /* ChallengeQuitAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */; };
+		3CB0614B25AB405E0088ACFD /* ChallengeQuitAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */; };
 		3CB0614E25ABE41C0088ACFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */; };
 		3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0615225ABE4330088ACFD /* Home.storyboard */; };
 		3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0615525ABEAFB0088ACFD /* HomeNavigationViewController.swift */; };
@@ -50,11 +51,12 @@
 		3B0AFF769C981269E21538EA /* Pods-zipkok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zipkok.debug.xcconfig"; path = "Target Support Files/Pods-zipkok/Pods-zipkok.debug.xcconfig"; sourceTree = "<group>"; };
 		3C15519725AD3CF90030949D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		3C15519A25AD3D010030949D /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
+		3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeSuccessAlertView.swift; sourceTree = "<group>"; };
+		3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeSuccessAlertView.xib; sourceTree = "<group>"; };
 		3C356DF625AA9A5200629143 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3C356DF925AA9BA600629143 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3C356DFC25AA9F3000629143 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
 		3C356E0125AAA1F300629143 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		3C356E0425AAB96A00629143 /* CustomSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTextField.swift; sourceTree = "<group>"; };
 		3C356E0B25AAC78D00629143 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		3C356E1825AAE1F100629143 /* LocationWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWebViewController.swift; sourceTree = "<group>"; };
 		3C356E1B25AAE20300629143 /* LocationWeb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationWeb.storyboard; sourceTree = "<group>"; };
@@ -72,8 +74,8 @@
 		3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		3C72DA2C25A9FAE1001567B4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "THEFACESHOP+INKLIPQUID.otf"; sourceTree = "<group>"; };
-		3CB0614725AB404D0088ACFD /* LocationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertView.swift; sourceTree = "<group>"; };
-		3CB0614A25AB405E0088ACFD /* LocationAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationAlertView.xib; sourceTree = "<group>"; };
+		3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeQuitAlertView.swift; sourceTree = "<group>"; };
+		3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeQuitAlertView.xib; sourceTree = "<group>"; };
 		3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3CB0615225ABE4330088ACFD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3CB0615525ABEAFB0088ACFD /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
@@ -140,10 +142,11 @@
 		3C356E0925AAB98100629143 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3C356E0425AAB96A00629143 /* CustomSearchTextField.swift */,
 				3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */,
-				3CB0614725AB404D0088ACFD /* LocationAlertView.swift */,
-				3CB0614A25AB405E0088ACFD /* LocationAlertView.xib */,
+				3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */,
+				3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */,
+				3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */,
+				3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,7 +313,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */,
-				3CB0614B25AB405E0088ACFD /* LocationAlertView.xib in Resources */,
+				3C1551A425AD6D5E0030949D /* ChallengeSuccessAlertView.xib in Resources */,
+				3CB0614B25AB405E0088ACFD /* ChallengeQuitAlertView.xib in Resources */,
 				3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */,
 				3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */,
 				3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */,
@@ -382,12 +386,12 @@
 				3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */,
 				3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */,
 				3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */,
+				3C1551A125AD6D260030949D /* ChallengeSuccessAlertView.swift in Sources */,
 				3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */,
 				3CB0615A25ABEF9D0088ACFD /* SettingViewController.swift in Sources */,
-				3C356E0525AAB96A00629143 /* CustomSearchTextField.swift in Sources */,
 				3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */,
 				3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */,
-				3CB0614825AB404D0088ACFD /* LocationAlertView.swift in Sources */,
+				3CB0614825AB404D0088ACFD /* ChallengeQuitAlertView.swift in Sources */,
 				3C15519825AD3CF90030949D /* TimerViewController.swift in Sources */,
 				3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */,
 				3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */,

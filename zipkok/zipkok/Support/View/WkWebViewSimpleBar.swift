@@ -11,7 +11,6 @@ class WkWebViewSimpleBar: WKWebView {
     var accessoryView: UIView?
 
     override var inputAccessoryView: UIView? {
-        // remove/replace the default accessory view
         return accessoryView
     }
 }

@@ -18,38 +18,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rh8-OT-ghA">
-                                <rect key="frame" x="162.5" y="344" width="89" height="218"/>
+                                <rect key="frame" x="153" y="320.5" width="108" height="265"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ft-w9-dDg">
-                                        <rect key="frame" x="25.5" y="0.0" width="38" height="30"/>
+                                        <rect key="frame" x="35" y="0.0" width="38" height="30"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zzu-1P-jrB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Au-Zt-Rbh">
-                                        <rect key="frame" x="15" y="47" width="59" height="30"/>
+                                        <rect key="frame" x="24.5" y="47" width="59" height="30"/>
                                         <state key="normal" title="Location"/>
                                         <connections>
                                             <action selector="locationButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="8b3-Dx-xfc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVh-ad-WQ7">
-                                        <rect key="frame" x="0.0" y="94" width="89" height="30"/>
+                                        <rect key="frame" x="9.5" y="94" width="89" height="30"/>
                                         <state key="normal" title="LocationWeb"/>
                                         <connections>
                                             <action selector="locationWebButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="T46-BW-oIv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcB-ZX-jNH">
-                                        <rect key="frame" x="24" y="141" width="41" height="30"/>
+                                        <rect key="frame" x="33.5" y="141" width="41" height="30"/>
                                         <state key="normal" title="Home"/>
                                         <connections>
                                             <action selector="homeButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="zMg-xY-5me"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZrF-Rd-0hj">
+                                        <rect key="frame" x="0.0" y="188" width="108" height="30"/>
+                                        <state key="normal" title="ChallengeShare"/>
+                                        <connections>
+                                            <action selector="alertShareButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="fa9-rz-CkM"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhV-PQ-OUX">
-                                        <rect key="frame" x="28.5" y="188" width="32" height="30"/>
+                                        <rect key="frame" x="38" y="235" width="32" height="30"/>
                                         <state key="normal" title="alert"/>
                                         <connections>
                                             <action selector="alertButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="jsV-AO-uP5"/>

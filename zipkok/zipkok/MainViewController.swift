@@ -9,8 +9,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    lazy var alertView: LocationAlertView = {
-        let alert = LocationAlertView.loadViewFromNib()
+    lazy var alertView: ChallengeQuitAlertView = {
+        let alert = ChallengeQuitAlertView.loadViewFromNib()
+        alert.translatesAutoresizingMaskIntoConstraints = false
         return alert
     }()
 
@@ -56,6 +57,26 @@ class MainViewController: UIViewController {
         alertView.cancelButtonView.isUserInteractionEnabled = true
         alertView.cancelButtonView.addGestureRecognizer(tapGesture)
         view.addSubview(alertView)
+        
+        NSLayoutConstraint.activate([
+            alertView.topAnchor.constraint(equalTo: view.topAnchor),
+            alertView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            alertView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            alertView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+    
+    @IBAction func alertShareButtonTapped() {
+        let share = ChallengeSuccessAlertView.loadViewFromNib()
+        share.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(share)
+        
+        NSLayoutConstraint.activate([
+            share.topAnchor.constraint(equalTo: view.topAnchor),
+            share.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            share.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            share.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
     
     @objc func cacelButtonTapped() {
