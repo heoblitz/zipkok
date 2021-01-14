@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9E728C0CD952E6DEAF5F5C62FFF7FE23"
-               BuildableName = "Pods-zipkok.framework"
-               BlueprintName = "Pods-zipkok"
+               BlueprintIdentifier = "46FA1E1D7ABC29B96888E2D9085D474F"
+               BuildableName = "MBCircularProgressBar.framework"
+               BlueprintName = "MBCircularProgressBar"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
