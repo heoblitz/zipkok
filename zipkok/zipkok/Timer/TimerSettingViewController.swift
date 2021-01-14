@@ -20,7 +20,6 @@ class TimerSettingViewController: UIViewController {
         prepareStartButtonView()
         prepareStartTimeView()
         prepareEndTimeView()
-        // prepareDotLineViews()
     }
     
     private func prepareStartImageView() {
@@ -49,26 +48,6 @@ class TimerSettingViewController: UIViewController {
         endTimeView.layer.borderColor = CGColor(red: 255/255, green: 107/255, blue: 22/255, alpha: 1)
         endTimeView.layer.borderWidth = 1
     }
-    
-//    private func prepareDotLineViews() {
-//        dotLineViews?.forEach {
-//            drawDottedLine(for: $0)
-//        }
-//    }
-//
-//    private func drawDottedLine(for view: UIView) {
-//        let start = CGPoint(x: view.bounds.minX, y: view.bounds.minY)
-//        let end = CGPoint(x: view.bounds.maxX, y: view.bounds.minY)
-//        let shapeLayer = CAShapeLayer()
-//        shapeLayer.strokeColor = CGColor(red: 210/255, green: 210/255, blue: 210/255, alpha: 1)
-//        shapeLayer.lineWidth = 1
-//        shapeLayer.lineDashPattern = [7, 3] // 7 is the length of dash, 3 is length of the gap.
-//
-//        let path = CGMutablePath()
-//        path.addLines(between: [start, end])
-//        shapeLayer.path = path
-//        view.layer.addSublayer(shapeLayer)
-//    }
     
     @objc func startImageButtonTapped() {
         guard let timerVc = UIStoryboard(name: "Timer", bundle: nil).instantiateInitialViewController() as? TimerViewController else { fatalError() }

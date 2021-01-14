@@ -15,6 +15,10 @@ class TimerViewController: UIViewController {
     @IBOutlet private weak var startTimeView: UIView!
     @IBOutlet private weak var endTimeView: UIView!
     
+    let dateManager = DateManager()
+    var startDate: Date?
+    var endDate: Date?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareCircleProgressBar()
