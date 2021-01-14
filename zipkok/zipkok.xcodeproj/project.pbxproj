@@ -46,6 +46,7 @@
 		3CB0618025AC18BF0088ACFD /* TimerSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */; };
 		3CEC75D425AD93D90016738F /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */; };
 		3CEC75D725AD93E30016738F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */; };
+		3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025025B06ED000E3A71D /* dottedLineView.swift */; };
 		FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerSetting.storyboard; sourceTree = "<group>"; };
 		3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		3CF8025025B06ED000E3A71D /* dottedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dottedLineView.swift; sourceTree = "<group>"; };
 		F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zipkok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 				3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */,
 				3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */,
 				3C60605025ADF36E0070F58A /* ChallengeTimerView.swift */,
+				3CF8025025B06ED000E3A71D /* dottedLineView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 			files = (
 				3C356E1925AAE1F100629143 /* LocationWebViewController.swift in Sources */,
 				3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */,
+				3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */,
 				3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */,
 				3C60605125ADF36E0070F58A /* ChallengeTimerView.swift in Sources */,
 				3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */,
