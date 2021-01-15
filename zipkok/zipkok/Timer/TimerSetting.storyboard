@@ -90,7 +90,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4i-xd-UBj">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4i-xd-UBj" customClass="dottedLineView" customModule="zipkok" customModuleProvider="target">
                                                 <rect key="frame" x="83" y="14.5" width="112" height="1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="112" id="9E5-kW-IEA"/>
@@ -138,7 +138,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQY-zd-QDZ">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQY-zd-QDZ" customClass="dottedLineView" customModule="zipkok" customModuleProvider="target">
                                                 <rect key="frame" x="83" y="14.5" width="112" height="1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="112" id="i0k-Di-bQs"/>
@@ -185,9 +185,8 @@
                     <connections>
                         <outlet property="endTimeView" destination="yay-Bz-veZ" id="xXy-Eo-FCA"/>
                         <outlet property="startButtonView" destination="adw-Ox-w9j" id="Maj-r4-oxG"/>
+                        <outlet property="startImageView" destination="5BT-HG-RSP" id="Vq2-Re-biq"/>
                         <outlet property="startTimeView" destination="Mhf-NG-BfN" id="MRG-4u-thZ"/>
-                        <outletCollection property="dotLineViews" destination="q4i-xd-UBj" collectionClass="NSMutableArray" id="3JK-NV-wiC"/>
-                        <outletCollection property="dotLineViews" destination="TQY-zd-QDZ" collectionClass="NSMutableArray" id="25I-i6-Sak"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaX-qY-NKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

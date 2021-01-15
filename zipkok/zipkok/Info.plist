@@ -6,10 +6,12 @@
 	<string>사용자의 위치 확인을 위해서 필요합니다. </string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>THEFACESHOP+INKLIPQUID</string>
-		<string>NotoSansCJKkr-Medium</string>
-		<string>NotoSansCJKkr-Regular</string>
-		<string>NotoSansCJKkr-Bold</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-Medium.ttf</string>
+		<string>THEFACESHOP+INKLIPQUID.otf</string>
+		<string>NotoSansCJKkr-Medium.otf</string>
+		<string>NotoSansCJKkr-Regular.otf</string>
+		<string>NotoSansCJKkr-Bold.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

@@ -79,6 +79,19 @@ class MainViewController: UIViewController {
         ])
     }
     
+    @IBAction func timerButtonTapped() {
+        let custom = ChallengeTimerView(frame: CGRect(x: 0, y: 0, width: 242, height: 168))
+        custom.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(custom)
+        
+        NSLayoutConstraint.activate([
+            custom.widthAnchor.constraint(equalToConstant: 242),
+            custom.heightAnchor.constraint(equalToConstant: 214),
+            custom.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            custom.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+    
     @objc func cacelButtonTapped() {
         alertView.removeFromSuperview()
     }

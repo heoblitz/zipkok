@@ -20,6 +20,7 @@
 		3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C356E1B25AAE20300629143 /* LocationWeb.storyboard */; };
 		3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E1F25AAEF4B00629143 /* LoginNavigationViewController.swift */; };
 		3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */; };
+		3C60605125ADF36E0070F58A /* ChallengeTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C60605025ADF36E0070F58A /* ChallengeTimerView.swift */; };
 		3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */; };
 		3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */; };
 		3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA1025A9F1C4001567B4 /* ViewController.swift */; };
@@ -43,6 +44,11 @@
 		3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */; };
 		3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */; };
 		3CB0618025AC18BF0088ACFD /* TimerSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */; };
+		3CEC75D425AD93D90016738F /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */; };
+		3CEC75D725AD93E30016738F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */; };
+		3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025025B06ED000E3A71D /* dottedLineView.swift */; };
+		3CF8025525B077F300E3A71D /* dateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025425B077F300E3A71D /* dateManager.swift */; };
+		3CF8025825B125AC00E3A71D /* letterSpacingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025725B125AC00E3A71D /* letterSpacingLabel.swift */; };
 		FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +68,7 @@
 		3C356E1B25AAE20300629143 /* LocationWeb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationWeb.storyboard; sourceTree = "<group>"; };
 		3C356E1F25AAEF4B00629143 /* LoginNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationViewController.swift; sourceTree = "<group>"; };
 		3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkWebViewSimpleBar.swift; sourceTree = "<group>"; };
+		3C60605025ADF36E0070F58A /* ChallengeTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTimerView.swift; sourceTree = "<group>"; };
 		3C72DA0925A9F1C4001567B4 /* zipkok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zipkok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +94,11 @@
 		3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNavigatorCell.xib; sourceTree = "<group>"; };
 		3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingViewController.swift; sourceTree = "<group>"; };
 		3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerSetting.storyboard; sourceTree = "<group>"; };
+		3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		3CF8025025B06ED000E3A71D /* dottedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dottedLineView.swift; sourceTree = "<group>"; };
+		3CF8025425B077F300E3A71D /* dateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateManager.swift; sourceTree = "<group>"; };
+		3CF8025725B125AC00E3A71D /* letterSpacingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterSpacingLabel.swift; sourceTree = "<group>"; };
 		F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zipkok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -135,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				3C356E0925AAB98100629143 /* View */,
+				3CF8025425B077F300E3A71D /* dateManager.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -147,6 +160,9 @@
 				3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */,
 				3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */,
 				3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */,
+				3C60605025ADF36E0070F58A /* ChallengeTimerView.swift */,
+				3CF8025025B06ED000E3A71D /* dottedLineView.swift */,
+				3CF8025725B125AC00E3A71D /* letterSpacingLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +210,8 @@
 		3C72DA2A25A9F5C7001567B4 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */,
+				3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */,
 				3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */,
 				3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */,
 				3C356E0B25AAC78D00629143 /* NotoSansCJKkr-Bold.otf */,
@@ -319,7 +337,9 @@
 				3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */,
 				3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */,
 				3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */,
+				3CEC75D425AD93D90016738F /* Montserrat-Regular.ttf in Resources */,
 				3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */,
+				3CEC75D725AD93E30016738F /* Montserrat-Medium.ttf in Resources */,
 				3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */,
 				3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */,
 				3C72DA1625A9F1C5001567B4 /* Assets.xcassets in Resources */,
@@ -384,7 +404,10 @@
 			files = (
 				3C356E1925AAE1F100629143 /* LocationWebViewController.swift in Sources */,
 				3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */,
+				3CF8025525B077F300E3A71D /* dateManager.swift in Sources */,
+				3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */,
 				3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */,
+				3C60605125ADF36E0070F58A /* ChallengeTimerView.swift in Sources */,
 				3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */,
 				3C1551A125AD6D260030949D /* ChallengeSuccessAlertView.swift in Sources */,
 				3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */,
@@ -393,6 +416,7 @@
 				3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */,
 				3CB0614825AB404D0088ACFD /* ChallengeQuitAlertView.swift in Sources */,
 				3C15519825AD3CF90030949D /* TimerViewController.swift in Sources */,
+				3CF8025825B125AC00E3A71D /* letterSpacingLabel.swift in Sources */,
 				3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */,
 				3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */,
 				3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */,
