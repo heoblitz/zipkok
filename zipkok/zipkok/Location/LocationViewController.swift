@@ -82,6 +82,7 @@ class LocationViewController: UIViewController {
         switch CLLocationManager.authorizationStatus() {
         case .restricted, .denied:
             print("no permisson")
+            // 위치 요청 alert 뷰 올리기
         default:
             locationManager.requestLocation()
         }
@@ -102,8 +103,16 @@ extension LocationViewController: UITextFieldDelegate {
 extension LocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let coor = manager.location?.coordinate{
-            print("\(coor.latitude), \(coor.longitude)")
-            alertMessage(for: "\(coor.latitude), \(coor.longitude)")
+            let latitude = coor.latitude
+            let longitude = coor.longitude
+            
+            GeoCodingApi.shared.requestRegioncode(by: (longitude, latitude), completeHander: {  [weak self] addressName in
+                guard let self = self else { return }
+                
+                OperationQueue.main.addOperation {
+                    self.alertMessage(for: "name: \(addressName)\n latitude: \(latitude)\n longitude: \(longitude)")
+                }
+            })
         }
     }
     

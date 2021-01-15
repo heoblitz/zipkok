@@ -61,7 +61,7 @@ class LocationWebViewController: UIViewController {
     private func alertMessage(for message: String) {
         let alert = UIAlertController(title: "test", message: message, preferredStyle: .alert)
         let admit = UIAlertAction(title: "확인", style: .default, handler: { _ in
-            self.dismiss(animated: true, completion: nil)
+            //self.dismiss(animated: true, completion: nil)
         })
         
         alert.addAction(admit)
@@ -72,13 +72,19 @@ class LocationWebViewController: UIViewController {
 extension LocationWebViewController: WKNavigationDelegate {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
-        if let data = message.body as? [String: Any] {
-            print(data)
-            address = data["roadAddress"] as? String ?? ""
-        }
-        // guard let previousVC = presentingViewController as? ViewController else { return }
+        guard let data = message.body as? [String:Any] else { return }
+            // address = data["roadAddress"] as? String ?? ""
         
-        alertMessage(for: address)
+        if let roadAddress = data["roadAddress"] as? String {
+            GeoCodingApi.shared.requestCoord(by: roadAddress, completeHander: { x, y in
+                OperationQueue.main.addOperation {
+                    self.alertMessage(for: "x: \(x) \ny: \(y) \naddress:\(roadAddress)")
+                }
+            })
+        }
+
+        // guard let previousVC = presentingViewController as? ViewController else { return }
+
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
