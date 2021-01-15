@@ -4,12 +4,16 @@ PODS:
     - KakaoSDKCommon (= 2.2.0)
   - KakaoSDKCommon (2.2.0):
     - Alamofire (~> 5.1)
+  - KakaoSDKUser (2.2.0):
+    - KakaoSDKAuth (= 2.2.0)
+    - KakaoSDKCommon (= 2.2.0)
   - MBCircularProgressBar (0.3.5)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - KakaoSDKAuth
   - KakaoSDKCommon
+  - KakaoSDKUser
   - MBCircularProgressBar
 
 SPEC REPOS:
@@ -17,14 +21,16 @@ SPEC REPOS:
     - Alamofire
     - KakaoSDKAuth
     - KakaoSDKCommon
+    - KakaoSDKUser
     - MBCircularProgressBar
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   KakaoSDKAuth: a6fa63eb1a6a4e03de55d87da597a2976aad9cbf
   KakaoSDKCommon: 90adb38b946ff42f26d70aadb67e679f79fe139c
+  KakaoSDKUser: b5ddfcdaf4adce40f172cafc9d4864d1a8b4f938
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
 
-PODFILE CHECKSUM: 74535635555d51451a43b03dcd4c5b1b9b3b7b10
+PODFILE CHECKSUM: 0cd73dfb77fd67e1ff849108138d296b904087b7
 
 COCOAPODS: 1.10.0

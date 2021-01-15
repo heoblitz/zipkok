@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import KakaoSDKUser
+import KakaoSDKAuth
 
 class LoginViewController: UIViewController {
 
@@ -39,6 +41,21 @@ class LoginViewController: UIViewController {
     }
     
     @objc func kakaoLoginViewTapped() {
+        // 카카오톡 설치 여부 확인
+        if (AuthApi.isKakaoTalkLoginAvailable()) {
+            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                    print(oauthToken)
+                    //do something
+                    _ = oauthToken
+                }
+            }
+        }
+        
         guard let locationVc = UIStoryboard(name: "Location", bundle: nil).instantiateInitialViewController() as? LocationViewController else {
             fatalError()
         }
