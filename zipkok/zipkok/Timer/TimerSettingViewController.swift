@@ -51,6 +51,8 @@ class TimerSettingViewController: UIViewController {
     
     @objc func startImageButtonTapped() {
         guard let timerVc = UIStoryboard(name: "Timer", bundle: nil).instantiateInitialViewController() as? TimerViewController else { fatalError() }
+        timerVc.startDate = Date()
+        timerVc.endDate = Date(timeIntervalSinceNow: 30)
         
         navigationController?.pushViewController(timerVc, animated: true)
     }

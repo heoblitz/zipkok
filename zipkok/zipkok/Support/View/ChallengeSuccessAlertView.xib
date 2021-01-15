@@ -78,6 +78,15 @@
                                 <constraint firstItem="Iw3-IP-jQt" firstAttribute="centerY" secondItem="9TN-0d-CTu" secondAttribute="centerY" id="zy8-S6-Ko8"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afp-b8-tQh">
+                            <rect key="frame" x="291" y="4" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="XWa-IM-J4F"/>
+                                <constraint firstAttribute="width" constant="32" id="cjW-J6-8oA"/>
+                            </constraints>
+                            <color key="tintColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="xmark" catalog="system"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
@@ -85,6 +94,8 @@
                         <constraint firstAttribute="width" constant="327" id="6KQ-s4-XSy"/>
                         <constraint firstItem="VjB-br-nbT" firstAttribute="top" secondItem="tby-OV-YW5" secondAttribute="top" constant="-65.700000000000003" id="BiZ-KW-gfs"/>
                         <constraint firstAttribute="height" constant="408" id="Bjb-hk-Cp3"/>
+                        <constraint firstAttribute="trailing" secondItem="afp-b8-tQh" secondAttribute="trailing" constant="4" id="GNb-qa-LrL"/>
+                        <constraint firstItem="afp-b8-tQh" firstAttribute="top" secondItem="EaH-aF-A0q" secondAttribute="top" constant="4" id="Ovm-Wa-yvX"/>
                         <constraint firstItem="9TN-0d-CTu" firstAttribute="centerX" secondItem="EaH-aF-A0q" secondAttribute="centerX" id="Q8l-pi-huv"/>
                         <constraint firstItem="tby-OV-YW5" firstAttribute="top" secondItem="eTG-jL-Dgx" secondAttribute="bottom" constant="21.399999999999999" id="URT-8p-YbL"/>
                         <constraint firstItem="VjB-br-nbT" firstAttribute="trailing" secondItem="tby-OV-YW5" secondAttribute="trailing" constant="16.800000000000001" id="XRR-Ot-uMH"/>
@@ -114,6 +125,7 @@
         </view>
     </objects>
     <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <image name="그룹 125-2" width="169" height="161"/>
         <image name="그룹 149" width="150" height="155.5"/>
         <systemColor name="systemBackgroundColor">

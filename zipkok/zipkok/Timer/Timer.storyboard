@@ -57,24 +57,32 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="But-eM-oQe">
-                                <rect key="frame" x="128" y="337.5" width="158.5" height="88"/>
+                                <rect key="frame" x="127" y="337.5" width="160" height="88"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지속시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtp-WB-FvP">
-                                        <rect key="frame" x="49.5" y="0.0" width="59" height="24"/>
+                                        <rect key="frame" x="50.5" y="0.0" width="59" height="24"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
                                         <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvS-ck-k0A">
-                                        <rect key="frame" x="0.0" y="44" width="158.5" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvS-ck-k0A" customClass="letterSpacingLabel" customModule="zipkok" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44" width="160" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="S1A-5o-x6E"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="36"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Oaf-tF-Yr5" userLabel="setTimeStackView">
-                                <rect key="frame" x="41.5" y="692" width="331" height="84"/>
+                                <rect key="frame" x="41.5" y="658" width="331" height="84"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JWh-vB-gBf" userLabel="startStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="30"/>
@@ -175,7 +183,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8a-uH-Po4" userLabel="StartButtonView">
-                                <rect key="frame" x="25" y="800" width="364" height="56"/>
+                                <rect key="frame" x="25" y="766" width="364" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종료하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lne-p9-HVp">
                                         <rect key="frame" x="152.5" y="16" width="59" height="24"/>
@@ -192,8 +200,8 @@
                                     <constraint firstItem="lne-p9-HVp" firstAttribute="centerX" secondItem="n8a-uH-Po4" secondAttribute="centerX" id="bwi-4J-UJ8"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csH-fO-bMO">
-                                <rect key="frame" x="193.5" y="474.5" width="27.5" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csH-fO-bMO">
+                                <rect key="frame" x="184" y="474.5" width="46" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" red="0.24313725490196078" green="0.44705882352941173" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -214,14 +222,16 @@
                             <constraint firstItem="n8a-uH-Po4" firstAttribute="top" secondItem="Oaf-tF-Yr5" secondAttribute="bottom" constant="24" id="5O9-84-fFK"/>
                             <constraint firstItem="dkc-Ag-BOl" firstAttribute="centerX" secondItem="nF7-Sw-hMA" secondAttribute="centerX" id="C8n-a8-DWO"/>
                             <constraint firstItem="n8a-uH-Po4" firstAttribute="leading" secondItem="nF7-Sw-hMA" secondAttribute="leading" constant="25" id="C8u-bY-X8Q"/>
-                            <constraint firstAttribute="bottom" secondItem="n8a-uH-Po4" secondAttribute="bottom" constant="40" id="F6H-X2-tt7"/>
+                            <constraint firstItem="nF7-Sw-hMA" firstAttribute="bottom" secondItem="n8a-uH-Po4" secondAttribute="bottom" constant="40" id="F6H-X2-tt7"/>
                             <constraint firstItem="Oaf-tF-Yr5" firstAttribute="centerX" secondItem="nF7-Sw-hMA" secondAttribute="centerX" id="J7x-2g-39P"/>
+                            <constraint firstItem="csH-fO-bMO" firstAttribute="trailing" secondItem="GAK-Tr-aXE" secondAttribute="trailing" constant="-10" id="Loa-Vd-zAG"/>
                             <constraint firstItem="But-eM-oQe" firstAttribute="centerX" secondItem="dkc-Ag-BOl" secondAttribute="centerX" id="Uyj-kg-qfl"/>
                             <constraint firstItem="dkc-Ag-BOl" firstAttribute="centerY" secondItem="nF7-Sw-hMA" secondAttribute="centerY" multiplier="0.9" id="d8g-QH-zJA"/>
                             <constraint firstItem="But-eM-oQe" firstAttribute="top" secondItem="dkc-Ag-BOl" secondAttribute="top" constant="51" id="ey3-Hu-hdj"/>
                             <constraint firstItem="F00-HY-xaM" firstAttribute="top" secondItem="nF7-Sw-hMA" secondAttribute="top" constant="27" id="g7o-Jd-f21"/>
                             <constraint firstItem="GAK-Tr-aXE" firstAttribute="top" secondItem="CvS-ck-k0A" secondAttribute="bottom" constant="45" id="gUQ-Nf-vmW"/>
                             <constraint firstItem="csH-fO-bMO" firstAttribute="centerY" secondItem="GAK-Tr-aXE" secondAttribute="centerY" id="oDf-D5-xCX"/>
+                            <constraint firstItem="csH-fO-bMO" firstAttribute="leading" secondItem="GAK-Tr-aXE" secondAttribute="leading" constant="10" id="pj7-GR-sWQ"/>
                             <constraint firstItem="GAK-Tr-aXE" firstAttribute="centerX" secondItem="dkc-Ag-BOl" secondAttribute="centerX" id="pjl-3m-0it"/>
                             <constraint firstItem="F00-HY-xaM" firstAttribute="centerX" secondItem="nF7-Sw-hMA" secondAttribute="centerX" id="qxY-Rl-d9C"/>
                             <constraint firstItem="csH-fO-bMO" firstAttribute="centerX" secondItem="GAK-Tr-aXE" secondAttribute="centerX" id="rMo-sJ-E0p"/>
@@ -230,8 +240,11 @@
                     <connections>
                         <outlet property="circleProgressBar" destination="dkc-Ag-BOl" id="htb-cE-STu"/>
                         <outlet property="endTimeView" destination="G0M-yU-NSf" id="qe1-Ef-qVm"/>
+                        <outlet property="percentLabel" destination="csH-fO-bMO" id="cwd-yf-sbh"/>
                         <outlet property="percentView" destination="GAK-Tr-aXE" id="dW8-a8-GmJ"/>
+                        <outlet property="quitButtonView" destination="n8a-uH-Po4" id="Llz-O1-KT4"/>
                         <outlet property="startTimeView" destination="2V6-Rb-ZYp" id="i4o-PP-HIi"/>
+                        <outlet property="timeLabel" destination="CvS-ck-k0A" id="o8R-Qv-Dp0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pR3-Jk-wTa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
