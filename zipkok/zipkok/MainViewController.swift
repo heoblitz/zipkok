@@ -41,16 +41,12 @@ class MainViewController: UIViewController {
         loginNavVc.modalPresentationStyle = .fullScreen
         present(loginNavVc, animated: false)
     }
-
-    @IBAction func requestCoordButtonTapped() {
-        GeoCodingApi.shared.requestCoord(by: "석계로 49", completeHander: { x, y in
-            print(x, y)
-        })
-    }
     
-    @IBAction func requestRegioncode() {
-        GeoCodingApi.shared.requestRegioncode(by: (37.6172252018111, 127.06253874566), completeHander: { addressName in
-            print(addressName)
-        })
+    @IBAction func testVcButtonTapped() {
+        guard let testVc = UIStoryboard(name: "Test", bundle: nil).instantiateInitialViewController() as? TestViewController else {
+            fatalError()
+        }
+        
+        present(testVc, animated: false)
     }
 }

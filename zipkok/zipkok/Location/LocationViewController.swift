@@ -106,7 +106,7 @@ extension LocationViewController: CLLocationManagerDelegate {
             let latitude = coor.latitude
             let longitude = coor.longitude
             
-            GeoCodingApi.shared.requestRegioncode(by: (longitude, latitude), completeHander: {  [weak self] addressName in
+            GeoCodingApi.shared.requestRegioncode(by: (longitude, latitude), completionHandler: {  [weak self] addressName in
                 guard let self = self else { return }
                 
                 OperationQueue.main.addOperation {

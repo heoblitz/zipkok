@@ -176,23 +176,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "requestRegioncode(by:completeHander:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "17ACAB83-BF3D-45E0-A5F1-D8F1B80D1870"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "zipkok/Support/Manager/GeoCoding/GeoCodingApi.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "requestRegioncode(by:completeHander:)"
+            landmarkName = "requestRegioncode(by:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -23,7 +23,7 @@
 		3C60605125ADF36E0070F58A /* ChallengeTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C60605025ADF36E0070F58A /* ChallengeTimerView.swift */; };
 		3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */; };
 		3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */; };
-		3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA1025A9F1C4001567B4 /* ViewController.swift */; };
+		3C72DA1125A9F1C4001567B4 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA1025A9F1C4001567B4 /* TestViewController.swift */; };
 		3C72DA1425A9F1C4001567B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA1225A9F1C4001567B4 /* Main.storyboard */; };
 		3C72DA1625A9F1C5001567B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA1525A9F1C5001567B4 /* Assets.xcassets */; };
 		3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA1725A9F1C5001567B4 /* LaunchScreen.storyboard */; };
@@ -50,6 +50,8 @@
 		3CF8025525B077F300E3A71D /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025425B077F300E3A71D /* DateManager.swift */; };
 		3CF8025825B125AC00E3A71D /* letterSpacingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025725B125AC00E3A71D /* letterSpacingLabel.swift */; };
 		3CF8027425B167F700E3A71D /* GeoCodingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8027325B167F700E3A71D /* GeoCodingApi.swift */; };
+		3CF8027E25B2DAD300E3A71D /* ZipkokApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8027D25B2DAD300E3A71D /* ZipkokApi.swift */; };
+		3CF8028325B2F3E700E3A71D /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8028225B2F3E700E3A71D /* Test.storyboard */; };
 		FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +75,7 @@
 		3C72DA0925A9F1C4001567B4 /* zipkok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zipkok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3C72DA1025A9F1C4001567B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3C72DA1025A9F1C4001567B4 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3C72DA1325A9F1C4001567B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C72DA1525A9F1C5001567B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C72DA1825A9F1C5001567B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,8 @@
 		3CF8025425B077F300E3A71D /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		3CF8025725B125AC00E3A71D /* letterSpacingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterSpacingLabel.swift; sourceTree = "<group>"; };
 		3CF8027325B167F700E3A71D /* GeoCodingApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodingApi.swift; sourceTree = "<group>"; };
+		3CF8027D25B2DAD300E3A71D /* ZipkokApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipkokApi.swift; sourceTree = "<group>"; };
+		3CF8028225B2F3E700E3A71D /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zipkok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -192,7 +196,8 @@
 			children = (
 				3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */,
 				3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */,
-				3C72DA1025A9F1C4001567B4 /* ViewController.swift */,
+				3C72DA1025A9F1C4001567B4 /* TestViewController.swift */,
+				3CF8028225B2F3E700E3A71D /* Test.storyboard */,
 				3C72DA1225A9F1C4001567B4 /* Main.storyboard */,
 				3C356DF925AA9BA600629143 /* MainViewController.swift */,
 				3CB0615025ABE4250088ACFD /* Home */,
@@ -276,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				3CF8025425B077F300E3A71D /* DateManager.swift */,
+				3CF8027D25B2DAD300E3A71D /* ZipkokApi.swift */,
 				3CF8027825B1680E00E3A71D /* GeoCoding */,
 			);
 			path = Manager;
@@ -361,6 +367,7 @@
 				3CEC75D725AD93E30016738F /* Montserrat-Medium.ttf in Resources */,
 				3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */,
 				3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */,
+				3CF8028325B2F3E700E3A71D /* Test.storyboard in Resources */,
 				3C72DA1625A9F1C5001567B4 /* Assets.xcassets in Resources */,
 				3C72DA1425A9F1C4001567B4 /* Main.storyboard in Resources */,
 				3CB0616525ABFDE80088ACFD /* SettingProfileCell.xib in Resources */,
@@ -425,7 +432,8 @@
 				3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */,
 				3CF8025525B077F300E3A71D /* DateManager.swift in Sources */,
 				3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */,
-				3C72DA1125A9F1C4001567B4 /* ViewController.swift in Sources */,
+				3CF8027E25B2DAD300E3A71D /* ZipkokApi.swift in Sources */,
+				3C72DA1125A9F1C4001567B4 /* TestViewController.swift in Sources */,
 				3C60605125ADF36E0070F58A /* ChallengeTimerView.swift in Sources */,
 				3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */,
 				3C1551A125AD6D260030949D /* ChallengeSuccessAlertView.swift in Sources */,

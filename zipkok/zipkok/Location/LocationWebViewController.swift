@@ -76,11 +76,11 @@ extension LocationWebViewController: WKNavigationDelegate {
             // address = data["roadAddress"] as? String ?? ""
         
         if let roadAddress = data["roadAddress"] as? String {
-            GeoCodingApi.shared.requestCoord(by: roadAddress, completeHander: { x, y in
+            GeoCodingApi.shared.requestCoord(by: roadAddress) { x, y in
                 OperationQueue.main.addOperation {
                     self.alertMessage(for: "x: \(x) \ny: \(y) \naddress:\(roadAddress)")
                 }
-            })
+            }
         }
 
         // guard let previousVC = presentingViewController as? ViewController else { return }

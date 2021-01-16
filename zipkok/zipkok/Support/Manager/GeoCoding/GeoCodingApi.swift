@@ -17,9 +17,9 @@ class GeoCodingApi {
     
     private init() {}
     
-    func requestCoord(by regionName: String, completeHander: @escaping (Double, Double) -> ()) {
-        let parameters: Parameters = ["query" : regionName]
+    func requestCoord(by regionName: String, completionHandler: @escaping (Double, Double) -> ()) {
         let headers: HTTPHeaders = ["Authorization" : "KakaoAK 7ec366f0297ccf8930b9a5288ea66b22"]
+        let parameters: Parameters = ["query" : regionName]
         
         let request = AF.request(baseURLString + reigoncode2CoordURLString, method: .get, parameters: parameters, headers: headers)
         
@@ -37,11 +37,11 @@ class GeoCodingApi {
             }
             
             print(location)
-            completeHander(y, x)
+            completionHandler(y, x)
         }
     }
     
-    func requestRegioncode(by location: (Double, Double), completeHander: @escaping (String) -> ()) {
+    func requestRegioncode(by location: (Double, Double), completionHandler: @escaping (String) -> ()) {
         let parameters: Parameters = ["x" : location.0, "y": location.1] // longitude, latitude
         let headers: HTTPHeaders = ["Authorization" : "KakaoAK 7ec366f0297ccf8930b9a5288ea66b22"]
         
@@ -53,12 +53,20 @@ class GeoCodingApi {
                 return
             }
             
-            guard let value = response.value, let location = value.documents.first, let addressName = location.normalAddress?.name else {
-                print("value is nil")
+            guard let value = response.value else {
+                print("response is nil")
                 return
             }
             
-            completeHander(addressName)
+            print(value)
+            
+            guard let location = value.documents.first, let addressName = location.normalAddress?.name else {
+                print("location is nil")
+                return
+            }
+             
+            print(value)
+            completionHandler(addressName)
         }
     }
 }
