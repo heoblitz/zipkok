@@ -32,7 +32,7 @@
                                 <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="그룹 129" translatesAutoresizingMaskIntoConstraints="NO" id="94m-cR-Z9c">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="그룹 129" translatesAutoresizingMaskIntoConstraints="NO" id="94m-cR-Z9c">
                                 <rect key="frame" x="196" y="526.33333333333337" width="208" height="169"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="169" id="1NC-k3-0Nh"/>
@@ -119,6 +119,6 @@
     <resources>
         <image name="Backward arrow" width="16" height="16"/>
         <image name="free-icon-kakao-talk-2111466" width="85.333335876464844" height="85.333335876464844"/>
-        <image name="그룹 129" width="207.33332824707031" height="169"/>
+        <image name="그룹 129" width="207.33332824707031" height="169"/>
     </resources>
 </document>

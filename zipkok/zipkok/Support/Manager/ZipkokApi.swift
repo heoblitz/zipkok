@@ -30,6 +30,7 @@ class ZipkokApi {
         request.responseDecodable(of: kakaoLoginResponse.self) { response in
             if let error = response.error {
                 print(error)
+                print(response)
                 return
             }
             
