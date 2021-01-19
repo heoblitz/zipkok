@@ -13,6 +13,7 @@ class LocationViewController: UIViewController {
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet private weak var currentLocationButtonView: UIView!
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet private weak var submitButton: UIButton!
     
     lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
@@ -34,10 +35,19 @@ class LocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         prepareNavigationTitle()
         prepareViewTapGesture()
         prepareSearchTextField()
         prepareCurrentLocationButtonView()
+        prepareSubmitButton()
+    }
+    
+    private func prepareSubmitButton() {
+        submitButton.layer.masksToBounds = false
+        submitButton.layer.cornerRadius = 8
+        submitButton.layer.borderWidth = 1
+        submitButton.layer.borderColor = CGColor(red: 34/255, green: 145/255, blue: 255/255, alpha: 1)
     }
     
     private func prepareSearchTextField() {
@@ -100,6 +110,10 @@ class LocationViewController: UIViewController {
         default:
             locationManager.requestLocation()
         }
+    }
+    
+    @IBAction func submitButtonTapped() {
+        
     }
 }
 
