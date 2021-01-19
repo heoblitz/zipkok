@@ -12,8 +12,10 @@ class LocationWebViewController: UIViewController {
     
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
+    private let postcodeURLString: String = "https://heoblitz.github.io/Kakao_postcode/"
     private var webView: WkWebViewSimpleBar?
-    var address: String = "https://heoblitz.github.io/Kakao_postcode/"
+    
+    var completionHandler: ((LocationInfo) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,7 @@ class LocationWebViewController: UIViewController {
         webView?.scrollView.contentInsetAdjustmentBehavior = .never
         webView?.scrollView.backgroundColor = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1)
         
-        guard let url = URL(string: address) else { return }
+        guard let url = URL(string: postcodeURLString) else { return }
         let request = URLRequest(url: url)
         webView?.load(request)
     }
@@ -76,15 +78,19 @@ extension LocationWebViewController: WKNavigationDelegate {
             // address = data["roadAddress"] as? String ?? ""
         
         if let roadAddress = data["roadAddress"] as? String {
-            GeoCodingApi.shared.requestCoord(by: roadAddress) { x, y in
+            GeoCodingApi.shared.requestCoord(by: roadAddress) { [weak self] (x, y) in
+                guard let self = self else { return }
+                let locationInfo = LocationInfo(x: x, y: y, name: roadAddress)
+
                 OperationQueue.main.addOperation {
-                    self.alertMessage(for: "x: \(x) \ny: \(y) \naddress:\(roadAddress)")
+                    // self.alertMessage(for: "x: \(latitude) \ny: \(longitude) \naddress:\(roadAddress)")
+                    self.completionHandler?(locationInfo)
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
         }
 
         // guard let previousVC = presentingViewController as? ViewController else { return }
-
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

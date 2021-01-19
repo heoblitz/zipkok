@@ -17,7 +17,7 @@ class GeoCodingApi {
     
     private init() {}
     
-    func requestCoord(by regionName: String, completionHandler: @escaping (Double, Double) -> ()) {
+    func requestCoord(by regionName: String, completionHandler: @escaping (String, String) -> ()) {
         let headers: HTTPHeaders = ["Authorization" : "KakaoAK 7ec366f0297ccf8930b9a5288ea66b22"]
         let parameters: Parameters = ["query" : regionName]
         
@@ -29,15 +29,12 @@ class GeoCodingApi {
                 return
             }
             
-            guard let value = response.value,
-                  let location = value.documents.first,
-                  let y = Double(location.y), let x = Double(location.x) else {
+            guard let value = response.value, let location = value.documents.first else {
                 print("data is nil")
                 return
             }
             
-            print(location)
-            completionHandler(y, x)
+            completionHandler(location.x, location.y)
         }
     }
     
@@ -114,4 +111,13 @@ struct LoadAddress: Codable {
         case name = "address_name"
     }
 }
+
+// ---> LocationVc
+
+struct LocationInfo {
+    let x: String
+    let y: String
+    let name: String
+}
+
 

@@ -126,21 +126,20 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcX-Tm-0pa">
                                                 <rect key="frame" x="338" y="118.5" width="56" height="56"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aHo-hN-61J">
-                                                        <rect key="frame" x="16" y="17" width="24" height="22"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="24" id="Du5-57-Ran"/>
-                                                            <constraint firstAttribute="width" constant="24" id="xUW-V7-DAs"/>
-                                                        </constraints>
-                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTG-RJ-PVh">
+                                                        <rect key="frame" x="13" y="17.5" width="30" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <color key="tintColor" red="0.13333333333333333" green="0.56862745098039214" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="aHo-hN-61J" firstAttribute="centerX" secondItem="xcX-Tm-0pa" secondAttribute="centerX" id="1dD-B3-mY0"/>
+                                                    <constraint firstItem="GTG-RJ-PVh" firstAttribute="centerX" secondItem="xcX-Tm-0pa" secondAttribute="centerX" id="Mm2-ek-PWx"/>
                                                     <constraint firstAttribute="height" constant="56" id="Naz-kk-Vna"/>
+                                                    <constraint firstItem="GTG-RJ-PVh" firstAttribute="centerY" secondItem="xcX-Tm-0pa" secondAttribute="centerY" id="Qoj-6v-Bb1"/>
                                                     <constraint firstAttribute="width" constant="56" id="WtG-ZT-aNK"/>
-                                                    <constraint firstItem="aHo-hN-61J" firstAttribute="centerY" secondItem="xcX-Tm-0pa" secondAttribute="centerY" id="xLQ-Zn-6Af"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -175,6 +174,9 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="vPs-Hs-UWC"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="6bn-fG-QCd"/>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DjU-uV-PdG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="1122"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1te-qY-9UU"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,14 +184,19 @@
                             <constraint firstItem="1te-qY-9UU" firstAttribute="trailing" secondItem="DZK-yX-jpc" secondAttribute="trailing" id="1Fe-6Z-wt9"/>
                             <constraint firstItem="1te-qY-9UU" firstAttribute="trailing" secondItem="yT8-WZ-Ji8" secondAttribute="trailing" id="Cx0-5W-AwW"/>
                             <constraint firstItem="DZK-yX-jpc" firstAttribute="leading" secondItem="1te-qY-9UU" secondAttribute="leading" id="FRM-88-7Wv"/>
+                            <constraint firstItem="1te-qY-9UU" firstAttribute="bottom" secondItem="DjU-uV-PdG" secondAttribute="bottom" id="JyF-wD-WEc"/>
                             <constraint firstItem="yT8-WZ-Ji8" firstAttribute="leading" secondItem="1te-qY-9UU" secondAttribute="leading" id="LUi-PL-Nfz"/>
+                            <constraint firstItem="1te-qY-9UU" firstAttribute="trailing" secondItem="DjU-uV-PdG" secondAttribute="trailing" id="Zsg-mH-WEf"/>
                             <constraint firstItem="yT8-WZ-Ji8" firstAttribute="top" secondItem="1te-qY-9UU" secondAttribute="top" id="dsF-It-etV"/>
                             <constraint firstItem="1te-qY-9UU" firstAttribute="bottom" secondItem="yT8-WZ-Ji8" secondAttribute="bottom" id="eR5-eN-J1g"/>
                             <constraint firstItem="1te-qY-9UU" firstAttribute="trailing" secondItem="xcX-Tm-0pa" secondAttribute="trailing" constant="20" id="ruc-9I-2Ed"/>
+                            <constraint firstItem="DjU-uV-PdG" firstAttribute="top" secondItem="1te-qY-9UU" secondAttribute="top" id="sBk-FY-mSG"/>
+                            <constraint firstItem="DjU-uV-PdG" firstAttribute="leading" secondItem="1te-qY-9UU" secondAttribute="leading" id="yVi-d9-2zz"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="DjU-uV-PdG" id="dbY-QV-Jgq"/>
                         <outlet property="currentLocationButtonView" destination="ssi-yB-aLw" id="yUR-8E-JWl"/>
                         <outlet property="searchTextField" destination="3og-fc-nWq" id="7DT-M0-zqy"/>
                     </connections>
@@ -200,7 +207,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="그룹 118" width="32" height="32"/>
         <image name="그룹 147" width="32" height="32"/>
         <systemColor name="secondarySystemBackgroundColor">

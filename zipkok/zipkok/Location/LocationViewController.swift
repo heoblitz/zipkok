@@ -12,6 +12,7 @@ class LocationViewController: UIViewController {
 
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet private weak var currentLocationButtonView: UIView!
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     
     lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
@@ -19,6 +20,17 @@ class LocationViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         return locationManager
     }()
+    
+    lazy var setTextFieldFromLocationWeb: ((LocationInfo) -> Void) = { [weak self] info in
+        guard let self = self else { return }
+        
+        OperationQueue.main.addOperation {
+            self.locationInfo = info
+            self.searchTextField.text = info.name
+        }
+    }
+    
+    var locationInfo: LocationInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,11 +90,13 @@ class LocationViewController: UIViewController {
 
     @objc private func currentLocationButtonViewTapped() {
         locationManager.requestWhenInUseAuthorization()
+        activityIndicatorView.startAnimating()
         
         switch CLLocationManager.authorizationStatus() {
         case .restricted, .denied:
             print("no permisson")
             // 위치 요청 alert 뷰 올리기
+            activityIndicatorView.stopAnimating()
         default:
             locationManager.requestLocation()
         }
@@ -94,6 +108,7 @@ extension LocationViewController: UITextFieldDelegate {
         guard let locationWebVc = UIStoryboard(name: "LocationWeb", bundle: nil).instantiateInitialViewController() as? LocationWebViewController else {
             fatalError()
         }
+        locationWebVc.completionHandler = setTextFieldFromLocationWeb
         
         viewTapped()
         navigationController?.pushViewController(locationWebVc, animated: true)
@@ -110,7 +125,10 @@ extension LocationViewController: CLLocationManagerDelegate {
                 guard let self = self else { return }
                 
                 OperationQueue.main.addOperation {
-                    self.alertMessage(for: "name: \(addressName)\n latitude: \(latitude)\n longitude: \(longitude)")
+                    self.activityIndicatorView.stopAnimating()
+                    self.searchTextField.text = addressName
+                    
+                    print(addressName, latitude, longitude)
                 }
             })
         }
