@@ -31,5 +31,12 @@ class TestViewController: UIViewController {
             
         })
     }
+    
+    @IBAction func SelectChallengeViewController() {
+        guard let vc = UIStoryboard(name: "SelectChallenge", bundle: nil).instantiateInitialViewController() as? SelectChallengeViewController else { fatalError() }
+        
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
 }
 

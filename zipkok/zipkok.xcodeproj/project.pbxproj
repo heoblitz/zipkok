@@ -44,6 +44,15 @@
 		3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */; };
 		3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */; };
 		3CB0618025AC18BF0088ACFD /* TimerSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */; };
+		3CE3C1A325B7A6B8003DF328 /* SelectChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3C1A225B7A6B8003DF328 /* SelectChallenge.storyboard */; };
+		3CE3C1A725B7A6D3003DF328 /* SelectChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1A625B7A6D3003DF328 /* SelectChallengeViewController.swift */; };
+		3CE3C1AC25B7AB70003DF328 /* SelectChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1AA25B7AB70003DF328 /* SelectChallengeCell.swift */; };
+		3CE3C1AD25B7AB70003DF328 /* SelectChallengeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3C1AB25B7AB70003DF328 /* SelectChallengeCell.xib */; };
+		3CE3C1B425B7B3D0003DF328 /* CustomSelectChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1B225B7B3D0003DF328 /* CustomSelectChallengeCell.swift */; };
+		3CE3C1B525B7B3D0003DF328 /* CustomSelectChallengeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3C1B325B7B3D0003DF328 /* CustomSelectChallengeCell.xib */; };
+		3CE3C1B825B7B524003DF328 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1B725B7B524003DF328 /* Observable.swift */; };
+		3CE3C1BB25B7B574003DF328 /* SelectChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1BA25B7B574003DF328 /* SelectChallengeViewModel.swift */; };
+		3CE3C1C025B7B5A8003DF328 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1BF25B7B5A8003DF328 /* Challenge.swift */; };
 		3CEC75D425AD93D90016738F /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */; };
 		3CEC75D725AD93E30016738F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */; };
 		3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025025B06ED000E3A71D /* dottedLineView.swift */; };
@@ -98,6 +107,15 @@
 		3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNavigatorCell.xib; sourceTree = "<group>"; };
 		3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingViewController.swift; sourceTree = "<group>"; };
 		3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerSetting.storyboard; sourceTree = "<group>"; };
+		3CE3C1A225B7A6B8003DF328 /* SelectChallenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectChallenge.storyboard; sourceTree = "<group>"; };
+		3CE3C1A625B7A6D3003DF328 /* SelectChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectChallengeViewController.swift; sourceTree = "<group>"; };
+		3CE3C1AA25B7AB70003DF328 /* SelectChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectChallengeCell.swift; sourceTree = "<group>"; };
+		3CE3C1AB25B7AB70003DF328 /* SelectChallengeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectChallengeCell.xib; sourceTree = "<group>"; };
+		3CE3C1B225B7B3D0003DF328 /* CustomSelectChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectChallengeCell.swift; sourceTree = "<group>"; };
+		3CE3C1B325B7B3D0003DF328 /* CustomSelectChallengeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSelectChallengeCell.xib; sourceTree = "<group>"; };
+		3CE3C1B725B7B524003DF328 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		3CE3C1BA25B7B574003DF328 /* SelectChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectChallengeViewModel.swift; sourceTree = "<group>"; };
+		3CE3C1BF25B7B5A8003DF328 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		3CF8025025B06ED000E3A71D /* dottedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dottedLineView.swift; sourceTree = "<group>"; };
@@ -156,6 +174,7 @@
 			children = (
 				3C356E0925AAB98100629143 /* View */,
 				3CF8027B25B1682B00E3A71D /* Manager */,
+				3CE3C1B725B7B524003DF328 /* Observable.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -204,6 +223,7 @@
 				3CF8028E25B339C700E3A71D /* Wireframe.storyboard */,
 				3C356DF925AA9BA600629143 /* MainViewController.swift */,
 				3CB0615025ABE4250088ACFD /* Home */,
+				3CE3C1A525B7A6BD003DF328 /* Select */,
 				3CB0617D25AC18AF0088ACFD /* Timer */,
 				3CB0615C25ABEFA20088ACFD /* Setting */,
 				3C356DF425AA990F00629143 /* Login */,
@@ -270,6 +290,37 @@
 				3C15519A25AD3D010030949D /* Timer.storyboard */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		3CE3C1A525B7A6BD003DF328 /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				3CE3C1A225B7A6B8003DF328 /* SelectChallenge.storyboard */,
+				3CE3C1A625B7A6D3003DF328 /* SelectChallengeViewController.swift */,
+				3CE3C1AF25B7AB74003DF328 /* View */,
+				3CE3C1BD25B7B577003DF328 /* Model */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
+		3CE3C1AF25B7AB74003DF328 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CE3C1AA25B7AB70003DF328 /* SelectChallengeCell.swift */,
+				3CE3C1AB25B7AB70003DF328 /* SelectChallengeCell.xib */,
+				3CE3C1B225B7B3D0003DF328 /* CustomSelectChallengeCell.swift */,
+				3CE3C1B325B7B3D0003DF328 /* CustomSelectChallengeCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CE3C1BD25B7B577003DF328 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3CE3C1BA25B7B574003DF328 /* SelectChallengeViewModel.swift */,
+				3CE3C1BF25B7B5A8003DF328 /* Challenge.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3CF8027825B1680E00E3A71D /* GeoCoding */ = {
@@ -358,6 +409,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE3C1B525B7B3D0003DF328 /* CustomSelectChallengeCell.xib in Resources */,
 				3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */,
 				3C1551A425AD6D5E0030949D /* ChallengeSuccessAlertView.xib in Resources */,
 				3CB0614B25AB405E0088ACFD /* ChallengeQuitAlertView.xib in Resources */,
@@ -369,12 +421,14 @@
 				3CEC75D425AD93D90016738F /* Montserrat-Regular.ttf in Resources */,
 				3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */,
 				3CEC75D725AD93E30016738F /* Montserrat-Medium.ttf in Resources */,
+				3CE3C1AD25B7AB70003DF328 /* SelectChallengeCell.xib in Resources */,
 				3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */,
 				3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */,
 				3CF8028325B2F3E700E3A71D /* Test.storyboard in Resources */,
 				3C72DA1625A9F1C5001567B4 /* Assets.xcassets in Resources */,
 				3C72DA1425A9F1C4001567B4 /* Main.storyboard in Resources */,
 				3CB0616525ABFDE80088ACFD /* SettingProfileCell.xib in Resources */,
+				3CE3C1A325B7A6B8003DF328 /* SelectChallenge.storyboard in Resources */,
 				3C15519B25AD3D010030949D /* Timer.storyboard in Resources */,
 				3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */,
 				3CB0618025AC18BF0088ACFD /* TimerSetting.storyboard in Resources */,
@@ -435,6 +489,7 @@
 				3C356E1925AAE1F100629143 /* LocationWebViewController.swift in Sources */,
 				3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */,
 				3CF8025525B077F300E3A71D /* DateManager.swift in Sources */,
+				3CE3C1AC25B7AB70003DF328 /* SelectChallengeCell.swift in Sources */,
 				3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */,
 				3CF8027E25B2DAD300E3A71D /* ZipkokApi.swift in Sources */,
 				3C72DA1125A9F1C4001567B4 /* TestViewController.swift in Sources */,
@@ -450,9 +505,14 @@
 				3CF8025825B125AC00E3A71D /* letterSpacingLabel.swift in Sources */,
 				3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */,
 				3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */,
+				3CE3C1C025B7B5A8003DF328 /* Challenge.swift in Sources */,
 				3CF8027425B167F700E3A71D /* GeoCodingApi.swift in Sources */,
+				3CE3C1B425B7B3D0003DF328 /* CustomSelectChallengeCell.swift in Sources */,
+				3CE3C1BB25B7B574003DF328 /* SelectChallengeViewModel.swift in Sources */,
+				3CE3C1A725B7A6D3003DF328 /* SelectChallengeViewController.swift in Sources */,
 				3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */,
 				3CB0616425ABFDE80088ACFD /* SettingProfileCell.swift in Sources */,
+				3CE3C1B825B7B524003DF328 /* Observable.swift in Sources */,
 				3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */,
 				3CB0616C25AC08100088ACFD /* SettingNavigatorCell.swift in Sources */,
 				3CB0614E25ABE41C0088ACFD /* HomeViewController.swift in Sources */,

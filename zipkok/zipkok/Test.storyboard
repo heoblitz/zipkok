@@ -18,27 +18,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ozq-br-o3z">
-                                <rect key="frame" x="140" y="408" width="134" height="90"/>
+                                <rect key="frame" x="101" y="393" width="212" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gi-WN-Sga">
-                                        <rect key="frame" x="0.0" y="0.0" width="134" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="212" height="30"/>
                                         <state key="normal" title="requestCoord"/>
                                         <connections>
                                             <action selector="requestCoordButtonTapped" destination="gbL-Gv-RnZ" eventType="touchUpInside" id="ITS-NX-EfR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRU-As-wj5">
-                                        <rect key="frame" x="0.0" y="30" width="134" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="212" height="30"/>
                                         <state key="normal" title="requestRegioncode"/>
                                         <connections>
                                             <action selector="requestRegioncode" destination="gbL-Gv-RnZ" eventType="touchUpInside" id="pD9-Ew-Cby"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAz-Qy-oH4">
-                                        <rect key="frame" x="0.0" y="60" width="134" height="30"/>
+                                        <rect key="frame" x="0.0" y="60" width="212" height="30"/>
                                         <state key="normal" title="kakaoLogin"/>
                                         <connections>
                                             <action selector="kakaoLogin" destination="gbL-Gv-RnZ" eventType="touchUpInside" id="p2y-Z1-9CR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O6-w4-pLL">
+                                        <rect key="frame" x="0.0" y="90" width="212" height="30"/>
+                                        <state key="normal" title="SelectChallengeViewController"/>
+                                        <connections>
+                                            <action selector="SelectChallengeViewController" destination="gbL-Gv-RnZ" eventType="touchUpInside" id="fGk-mA-r6b"/>
                                         </connections>
                                     </button>
                                 </subviews>

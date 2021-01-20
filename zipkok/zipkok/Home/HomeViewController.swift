@@ -55,10 +55,14 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func startButtonViewTapped() {
-        guard let timerSettingVc = UIStoryboard(name: "TimerSetting", bundle: nil).instantiateInitialViewController() as? TimerSettingViewController else { fatalError() }
+        guard let selectChallengeVc = UIStoryboard(name: "SelectChallenge", bundle: nil).instantiateInitialViewController() as? SelectChallengeViewController else { fatalError() }
         
-        addChild(timerSettingVc)
-        view.addSubview(timerSettingVc.view)
-        timerSettingVc.didMove(toParent: self)
+        navigationController?.pushViewController(selectChallengeVc, animated: true)
+        
+//        guard let timerSettingVc = UIStoryboard(name: "TimerSetting", bundle: nil).instantiateInitialViewController() as? TimerSettingViewController else { fatalError() }
+//
+//        addChild(timerSettingVc)
+//        view.addSubview(timerSettingVc.view)
+//        timerSettingVc.didMove(toParent: self)
     }
 }

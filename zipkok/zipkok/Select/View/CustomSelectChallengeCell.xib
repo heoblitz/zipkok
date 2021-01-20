@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Bold.otf">
+            <string>NotoSansCJKkr-Bold</string>
+        </array>
+        <array key="NotoSansCJKkr-Medium.otf">
+            <string>NotoSansCJKkr-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Uot-Cu-YP9" customClass="CustomSelectChallengeCell" customModule="zipkok" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="327" height="155"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="327" height="155"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도전 집콕 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL2-tX-VOJ">
+                        <rect key="frame" x="25" y="29" width="91.5" height="22.5"/>
+                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="15"/>
+                        <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커스텀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec7-dF-y9M">
+                        <rect key="frame" x="235.5" y="21" width="66.5" height="36"/>
+                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="24"/>
+                        <color key="textColor" red="0.1333333333" green="0.56862745100000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나만의 집콕 계획 생성하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7b-Ct-z0p">
+                        <rect key="frame" x="75.5" y="103" width="176" height="24"/>
+                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
+                        <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZE-PE-uQw">
+                        <rect key="frame" x="0.0" y="77" width="327" height="1"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="eT1-S7-Grz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="jZE-PE-uQw" firstAttribute="top" secondItem="Uot-Cu-YP9" secondAttribute="top" constant="77" id="06u-M2-uL5"/>
+                <constraint firstItem="k7b-Ct-z0p" firstAttribute="centerX" secondItem="Uot-Cu-YP9" secondAttribute="centerX" id="B5j-vC-sqT"/>
+                <constraint firstAttribute="trailing" secondItem="jZE-PE-uQw" secondAttribute="trailing" id="M5d-Mm-Sr2"/>
+                <constraint firstItem="YL2-tX-VOJ" firstAttribute="top" secondItem="Uot-Cu-YP9" secondAttribute="top" constant="29" id="kEi-BZ-cph"/>
+                <constraint firstAttribute="trailing" secondItem="ec7-dF-y9M" secondAttribute="trailing" constant="25" id="lUH-IG-IfT"/>
+                <constraint firstItem="ec7-dF-y9M" firstAttribute="top" secondItem="Uot-Cu-YP9" secondAttribute="top" constant="21" id="mt8-Ye-dfP"/>
+                <constraint firstAttribute="bottom" secondItem="k7b-Ct-z0p" secondAttribute="bottom" constant="28" id="sRk-ZZ-3js"/>
+                <constraint firstItem="YL2-tX-VOJ" firstAttribute="leading" secondItem="Uot-Cu-YP9" secondAttribute="leading" constant="25" id="tMw-42-QON"/>
+                <constraint firstItem="jZE-PE-uQw" firstAttribute="leading" secondItem="Uot-Cu-YP9" secondAttribute="leading" id="whl-Ci-30V"/>
+            </constraints>
+            <size key="customSize" width="431" height="151"/>
+            <point key="canvasLocation" x="371.73913043478262" y="74.665178571428569"/>
+        </collectionViewCell>
+    </objects>
+</document>
