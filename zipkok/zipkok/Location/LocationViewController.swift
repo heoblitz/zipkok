@@ -24,12 +24,13 @@ class LocationViewController: UIViewController {
     
     lazy var setTextFieldFromLocationWeb: ((LocationInfo) -> Void) = { [weak self] info in
         guard let self = self else { return }
-        
         OperationQueue.main.addOperation {
             self.locationInfo = info
             self.searchTextField.text = info.name
         }
     }
+    
+    private let keyChainManager = KeyChainManager()
     
     var locationInfo: LocationInfo?
     
@@ -113,7 +114,46 @@ class LocationViewController: UIViewController {
     }
     
     @IBAction func submitButtonTapped() {
+        if searchTextField.text?.isEmpty ?? true {
+            // 비어있으니 예외처리
+            print("비어있으니 예외처리")
+            return
+        }
         
+        guard let locationInfo = locationInfo, let accessToken = keyChainManager.accessToken else {
+            print("값을 못불러움")
+            return
+        }
+        
+        activityIndicatorView.startAnimating()
+        
+        DispatchQueue.global().async {
+            KakaoApi.shared.getUserInformation(token: accessToken) { userInformation in
+                ZipkokApi.shared.register(location: locationInfo, user: userInformation) { registerResponse in
+                    
+                    if let jwt = registerResponse.jwt {
+                        self.keyChainManager.jwtToken = jwt
+                    }
+                     
+                    DispatchQueue.main.async {
+                        self.activityIndicatorView.stopAnimating()
+                        guard let homeNavVc = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as? HomeNavigationViewController else { return }
+                        
+                        guard let window = UIApplication.shared.windows.first else { return }
+                        window.rootViewController = homeNavVc
+                        
+                        let options: UIView.AnimationOptions = .transitionCrossDissolve
+                        let duration: TimeInterval = 0.3
+                        
+                        UIView.transition(with: window, duration: duration, options: options, animations: {}, completion:
+                                            { completed in
+                                                self.dismiss(animated: true, completion: nil)
+                                            })
+                    }
+                }
+            }
+        }
+
     }
 }
 
@@ -141,7 +181,7 @@ extension LocationViewController: CLLocationManagerDelegate {
                 OperationQueue.main.addOperation {
                     self.activityIndicatorView.stopAnimating()
                     self.searchTextField.text = addressName
-                    
+                    self.locationInfo = LocationInfo(latitude: "\(latitude)", longitude: "\(longitude)", name: addressName)
                     print(addressName, latitude, longitude)
                 }
             })

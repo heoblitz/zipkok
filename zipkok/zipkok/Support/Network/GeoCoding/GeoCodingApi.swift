@@ -34,7 +34,7 @@ class GeoCodingApi {
                 return
             }
             
-            completionHandler(location.x, location.y)
+            completionHandler(location.y, location.x)
         }
     }
     
@@ -115,9 +115,13 @@ struct LoadAddress: Codable {
 // ---> LocationVc
 
 struct LocationInfo {
-    let x: String
-    let y: String
+    let latitude: String
+    let longitude: String
     let name: String
+    
+    var parcelName: String {
+        return name.components(separatedBy: " ").first ?? name
+    }
 }
 
 

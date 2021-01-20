@@ -78,12 +78,11 @@ extension LocationWebViewController: WKNavigationDelegate {
             // address = data["roadAddress"] as? String ?? ""
         
         if let roadAddress = data["roadAddress"] as? String {
-            GeoCodingApi.shared.requestCoord(by: roadAddress) { [weak self] (x, y) in
+            GeoCodingApi.shared.requestCoord(by: roadAddress) { [weak self] (latitude, longitude) in
                 guard let self = self else { return }
-                let locationInfo = LocationInfo(x: x, y: y, name: roadAddress)
+                let locationInfo = LocationInfo(latitude: latitude, longitude: longitude, name: roadAddress)
 
                 OperationQueue.main.addOperation {
-                    // self.alertMessage(for: "x: \(latitude) \ny: \(longitude) \naddress:\(roadAddress)")
                     self.completionHandler?(locationInfo)
                     self.navigationController?.popViewController(animated: true)
                 }

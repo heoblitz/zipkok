@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var iconTextLabel: UILabel!
     @IBOutlet private weak var kakaoLoginView: UIView!
     
+    private let keyChainManager = KeyChainManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareIconTextLabel()
@@ -48,20 +50,30 @@ class LoginViewController: UIViewController {
                     print(error)
                 }
                 
-                guard let token = oauthToken else { fatalError() }
-                print("loginWithKakaoTalk() success.")
+                guard let token = oauthToken else { return }
+                
+                self.keyChainManager.accessToken = token.accessToken
                 print(token)
                 
-                ZipkokApi.shared.kakaoLogin(token: token.accessToken, completionHandler: { response in print(response)
+                // 서버에 Access Token 전달 후 회원가입 확인
+                ZipkokApi.shared.kakaoLogin(token: token.accessToken, completionHandler: { [weak self] response in
+                    guard let self = self else { return }
+                    
+                    if response.isSuccess { // 회원가입 성공
+                        guard let locationVc = UIStoryboard(name: "Location", bundle: nil).instantiateInitialViewController() as? LocationViewController else {
+                            fatalError()
+                        }
+                    
+                        self.navigationController?.pushViewController(locationVc, animated: true)
+                    } else { // 에러처리
+                        
+                    }
+                        
                 })
                 
             }
         }
         
-        guard let locationVc = UIStoryboard(name: "Location", bundle: nil).instantiateInitialViewController() as? LocationViewController else {
-            fatalError()
-        }
-    
-        navigationController?.pushViewController(locationVc, animated: true)
+
     }
 }

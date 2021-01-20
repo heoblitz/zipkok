@@ -13,7 +13,6 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     }
 
     @IBAction func requestCoordButtonTapped() {
@@ -29,9 +28,9 @@ class TestViewController: UIViewController {
     }
     
     @IBAction func kakaoLogin() {
-        ZipkokApi.shared.kakaoLogin(token: "a", completionHandler: { _ in
+        KakaoApi.shared.getUserInformation(token: "yyl5aPTm-q7ZYLtoY1Gsbgz25emqs_H-ug5NqgopcJ8AAAF3Hwu5lQ") { _ in
             
-        })
+        }
     }
     
     @IBAction func SelectChallengeViewController() {

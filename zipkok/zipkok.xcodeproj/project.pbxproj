@@ -53,6 +53,8 @@
 		3CE3C1B825B7B524003DF328 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1B725B7B524003DF328 /* Observable.swift */; };
 		3CE3C1BB25B7B574003DF328 /* SelectChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1BA25B7B574003DF328 /* SelectChallengeViewModel.swift */; };
 		3CE3C1C025B7B5A8003DF328 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1BF25B7B5A8003DF328 /* Challenge.swift */; };
+		3CE3C1CC25B82691003DF328 /* KakaoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1CB25B82691003DF328 /* KakaoApi.swift */; };
+		3CE3C1D325B82C3B003DF328 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1D225B82C3B003DF328 /* KeyChainManager.swift */; };
 		3CEC75D425AD93D90016738F /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */; };
 		3CEC75D725AD93E30016738F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */; };
 		3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025025B06ED000E3A71D /* dottedLineView.swift */; };
@@ -116,6 +118,8 @@
 		3CE3C1B725B7B524003DF328 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		3CE3C1BA25B7B574003DF328 /* SelectChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectChallengeViewModel.swift; sourceTree = "<group>"; };
 		3CE3C1BF25B7B5A8003DF328 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		3CE3C1CB25B82691003DF328 /* KakaoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoApi.swift; sourceTree = "<group>"; };
+		3CE3C1D225B82C3B003DF328 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		3CF8025025B06ED000E3A71D /* dottedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dottedLineView.swift; sourceTree = "<group>"; };
@@ -174,7 +178,8 @@
 			children = (
 				3C356E0925AAB98100629143 /* View */,
 				3CF8027B25B1682B00E3A71D /* Manager */,
-				3CE3C1B725B7B524003DF328 /* Observable.swift */,
+				3CE3C1D025B82C1F003DF328 /* Model */,
+				3CE3C1CE25B82BFF003DF328 /* Network */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -323,6 +328,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3CE3C1CE25B82BFF003DF328 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3CF8027D25B2DAD300E3A71D /* ZipkokApi.swift */,
+				3CE3C1CB25B82691003DF328 /* KakaoApi.swift */,
+				3CF8027825B1680E00E3A71D /* GeoCoding */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3CE3C1D025B82C1F003DF328 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3CE3C1B725B7B524003DF328 /* Observable.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3CF8027825B1680E00E3A71D /* GeoCoding */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,8 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				3CF8025425B077F300E3A71D /* DateManager.swift */,
-				3CF8027D25B2DAD300E3A71D /* ZipkokApi.swift */,
-				3CF8027825B1680E00E3A71D /* GeoCoding */,
+				3CE3C1D225B82C3B003DF328 /* KeyChainManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -496,6 +518,7 @@
 				3C60605125ADF36E0070F58A /* ChallengeTimerView.swift in Sources */,
 				3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */,
 				3C1551A125AD6D260030949D /* ChallengeSuccessAlertView.swift in Sources */,
+				3CE3C1CC25B82691003DF328 /* KakaoApi.swift in Sources */,
 				3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */,
 				3CB0615A25ABEF9D0088ACFD /* SettingViewController.swift in Sources */,
 				3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */,
@@ -508,6 +531,7 @@
 				3CE3C1C025B7B5A8003DF328 /* Challenge.swift in Sources */,
 				3CF8027425B167F700E3A71D /* GeoCodingApi.swift in Sources */,
 				3CE3C1B425B7B3D0003DF328 /* CustomSelectChallengeCell.swift in Sources */,
+				3CE3C1D325B82C3B003DF328 /* KeyChainManager.swift in Sources */,
 				3CE3C1BB25B7B574003DF328 /* SelectChallengeViewModel.swift in Sources */,
 				3CE3C1A725B7A6D3003DF328 /* SelectChallengeViewController.swift in Sources */,
 				3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */,
