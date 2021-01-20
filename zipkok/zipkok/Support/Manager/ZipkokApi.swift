@@ -11,7 +11,7 @@ import Alamofire
 class ZipkokApi {
     static let shared = ZipkokApi()
 
-    private let baseURLString = "http://homealoneapi.ga"
+    private let baseURLString = "http://15.164.161.25"
     private let autoLoginURLString = "/login/jwt"
     private let registerURLString = "/users"
     private let kakaoLoginURLString = "/login/kakao"
@@ -45,6 +45,7 @@ class ZipkokApi {
     }
 }
 
+// MARK:- kakaoLogin
 struct kakaoLoginResponse: Codable {
     let isSuccess: Bool
     let code: Int

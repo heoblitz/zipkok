@@ -8,6 +8,7 @@ PODS:
     - KakaoSDKAuth (= 2.2.0)
     - KakaoSDKCommon (= 2.2.0)
   - MBCircularProgressBar (0.3.5)
+  - SwiftKeychainWrapper (4.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - KakaoSDKCommon
   - KakaoSDKUser
   - MBCircularProgressBar
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - KakaoSDKCommon
     - KakaoSDKUser
     - MBCircularProgressBar
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
@@ -30,7 +33,8 @@ SPEC CHECKSUMS:
   KakaoSDKCommon: 90adb38b946ff42f26d70aadb67e679f79fe139c
   KakaoSDKUser: b5ddfcdaf4adce40f172cafc9d4864d1a8b4f938
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: 0cd73dfb77fd67e1ff849108138d296b904087b7
+PODFILE CHECKSUM: 2cfd5bda4c6e052af350870b29d4a933b55b96f7
 
 COCOAPODS: 1.10.0

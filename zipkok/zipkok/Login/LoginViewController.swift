@@ -47,12 +47,14 @@ class LoginViewController: UIViewController {
                 if let error = error {
                     print(error)
                 }
-                else {
-                    print("loginWithKakaoTalk() success.")
-                    print(oauthToken)
-                    //do something
-                    _ = oauthToken
-                }
+                
+                guard let token = oauthToken else { fatalError() }
+                print("loginWithKakaoTalk() success.")
+                print(token)
+                
+                ZipkokApi.shared.kakaoLogin(token: token.accessToken, completionHandler: { response in print(response)
+                })
+                
             }
         }
         
