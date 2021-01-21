@@ -11,6 +11,8 @@ class SettingViewController: UIViewController {
 
     @IBOutlet private weak var settingTableView: UITableView!
     
+    private let settingViewModel = SettingViewModel()
+    
     private var settingNavigaterTitles: [String] = [
         "푸쉬알림", "인증 달력 보기", "타임라인 전체보기", "도움말"
     ]
@@ -78,5 +80,4 @@ extension SettingViewController: UITableViewDataSource {
 }
 
 extension SettingViewController: UITableViewDelegate {
-    
 }

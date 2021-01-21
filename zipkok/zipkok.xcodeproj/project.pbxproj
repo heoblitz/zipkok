@@ -55,6 +55,7 @@
 		3CE3C1C025B7B5A8003DF328 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1BF25B7B5A8003DF328 /* Challenge.swift */; };
 		3CE3C1CC25B82691003DF328 /* KakaoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1CB25B82691003DF328 /* KakaoApi.swift */; };
 		3CE3C1D325B82C3B003DF328 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1D225B82C3B003DF328 /* KeyChainManager.swift */; };
+		3CE3C1D925B8644F003DF328 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1D825B8644F003DF328 /* SettingViewModel.swift */; };
 		3CEC75D425AD93D90016738F /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */; };
 		3CEC75D725AD93E30016738F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */; };
 		3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025025B06ED000E3A71D /* dottedLineView.swift */; };
@@ -120,6 +121,7 @@
 		3CE3C1BF25B7B5A8003DF328 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		3CE3C1CB25B82691003DF328 /* KakaoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoApi.swift; sourceTree = "<group>"; };
 		3CE3C1D225B82C3B003DF328 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		3CE3C1D825B8644F003DF328 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		3CF8025025B06ED000E3A71D /* dottedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dottedLineView.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				3CB0616725ABFDED0088ACFD /* View */,
 				3CB0615925ABEF9D0088ACFD /* SettingViewController.swift */,
 				3CB0615E25ABEFB10088ACFD /* Setting.storyboard */,
+				3CE3C1DC25B86453003DF328 /* ViewModel */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				3CE3C1A225B7A6B8003DF328 /* SelectChallenge.storyboard */,
 				3CE3C1A625B7A6D3003DF328 /* SelectChallengeViewController.swift */,
 				3CE3C1AF25B7AB74003DF328 /* View */,
+				3CE3C1D625B85B59003DF328 /* ViewModel */,
 				3CE3C1BD25B7B577003DF328 /* Model */,
 			);
 			path = Select;
@@ -322,7 +326,6 @@
 		3CE3C1BD25B7B577003DF328 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3CE3C1BA25B7B574003DF328 /* SelectChallengeViewModel.swift */,
 				3CE3C1BF25B7B5A8003DF328 /* Challenge.swift */,
 			);
 			path = Model;
@@ -344,6 +347,22 @@
 				3CE3C1B725B7B524003DF328 /* Observable.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3CE3C1D625B85B59003DF328 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3CE3C1BA25B7B574003DF328 /* SelectChallengeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3CE3C1DC25B86453003DF328 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3CE3C1D825B8644F003DF328 /* SettingViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3CF8027825B1680E00E3A71D /* GeoCoding */ = {
@@ -527,6 +546,7 @@
 				3C15519825AD3CF90030949D /* TimerViewController.swift in Sources */,
 				3CF8025825B125AC00E3A71D /* letterSpacingLabel.swift in Sources */,
 				3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */,
+				3CE3C1D925B8644F003DF328 /* SettingViewModel.swift in Sources */,
 				3CB0615625ABEAFC0088ACFD /* HomeNavigationViewController.swift in Sources */,
 				3CE3C1C025B7B5A8003DF328 /* Challenge.swift in Sources */,
 				3CF8027425B167F700E3A71D /* GeoCodingApi.swift in Sources */,

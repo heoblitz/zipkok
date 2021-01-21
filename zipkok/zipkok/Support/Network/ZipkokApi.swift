@@ -86,7 +86,7 @@ struct KakaoLoginResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    // let result: kakaologinResult
+    let result: KakaologinResult?
 }
 
 struct KakaologinResult: Codable {
@@ -94,12 +94,15 @@ struct KakaologinResult: Codable {
     let jwt: String
 }
 
-
 // MARK:- register
 struct RegisterResponse: Codable {
-    let jwt: String?
     let isSuccess: Bool
     let code: Int
     let message: String
+    let result: RegisterResult?
 }
 
+struct RegisterResult: Codable {
+    let userId: Int
+    let jwt: String
+}

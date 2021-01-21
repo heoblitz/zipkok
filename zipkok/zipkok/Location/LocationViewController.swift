@@ -131,10 +131,9 @@ class LocationViewController: UIViewController {
             KakaoApi.shared.getUserInformation(token: accessToken) { userInformation in
                 ZipkokApi.shared.register(location: locationInfo, user: userInformation) { registerResponse in
                     
-                    if let jwt = registerResponse.jwt {
-                        self.keyChainManager.jwtToken = jwt
-                    }
-                     
+                    self.keyChainManager.jwtToken = registerResponse.result?.jwt
+                    self.keyChainManager.userId = registerResponse.result?.userId
+                    
                     DispatchQueue.main.async {
                         self.activityIndicatorView.stopAnimating()
                         guard let homeNavVc = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as? HomeNavigationViewController else { return }
@@ -143,17 +142,15 @@ class LocationViewController: UIViewController {
                         window.rootViewController = homeNavVc
                         
                         let options: UIView.AnimationOptions = .transitionCrossDissolve
-                        let duration: TimeInterval = 0.3
+                        let duration: TimeInterval = 0.5
                         
-                        UIView.transition(with: window, duration: duration, options: options, animations: {}, completion:
-                                            { completed in
-                                                self.dismiss(animated: true, completion: nil)
-                                            })
+                        UIView.transition(with: window, duration: duration, options: options, animations: {}) { completed in
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }
             }
         }
-
     }
 }
 

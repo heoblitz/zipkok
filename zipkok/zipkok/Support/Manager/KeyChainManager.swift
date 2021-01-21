@@ -26,4 +26,13 @@ class KeyChainManager {
             KeychainWrapper.standard.set(value, forKey: "jwtToken")
         }
     }
+    
+    var userId: Int? {
+        get {
+            return KeychainWrapper.standard.integer(forKey: "userId")
+        } set {
+            guard let value = newValue else { return }
+            KeychainWrapper.standard.set(value, forKey: "userId")
+        }
+    }
 }

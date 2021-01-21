@@ -58,6 +58,10 @@ class LoginViewController: UIViewController {
                 // 서버에 Access Token 전달 후 회원가입 확인
                 ZipkokApi.shared.kakaoLogin(token: token.accessToken, completionHandler: { [weak self] response in
                     guard let self = self else { return }
+                    if response.code == 1010 { // 이미 회원가입 되었다면
+                        self.keyChainManager.userId = response.result?.userId
+                        self.keyChainManager.jwtToken = response.result?.jwt
+                    }
                     
                     if response.isSuccess { // 회원가입 성공
                         guard let locationVc = UIStoryboard(name: "Location", bundle: nil).instantiateInitialViewController() as? LocationViewController else {

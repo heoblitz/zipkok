@@ -11,17 +11,13 @@ class SettingProfileCell: UITableViewCell {
 
     @IBOutlet weak var resetButtonLabel: UILabel!
     @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userLocationNameTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         setComponetsStyle()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     private func setComponetsStyle() {
@@ -33,5 +29,4 @@ class SettingProfileCell: UITableViewCell {
         addressTextField.leftView = paddingView
         addressTextField.leftViewMode = .always
     }
-    
 }
