@@ -19,6 +19,11 @@ class SettingViewController: UIViewController {
     
     private var userInfo: UserInfoResult?
     
+    lazy var resetButtonGesture: UITapGestureRecognizer = {
+        let tapGesuture = UITapGestureRecognizer(target: self, action: #selector(resetButtonTapped))
+        return tapGesuture
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNavigationTitle()
@@ -47,6 +52,18 @@ class SettingViewController: UIViewController {
         navigationItem.title = "마이페이지"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NotoSansCJKkr-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)]
     }
+    
+    @objc func resetButtonTapped() {
+        guard let locationVc = UIStoryboard(name: "Location", bundle: nil).instantiateInitialViewController() as? LocationViewController else { fatalError() }
+        
+        locationVc.locationPatchCompletionHandler = { [weak self] location in
+            guard let self = self else { return }
+            self.userInfo = self.userInfo?.changeAddressName(by: location.name)
+            self.settingTableView.reloadData()
+        }
+        locationVc.locationRequestType = .patch
+        navigationController?.pushViewController(locationVc, animated: true)
+    }
 }
 
 extension SettingViewController: UITableViewDataSource {
@@ -63,11 +80,13 @@ extension SettingViewController: UITableViewDataSource {
                 settingProfileCell.prepare(by: userInfo)
             }
             
+            settingProfileCell.resetButtonLabel.addGestureRecognizer(resetButtonGesture)
+            settingProfileCell.resetButtonLabel.isUserInteractionEnabled = true
             return settingProfileCell
         case 1:
             guard let settingNavigatorCell = tableView.dequeueReusableCell(withIdentifier: "SettingNavigatorCell", for: indexPath) as? SettingNavigatorCell else { fatalError() }
             if indexPath.row == 0 {
-                settingNavigatorCell.swtichButton.isSelected = userInfo?.isPushStatus ?? false
+                settingNavigatorCell.swtichButton.isSelected = userInfo?.isPushStatusEnable ?? false
                 settingNavigatorCell.prepareSwitchButton()
             }
             settingNavigatorCell.titleLabel.text = settingNavigaterTitles[indexPath.row]

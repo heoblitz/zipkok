@@ -101,6 +101,35 @@ class ZipkokApi {
             completionHandler(value)
         }
     }
+    
+    func patchUserInfo(jwt jwtToken: String, id userId: Int, location locationInfo: LocationInfo, isPushStatusEnable: Bool = false, completionHandler: @escaping (PatchUserInfoResponse) -> ()) {
+        let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
+        let bodys: Parameters = [
+            "pushStatus" : isPushStatusEnable == true ? "Y" : "N",
+            "latitude" : locationInfo.latitude,
+            "longitude" : locationInfo.longitude,
+            "parcelAddressing" : locationInfo.parcelName,
+            "streetAddressing" : locationInfo.name
+        ]
+        
+        let request = AF.request(baseURLString + registerURLString + "/\(userId)", method: .patch, parameters: bodys, encoding: Alamofire.JSONEncoding.default, headers: headers)
+        
+        request.responseDecodable(of: PatchUserInfoResponse.self) { response in
+            if let error = response.error {
+                print(error)
+                print(response)
+                return
+            }
+
+            guard let value = response.value else {
+                print("data is nil")
+                return
+            }
+
+            print(value)
+            completionHandler(value)
+        }
+    }
 }
 
 // MARK:- kakaoLogin
@@ -143,8 +172,24 @@ struct UserInfoResult: Codable {
     let addressName: String
     let pushStatus: String
     
-    var isPushStatus: Bool {
+    var isPushStatusEnable: Bool {
         return pushStatus == "Y" ? true : false
+    }
+    
+    func changeAddressName(by address: String) -> UserInfoResult {
+        return UserInfoResult(userName: self.userName, addressName: address, pushStatus: self.pushStatus)
     }
 }
 
+
+// MARK:- patchUserInfo
+struct PatchUserInfoResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: PatchUserInfo?
+}
+
+struct PatchUserInfo: Codable {
+    let userIdx: Int
+}

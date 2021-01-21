@@ -44,6 +44,7 @@
 		3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */; };
 		3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */; };
 		3CB0618025AC18BF0088ACFD /* TimerSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */; };
+		3CDE69AA25B94A890057A415 /* LocationRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDE69A925B94A890057A415 /* LocationRequestType.swift */; };
 		3CE3C1A325B7A6B8003DF328 /* SelectChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3C1A225B7A6B8003DF328 /* SelectChallenge.storyboard */; };
 		3CE3C1A725B7A6D3003DF328 /* SelectChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1A625B7A6D3003DF328 /* SelectChallengeViewController.swift */; };
 		3CE3C1AC25B7AB70003DF328 /* SelectChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1AA25B7AB70003DF328 /* SelectChallengeCell.swift */; };
@@ -110,6 +111,7 @@
 		3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNavigatorCell.xib; sourceTree = "<group>"; };
 		3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingViewController.swift; sourceTree = "<group>"; };
 		3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerSetting.storyboard; sourceTree = "<group>"; };
+		3CDE69A925B94A890057A415 /* LocationRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestType.swift; sourceTree = "<group>"; };
 		3CE3C1A225B7A6B8003DF328 /* SelectChallenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectChallenge.storyboard; sourceTree = "<group>"; };
 		3CE3C1A625B7A6D3003DF328 /* SelectChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectChallengeViewController.swift; sourceTree = "<group>"; };
 		3CE3C1AA25B7AB70003DF328 /* SelectChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectChallengeCell.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				3C356E0125AAA1F300629143 /* LocationViewController.swift */,
 				3C356E1B25AAE20300629143 /* LocationWeb.storyboard */,
 				3C356E1825AAE1F100629143 /* LocationWebViewController.swift */,
+				3CDE69A925B94A890057A415 /* LocationRequestType.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 			files = (
 				3C356E1925AAE1F100629143 /* LocationWebViewController.swift in Sources */,
 				3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */,
+				3CDE69AA25B94A890057A415 /* LocationRequestType.swift in Sources */,
 				3CF8025525B077F300E3A71D /* DateManager.swift in Sources */,
 				3CE3C1AC25B7AB70003DF328 /* SelectChallengeCell.swift in Sources */,
 				3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */,

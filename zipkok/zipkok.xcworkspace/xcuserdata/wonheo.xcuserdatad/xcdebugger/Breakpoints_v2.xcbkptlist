@@ -30,8 +30,8 @@
             filePath = "zipkok/Location/LocationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "viewTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "zipkok/Location/LocationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "currentLocationButtonViewTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "zipkok/Location/LocationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
             <Locations>
@@ -110,8 +110,8 @@
             filePath = "zipkok/Location/LocationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "currentLocationButtonViewTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -354,6 +354,54 @@
             endingLineNumber = "63"
             landmarkName = "kakaoLoginViewTapped()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C53E6D48-FCC4-4EA4-85BD-1D90DF5E1479"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zipkok/Location/LocationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "patchUserInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C53E6D48-FCC4-4EA4-85BD-1D90DF5E1479 - 8de53365609f4339"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "zipkok.LocationViewController.(patchUserInfo in _4808AC6616BC160DD04EDA56B0F2BF37)() -&gt; ()"
+                  moduleName = "zipkok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wonheo/workspace/ios/jipkok/zipkok/zipkok/Location/LocationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "C53E6D48-FCC4-4EA4-85BD-1D90DF5E1479 - 151081bca91954"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (zipkok.PatchUserInfoResponse) -&gt; () in zipkok.LocationViewController.(patchUserInfo in _4808AC6616BC160DD04EDA56B0F2BF37)() -&gt; ()"
+                  moduleName = "zipkok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wonheo/workspace/ios/jipkok/zipkok/zipkok/Location/LocationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
