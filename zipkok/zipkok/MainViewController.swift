@@ -47,6 +47,7 @@ class MainViewController: UIViewController {
             fatalError()
         }
         
+        testVc.modalPresentationStyle = .fullScreen
         present(testVc, animated: false)
     }
 }

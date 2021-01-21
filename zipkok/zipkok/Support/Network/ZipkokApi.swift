@@ -15,6 +15,7 @@ class ZipkokApi {
     private let autoLoginURLString = "/login/jwt"
     private let kakaoLoginURLString = "/login/kakao"
     private let registerURLString = "/users"
+    private let locationURLString = "/locations"
     
     private init() {}
 
@@ -70,16 +71,7 @@ class ZipkokApi {
             completionHandler(value)
         }
     }
-    /*  "userName" : "skdnvklskd",
-        "userEmail" : "snkvlsdmkv",
-        "snsId": 1111001,
-        "latitude":13.2223,
-        "longitude":2343.343,
-        "parcelAddressing":"경기도 ",
-        "streetAddressing":"경기도 성남시 분당구",
-       "loginType":"KAKAO"
-    */
-    
+
     func userInfo(jwt jwtToken: String, id userId: Int, completionHandler: @escaping (UserInfoResponse) -> ()) {
         let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
 
@@ -113,7 +105,7 @@ class ZipkokApi {
         ]
         
         let request = AF.request(baseURLString + registerURLString + "/\(userId)", method: .patch, parameters: bodys, encoding: Alamofire.JSONEncoding.default, headers: headers)
-        
+         
         request.responseDecodable(of: PatchUserInfoResponse.self) { response in
             if let error = response.error {
                 print(error)
@@ -127,6 +119,31 @@ class ZipkokApi {
             }
 
             print(value)
+            completionHandler(value)
+        }
+    }
+    
+    func userLocation(token accessToken: String, location locationInfo: LocationInfo, completionHandler: @escaping (UserLocationResponse) -> ()) {
+        let headers: HTTPHeaders = ["accessToken" : accessToken]
+        let bodys: Parameters = [
+            "latitude" : locationInfo.latitude,
+            "longitude" : locationInfo.longitude
+        ]
+        
+        let request = AF.request(baseURLString + locationURLString, method: .post, parameters: bodys, encoding: Alamofire.JSONEncoding.default, headers: headers)
+         
+        request.responseDecodable(of: UserLocationResponse.self) { response in
+            if let error = response.error {
+                print(error)
+                print(response)
+                return
+            }
+
+            guard let value = response.value else {
+                print("data is nil")
+                return
+            }
+
             completionHandler(value)
         }
     }
@@ -192,4 +209,11 @@ struct PatchUserInfoResponse: Codable {
 
 struct PatchUserInfo: Codable {
     let userIdx: Int
+}
+
+// MARK:- kakaoLogin
+struct UserLocationResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
 }

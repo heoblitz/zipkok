@@ -45,6 +45,8 @@
 		3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */; };
 		3CB0618025AC18BF0088ACFD /* TimerSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */; };
 		3CDE69AA25B94A890057A415 /* LocationRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDE69A925B94A890057A415 /* LocationRequestType.swift */; };
+		3CDE69AF25B969F70057A415 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDE69AE25B969F70057A415 /* CustomAlertView.swift */; };
+		3CDE69B225B96A120057A415 /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDE69B125B96A120057A415 /* CustomAlertView.xib */; };
 		3CE3C1A325B7A6B8003DF328 /* SelectChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE3C1A225B7A6B8003DF328 /* SelectChallenge.storyboard */; };
 		3CE3C1A725B7A6D3003DF328 /* SelectChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1A625B7A6D3003DF328 /* SelectChallengeViewController.swift */; };
 		3CE3C1AC25B7AB70003DF328 /* SelectChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1AA25B7AB70003DF328 /* SelectChallengeCell.swift */; };
@@ -112,6 +114,8 @@
 		3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingViewController.swift; sourceTree = "<group>"; };
 		3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerSetting.storyboard; sourceTree = "<group>"; };
 		3CDE69A925B94A890057A415 /* LocationRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestType.swift; sourceTree = "<group>"; };
+		3CDE69AE25B969F70057A415 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		3CDE69B125B96A120057A415 /* CustomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertView.xib; sourceTree = "<group>"; };
 		3CE3C1A225B7A6B8003DF328 /* SelectChallenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectChallenge.storyboard; sourceTree = "<group>"; };
 		3CE3C1A625B7A6D3003DF328 /* SelectChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectChallengeViewController.swift; sourceTree = "<group>"; };
 		3CE3C1AA25B7AB70003DF328 /* SelectChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectChallengeCell.swift; sourceTree = "<group>"; };
@@ -192,11 +196,8 @@
 		3C356E0925AAB98100629143 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3CDE69AC25B969D50057A415 /* Alert */,
 				3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */,
-				3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */,
-				3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */,
-				3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */,
-				3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */,
 				3C60605025ADF36E0070F58A /* ChallengeTimerView.swift */,
 				3CF8025025B06ED000E3A71D /* dottedLineView.swift */,
 				3CF8025725B125AC00E3A71D /* letterSpacingLabel.swift */,
@@ -301,6 +302,19 @@
 				3C15519A25AD3D010030949D /* Timer.storyboard */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		3CDE69AC25B969D50057A415 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */,
+				3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */,
+				3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */,
+				3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */,
+				3CDE69AE25B969F70057A415 /* CustomAlertView.swift */,
+				3CDE69B125B96A120057A415 /* CustomAlertView.xib */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		3CE3C1A525B7A6BD003DF328 /* Select */ = {
@@ -459,6 +473,7 @@
 				3CB0614B25AB405E0088ACFD /* ChallengeQuitAlertView.xib in Resources */,
 				3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */,
 				3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */,
+				3CDE69B225B96A120057A415 /* CustomAlertView.xib in Resources */,
 				3CF8028F25B339C700E3A71D /* Wireframe.storyboard in Resources */,
 				3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */,
 				3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */,
@@ -545,6 +560,7 @@
 				3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */,
 				3CB0615A25ABEF9D0088ACFD /* SettingViewController.swift in Sources */,
 				3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */,
+				3CDE69AF25B969F70057A415 /* CustomAlertView.swift in Sources */,
 				3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */,
 				3CB0614825AB404D0088ACFD /* ChallengeQuitAlertView.swift in Sources */,
 				3C15519825AD3CF90030949D /* TimerViewController.swift in Sources */,

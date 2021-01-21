@@ -17,6 +17,7 @@ class LocationViewController: UIViewController {
     
     lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         return locationManager
@@ -31,6 +32,7 @@ class LocationViewController: UIViewController {
     }
     
     private let keyChainManager = KeyChainManager()
+    private var isReceivedCurrentLocation: Bool = false
     
     var locationRequestType: LocationRequestType = .register
     var locationPatchCompletionHandler: ((LocationInfo) -> ())?
@@ -85,6 +87,25 @@ class LocationViewController: UIViewController {
     private func prepareNavigationTitle() {
         navigationItem.title = "우리집설정"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NotoSansCJKkr-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)]
+    }
+    
+    private func alertLocationAuthView() {
+        guard let navVc = navigationController else { return }
+        
+        let customAlertView = CustomAlertView.loadViewFromNib()
+        customAlertView.translatesAutoresizingMaskIntoConstraints = false
+        customAlertView.contentLabel.text = """
+                                집콕 챌린지를 시작하기 위해서는 사용자의 위치 권한이 필요합니다. \n
+                                설정 > 개인 정보 보호 > 위치 서비스에서 집콕 앱을 활성화해주세요.
+                                """
+        navVc.view.addSubview(customAlertView)
+        
+        NSLayoutConstraint.activate([
+            customAlertView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            customAlertView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            customAlertView.topAnchor.constraint(equalTo: view.topAnchor),
+            customAlertView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
     
     private func register() {
@@ -149,8 +170,11 @@ class LocationViewController: UIViewController {
             print("no permisson")
             // 위치 요청 alert 뷰 올리기
             activityIndicatorView.stopAnimating()
+            alertLocationAuthView()
         default:
-            locationManager.requestLocation()
+            // locationManager.requestLocation()
+            isReceivedCurrentLocation = false
+            locationManager.startUpdatingLocation()
         }
     }
     
@@ -166,8 +190,6 @@ class LocationViewController: UIViewController {
             register()
         case .patch:
             patchUserInfo()
-        default:
-            break
         }
     }
 }
@@ -186,9 +208,13 @@ extension LocationViewController: UITextFieldDelegate {
 
 extension LocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let coor = manager.location?.coordinate{
+        if let coor = manager.location?.coordinate, !isReceivedCurrentLocation {
             let latitude = coor.latitude
             let longitude = coor.longitude
+            
+            isReceivedCurrentLocation = true
+            locationManager.stopUpdatingLocation()
+            locationManager.stopMonitoringSignificantLocationChanges()
             
             GeoCodingApi.shared.requestRegioncode(by: (longitude, latitude), completionHandler: {  [weak self] addressName in
                 guard let self = self else { return }

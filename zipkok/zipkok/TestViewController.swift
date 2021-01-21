@@ -28,9 +28,16 @@ class TestViewController: UIViewController {
     }
     
     @IBAction func kakaoLogin() {
-        KakaoApi.shared.getUserInformation(token: "yyl5aPTm-q7ZYLtoY1Gsbgz25emqs_H-ug5NqgopcJ8AAAF3Hwu5lQ") { _ in
-            
-        }
+        let customView = CustomAlertView.loadViewFromNib()
+        customView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(customView)
+
+        NSLayoutConstraint.activate([
+            customView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            customView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            customView.topAnchor.constraint(equalTo: view.topAnchor),
+            customView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])        
     }
     
     @IBAction func SelectChallengeViewController() {
