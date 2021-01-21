@@ -11,6 +11,17 @@ class SettingNavigatorCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
+    let swtichButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageView?.clipsToBounds = true
+        button.setImage(UIImage(named: "그룹 1429"), for: .selected)
+        button.setImage(UIImage(named: "그룹 1433"), for: .normal)
+        button.isSelected = true
+        return button
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,14 +33,6 @@ class SettingNavigatorCell: UITableViewCell {
     }
     
     func prepareSwitchButton() {
-        let swtichButton = UIButton(type: .custom)
-        swtichButton.translatesAutoresizingMaskIntoConstraints = false
-        swtichButton.imageView?.contentMode = .scaleAspectFit
-        swtichButton.imageView?.clipsToBounds = true
-        swtichButton.setImage(UIImage(named: "그룹 1429"), for: .selected)
-        swtichButton.setImage(UIImage(named: "그룹 1433"), for: .normal)
-        swtichButton.isSelected = true
-        
         contentView.addSubview(swtichButton)
         
         NSLayoutConstraint.activate([

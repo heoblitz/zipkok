@@ -17,10 +17,22 @@ class SettingViewController: UIViewController {
         "푸쉬알림", "인증 달력 보기", "타임라인 전체보기", "도움말"
     ]
     
+    private var userInfo: UserInfoResult?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNavigationTitle()
         prepareSettingTableView()
+        bind()
+        settingViewModel.requestUserInfo()
+    }
+    
+    private func bind() {
+        settingViewModel.userInfo.bind { [weak self] userInfo in
+            guard let self = self else { return }
+            self.userInfo = userInfo
+            self.settingTableView.reloadData()
+        }
     }
     
     private func prepareSettingTableView() {
@@ -47,10 +59,15 @@ extension SettingViewController: UITableViewDataSource {
         case 0:
             guard let settingProfileCell = tableView.dequeueReusableCell(withIdentifier: "SettingProfileCell", for: indexPath) as? SettingProfileCell else { fatalError() }
             
+            if let userInfo = userInfo {
+                settingProfileCell.prepare(by: userInfo)
+            }
+            
             return settingProfileCell
         case 1:
             guard let settingNavigatorCell = tableView.dequeueReusableCell(withIdentifier: "SettingNavigatorCell", for: indexPath) as? SettingNavigatorCell else { fatalError() }
             if indexPath.row == 0 {
+                settingNavigatorCell.swtichButton.isSelected = userInfo?.isPushStatus ?? false
                 settingNavigatorCell.prepareSwitchButton()
             }
             settingNavigatorCell.titleLabel.text = settingNavigaterTitles[indexPath.row]

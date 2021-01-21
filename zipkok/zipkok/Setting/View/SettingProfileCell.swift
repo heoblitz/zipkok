@@ -29,4 +29,9 @@ class SettingProfileCell: UITableViewCell {
         addressTextField.leftView = paddingView
         addressTextField.leftViewMode = .always
     }
+    
+    func prepare(by userInfo: UserInfoResult) {
+        addressTextField.text = userInfo.addressName
+        userNameLabel.text = userInfo.userName
+    }
 }

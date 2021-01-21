@@ -13,8 +13,8 @@ class ZipkokApi {
 
     private let baseURLString = "http://15.164.161.25"
     private let autoLoginURLString = "/login/jwt"
-    private let registerURLString = "/users"
     private let kakaoLoginURLString = "/login/kakao"
+    private let registerURLString = "/users"
     
     private init() {}
 
@@ -79,6 +79,28 @@ class ZipkokApi {
         "streetAddressing":"경기도 성남시 분당구",
        "loginType":"KAKAO"
     */
+    
+    func userInfo(jwt jwtToken: String, id userId: Int, completionHandler: @escaping (UserInfoResponse) -> ()) {
+        let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
+
+        let request = AF.request(baseURLString + registerURLString + "/\(userId)", method: .get, encoding: Alamofire.JSONEncoding.default, headers: headers)
+        
+        request.responseDecodable(of: UserInfoResponse.self) { response in
+            if let error = response.error {
+                print(error)
+                print(response)
+                return
+            }
+
+            guard let value = response.value else {
+                print("data is nil")
+                return
+            }
+
+            print(value)
+            completionHandler(value)
+        }
+    }
 }
 
 // MARK:- kakaoLogin
@@ -106,3 +128,23 @@ struct RegisterResult: Codable {
     let userId: Int
     let jwt: String
 }
+
+
+// MARK:- userInfo
+struct UserInfoResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: UserInfoResult?
+}
+
+struct UserInfoResult: Codable {
+    let userName: String
+    let addressName: String
+    let pushStatus: String
+    
+    var isPushStatus: Bool {
+        return pushStatus == "Y" ? true : false
+    }
+}
+
