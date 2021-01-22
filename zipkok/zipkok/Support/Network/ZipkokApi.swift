@@ -9,13 +9,14 @@ import Foundation
 import Alamofire
 
 class ZipkokApi {
-    static let shared = ZipkokApi()
+    static let shared: ZipkokApi = ZipkokApi()
 
-    private let baseURLString = "http://15.164.161.25"
-    private let autoLoginURLString = "/login/jwt"
-    private let kakaoLoginURLString = "/login/kakao"
-    private let registerURLString = "/users"
-    private let locationURLString = "/locations"
+    private let baseURLString: String = "http://15.164.161.25"
+    private let autoLoginURLString: String = "/login/jwt"
+    private let kakaoLoginURLString: String = "/login/kakao"
+    private let registerURLString: String = "/users"
+    private let locationURLString: String = "/users/locations"
+    private let registerChallengeTimeURLString: String = "/users/challenge-times"
     
     private init() {}
 
@@ -98,8 +99,8 @@ class ZipkokApi {
         let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
         let bodys: Parameters = [
             "pushStatus" : isPushStatusEnable == true ? "Y" : "N",
-            "latitude" : locationInfo.latitude,
-            "longitude" : locationInfo.longitude,
+            "latitude" : Double(locationInfo.latitude)!,
+            "longitude" : Double(locationInfo.longitude)!,
             "parcelAddressing" : locationInfo.parcelName,
             "streetAddressing" : locationInfo.name
         ]
@@ -123,11 +124,11 @@ class ZipkokApi {
         }
     }
     
-    func userLocation(token accessToken: String, location locationInfo: LocationInfo, completionHandler: @escaping (UserLocationResponse) -> ()) {
-        let headers: HTTPHeaders = ["accessToken" : accessToken]
+    func userLocation(jwt jwtToken: String, latitude: Double, longitude: Double,  completionHandler: @escaping (UserLocationResponse) -> ()) {
+        let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
         let bodys: Parameters = [
-            "latitude" : locationInfo.latitude,
-            "longitude" : locationInfo.longitude
+            "latitude" : latitude,
+            "longitude" : longitude
         ]
         
         let request = AF.request(baseURLString + locationURLString, method: .post, parameters: bodys, encoding: Alamofire.JSONEncoding.default, headers: headers)
@@ -144,6 +145,33 @@ class ZipkokApi {
                 return
             }
 
+            print(value)
+            completionHandler(value)
+        }
+    }
+    
+    func registerChallengeTime(jwt jwtToken: String, start startTime: String, end endTime: String, completionHandler: @escaping (RegisterChallengeTimeResponse) -> ()) {
+        let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
+        let bodys: Parameters = [
+            "startTime" : startTime,
+            "endTime" : endTime
+        ]
+        
+        let request = AF.request(baseURLString + registerChallengeTimeURLString, method: .post, parameters: bodys, encoding: Alamofire.JSONEncoding.default, headers: headers)
+         
+        request.responseDecodable(of: RegisterChallengeTimeResponse.self) { response in
+            if let error = response.error {
+                print(error)
+                print(response)
+                return
+            }
+
+            guard let value = response.value else {
+                print("data is nil")
+                return
+            }
+
+            print(value)
             completionHandler(value)
         }
     }
@@ -211,9 +239,37 @@ struct PatchUserInfo: Codable {
     let userIdx: Int
 }
 
-// MARK:- kakaoLogin
+// MARK:- KakaoLogin
 struct UserLocationResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
 }
+
+// MARK:- RegisterChallengeTime
+struct RegisterChallengeTimeResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: RegisterChallengeTimeResult?
+}
+
+struct RegisterChallengeTimeResult: Codable {
+    let challengeIdx: Int
+}
+
+//"{
+//    ""isSuccess"": true,
+//    ""code"": 1000,
+//    ""message"": ""요청에 성공하였습니다."",
+//    ""result"": {
+//        ""challengeIdx"": 3
+//    }
+//}"
+
+            
+            
+            
+            
+            
+            

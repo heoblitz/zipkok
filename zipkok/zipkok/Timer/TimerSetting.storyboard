@@ -183,8 +183,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="endDateLabel" destination="oR2-hX-Aog" id="YXJ-M3-nup"/>
                         <outlet property="endTimeView" destination="yay-Bz-veZ" id="xXy-Eo-FCA"/>
                         <outlet property="startButtonView" destination="adw-Ox-w9j" id="Maj-r4-oxG"/>
+                        <outlet property="startDateLabel" destination="Wci-Fh-Iqy" id="vfh-Vy-Mux"/>
                         <outlet property="startImageView" destination="5BT-HG-RSP" id="Vq2-Re-biq"/>
                         <outlet property="startTimeView" destination="Mhf-NG-BfN" id="MRG-4u-thZ"/>
                     </connections>

@@ -134,7 +134,7 @@
                 <outlet property="cancelButtonView" destination="PSr-L4-uGS" id="77s-9j-1DG"/>
                 <outlet property="quitButtonView" destination="DwS-QK-E0n" id="zaI-sg-KvE"/>
             </connections>
-            <point key="canvasLocation" x="139" y="74"/>
+            <point key="canvasLocation" x="137.68115942028987" y="73.660714285714278"/>
         </view>
     </objects>
     <resources>

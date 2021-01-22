@@ -52,15 +52,12 @@ class HomeViewController: UIViewController {
         startButtonView.layer.shadowRadius = 14
     }
     
-    private func alertLocationAuthView() {
+    private func alertLocationAuthView(message: String) {
         guard let navVc = navigationController else { return }
 
         let customAlertView = CustomAlertView.loadViewFromNib()
         customAlertView.translatesAutoresizingMaskIntoConstraints = false
-        customAlertView.contentLabel.text = """
-                                집콕 챌린지를 시작하기 위해서는 사용자의 위치 권한이 필요합니다. \n
-                                설정 > 개인 정보 보호 > 위치 서비스에서 집콕 앱을 활성화해주세요.
-                                """
+        customAlertView.contentLabel.text = message
         navVc.view.addSubview(customAlertView)
         
         NSLayoutConstraint.activate([
@@ -91,19 +88,24 @@ class HomeViewController: UIViewController {
         switch CLLocationManager.authorizationStatus() {
         case .restricted, .denied:
             print("권한 없음")
-            alertLocationAuthView()
+            alertLocationAuthView(message: """
+                                집콕 챌린지를 시작하기 위해서는 사용자의 위치 권한이 필요합니다. \n
+                                설정 > 개인 정보 보호 > 위치 서비스에서 집콕 앱을 활성화해주세요.
+                                """)
         default:
             isReceivedCurrentLocation = false
             locationManager.startUpdatingLocation()
         }
-//        guard let selectChallengeVc = UIStoryboard(name: "SelectChallenge", bundle: nil).instantiateInitialViewController() as? SelectChallengeViewController else { fatalError() }
-//
-//        navigationController?.pushViewController(selectChallengeVc, animated: true)
+
     }
 }
 
 extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let jwtToken = keyChainManager.jwtToken else {
+            print("---> Access Token can't loaded")
+            return
+        }
         if let coor = manager.location?.coordinate, !isReceivedCurrentLocation {
             let latitude = coor.latitude
             let longitude = coor.longitude
@@ -111,6 +113,16 @@ extension HomeViewController: CLLocationManagerDelegate {
             isReceivedCurrentLocation = true
             locationManager.stopUpdatingLocation()
             locationManager.stopMonitoringSignificantLocationChanges()
+            
+            ZipkokApi.shared.userLocation(jwt: jwtToken, latitude: latitude, longitude: longitude) { userLocationResponse in
+                if userLocationResponse.isSuccess {
+                    guard let selectChallengeVc = UIStoryboard(name: "SelectChallenge", bundle: nil).instantiateInitialViewController() as? SelectChallengeViewController else { fatalError() }
+            
+                    self.navigationController?.pushViewController(selectChallengeVc, animated: true)
+                } else {
+                    self.alertLocationAuthView(message: "집콕은 현재 집으로 등록된 장소에서만\n가능합니다. \n\n집으로 이동하여 진행하거나, 마이페이지에서 우리집설정을 변경해주세요.")
+                }
+            }
         }
     }
     

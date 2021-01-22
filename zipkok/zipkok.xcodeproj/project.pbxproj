@@ -31,6 +31,7 @@
 		3C72DA2825A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */; };
 		3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2C25A9FAE1001567B4 /* Login.storyboard */; };
 		3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */; };
+		3C8CDD0F25BA8D4A00F9FBF2 /* DateFormatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8CDD0E25BA8D4A00F9FBF2 /* DateFormatExtension.swift */; };
 		3CB0614825AB404D0088ACFD /* ChallengeQuitAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */; };
 		3CB0614B25AB405E0088ACFD /* ChallengeQuitAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */; };
 		3CB0614E25ABE41C0088ACFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */; };
@@ -100,6 +101,7 @@
 		3C72DA2625A9F5C1001567B4 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		3C72DA2C25A9FAE1001567B4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3C72DA2F25A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "THEFACESHOP+INKLIPQUID.otf"; sourceTree = "<group>"; };
+		3C8CDD0E25BA8D4A00F9FBF2 /* DateFormatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatExtension.swift; sourceTree = "<group>"; };
 		3CB0614725AB404D0088ACFD /* ChallengeQuitAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeQuitAlertView.swift; sourceTree = "<group>"; };
 		3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeQuitAlertView.xib; sourceTree = "<group>"; };
 		3CB0614D25ABE41C0088ACFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				3CF8027B25B1682B00E3A71D /* Manager */,
 				3CE3C1D025B82C1F003DF328 /* Model */,
 				3CE3C1CE25B82BFF003DF328 /* Network */,
+				3C8CDD1125BA8D4D00F9FBF2 /* Extension */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -259,6 +262,14 @@
 				3C72DA2525A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		3C8CDD1125BA8D4D00F9FBF2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3C8CDD0E25BA8D4A00F9FBF2 /* DateFormatExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		3CB0615025ABE4250088ACFD /* Home */ = {
@@ -577,6 +588,7 @@
 				3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */,
 				3CB0616425ABFDE80088ACFD /* SettingProfileCell.swift in Sources */,
 				3CE3C1B825B7B524003DF328 /* Observable.swift in Sources */,
+				3C8CDD0F25BA8D4A00F9FBF2 /* DateFormatExtension.swift in Sources */,
 				3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */,
 				3CB0616C25AC08100088ACFD /* SettingNavigatorCell.swift in Sources */,
 				3CB0614E25ABE41C0088ACFD /* HomeViewController.swift in Sources */,

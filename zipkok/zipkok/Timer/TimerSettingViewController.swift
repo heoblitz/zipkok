@@ -14,8 +14,22 @@ class TimerSettingViewController: UIViewController {
     @IBOutlet private weak var startTimeView: UIView!
     @IBOutlet private weak var endTimeView: UIView!
     
+    @IBOutlet private weak var startDateLabel: UILabel!
+    @IBOutlet private weak var endDateLabel: UILabel!
+    
+    private let keyChainManager = KeyChainManager()
+
+    var startDate: Date?
+    var endDate: Date?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let startDate = startDate, let endDate = endDate {
+            startDateLabel.text = startDate.challengeSelectTimeFormat
+            endDateLabel.text = endDate.challengeSelectTimeFormat
+        }
+        
         prepareStartImageView()
         prepareStartButtonView()
         prepareStartTimeView()
@@ -50,9 +64,20 @@ class TimerSettingViewController: UIViewController {
     }
     
     @objc func startImageButtonTapped() {
-        guard let timerVc = UIStoryboard(name: "Timer", bundle: nil).instantiateInitialViewController() as? TimerViewController else { fatalError() }
-        timerVc.startDate = Date()
-        timerVc.endDate = Date(timeIntervalSinceNow: 10)
+        guard let jwtToken = keyChainManager.jwtToken, let startTime = startDate, let endTime = endDate else { return }
+        guard let timerVc = UIStoryboard(name: "Timer", bundle: nil).instantiateInitialViewController() as? TimerViewController else { return }
+        
+        ZipkokApi.shared.registerChallengeTime(jwt: jwtToken, start: startTime.challengeTimeFormat, end: endTime.challengeTimeFormat) { [weak self] registerChallengeTimeResponse in
+            guard let self = self else { return }
+            
+            if registerChallengeTimeResponse.isSuccess {
+                timerVc.startDate = startTime
+                timerVc.endDate = endTime
+                self.navigationController?.pushViewController(timerVc, animated: true)
+            } else {
+                print("타임 등록이 되었는가")
+            }
+        }
         
         navigationController?.pushViewController(timerVc, animated: true)
     }

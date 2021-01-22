@@ -60,6 +60,31 @@ extension SelectChallengeViewController: UICollectionViewDataSource {
     }
 }
 
+extension SelectChallengeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item == challenges.count {
+            print("준비중")
+            return
+        }
+        
+        let challenge = challenges[indexPath.item]
+        let dayNumber = challenge.dayNumber
+        let startDate = Date()
+        
+   
+        guard let endDate = Calendar.current.date(byAdding: .day, value: dayNumber, to: startDate) else {
+            return
+            
+        }
+        guard let timerSettingVc = UIStoryboard(name: "TimerSetting", bundle: nil).instantiateInitialViewController() as? TimerSettingViewController else { return }
+        
+        timerSettingVc.startDate = startDate
+        timerSettingVc.endDate = endDate
+        
+        navigationController?.pushViewController(timerSettingVc, animated: true)
+    }
+}
+
 extension SelectChallengeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = view.frame.width - (24 * 2)
