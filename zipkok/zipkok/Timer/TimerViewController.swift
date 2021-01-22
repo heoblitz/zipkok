@@ -64,6 +64,11 @@ class TimerViewController: UIViewController {
         animateCircleProgressBar(with: Double(timeInterval))
     }
     
+    static func storyboardInstance() -> TimerViewController? {
+        let storyboard = UIStoryboard(name: TimerViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
+    }
+    
     private func prepareCircleProgressBar() {
         percentView.layer.masksToBounds = false
         percentView.layer.cornerRadius = 16

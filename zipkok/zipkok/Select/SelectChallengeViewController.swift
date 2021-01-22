@@ -21,6 +21,11 @@ class SelectChallengeViewController: UIViewController {
         bind()
     }
     
+    static func storyboardInstance() -> SelectChallengeViewController? {
+        let storyboard = UIStoryboard(name: SelectChallengeViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
+    }
+    
     private func bind() {
         selectChallengeViewModel.challenges.bind { [weak self] challenges in
             self?.challenges = challenges
@@ -71,7 +76,7 @@ extension SelectChallengeViewController: UICollectionViewDelegate {
                 return
                 
             }
-            guard let timerSettingVc = UIStoryboard(name: "TimerSetting", bundle: nil).instantiateInitialViewController() as? TimerSettingViewController else { return }
+            guard let timerSettingVc = TimerSettingViewController.storyboardInstance() else { return }
             
             timerSettingVc.startDate = startDate
             timerSettingVc.endDate = endDate

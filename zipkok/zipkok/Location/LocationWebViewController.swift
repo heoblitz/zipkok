@@ -24,6 +24,11 @@ class LocationWebViewController: UIViewController {
         prepareNavigationTitle()
     }
     
+    static func storyboardInstance() -> LocationWebViewController? {
+        let storyboard = UIStoryboard(name: LocationWebViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
+    }
+    
     private func prepareWebView() {
         let contentController = WKUserContentController()
         contentController.add(self, name: "callBackHandler")

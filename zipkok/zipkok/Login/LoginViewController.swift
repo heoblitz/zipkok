@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
         prepareKakaoLoginView()
         prepareKakaoLoginViewTapGesture()
     }
-    
+
     func prepareIconTextLabel() {
         iconTextLabel.transform = CGAffineTransform(rotationAngle: -(.pi/8))
     }
@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
                     }
                     
                     if response.isSuccess { // 회원가입 성공
-                        guard let locationVc = UIStoryboard(name: "Location", bundle: nil).instantiateInitialViewController() as? LocationViewController else {
+                        guard let locationVc = LocationViewController.storyboardInstance() else {
                             fatalError()
                         }
                     
@@ -72,12 +72,8 @@ class LoginViewController: UIViewController {
                     } else { // 에러처리
                         
                     }
-                        
                 })
-                
             }
         }
-        
-
     }
 }

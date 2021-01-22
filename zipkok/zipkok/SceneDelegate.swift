@@ -22,19 +22,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).        
         guard let windowScene = (scene as? UIWindowScene) else { return }
-      
-        let window = UIWindow(windowScene: windowScene)
-        
-        guard let loginNavVc = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as? UINavigationController else {
+        guard let loginNavVc = LoginNavigationViewController.storyboardInstance(),
+              let homeNavVc = HomeNavigationViewController.storyboardInstance(),
+              let splashVc = SplashViewController.storyboardInstance() else {
             fatalError()
         }
-        loginNavVc.modalPresentationStyle = .fullScreen
-        window.rootViewController = loginNavVc // Your initial view controller.
+        
+        let keyChainManager = KeyChainManager()
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = splashVc
         window.makeKeyAndVisible()
+        self.window = window
+        
+        if let jwtToken = keyChainManager.jwtToken { // jwt token 이 있을 때
+            ZipkokApi.shared.jwtLogin(jwt: jwtToken) { jwtLoginResponse in
+                if jwtLoginResponse.isSuccess {
+                    homeNavVc.modalPresentationStyle = .fullScreen
+                    window.rootViewController = homeNavVc
+                } else { // jwt token 이 유효하지 않을 때
+                    loginNavVc.modalPresentationStyle = .fullScreen
+                    window.rootViewController = loginNavVc
+                }
+            }
+        } else { // jwt token 이 없으면
+            guard let loginNavVc = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as? UINavigationController else {
+                fatalError()
+            }
+            loginNavVc.modalPresentationStyle = .fullScreen
+            window.rootViewController = loginNavVc
+        }
+        
         self.window = window
     }
 
@@ -65,7 +83,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 

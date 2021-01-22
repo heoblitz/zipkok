@@ -15,6 +15,11 @@ class LoginNavigationViewController: UINavigationController {
         prepareNavigationBar()
     }
     
+    static func storyboardInstance() -> LoginNavigationViewController? {
+        let storyboard = UIStoryboard(name: LoginViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
+    }
+    
     private func prepareNavigationBar() {
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()

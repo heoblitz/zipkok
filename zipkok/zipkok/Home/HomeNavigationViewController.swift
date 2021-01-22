@@ -15,6 +15,11 @@ class HomeNavigationViewController: UINavigationController {
         prepareNavigationBar()
     }
     
+    static func storyboardInstance() -> HomeNavigationViewController? {
+        let storyboard = UIStoryboard(name: HomeViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
+    }
+    
     private func prepareNavigationBar() {
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()

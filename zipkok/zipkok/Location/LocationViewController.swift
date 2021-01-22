@@ -48,6 +48,11 @@ class LocationViewController: UIViewController {
         prepareSubmitButton()
     }
     
+    static func storyboardInstance() -> LocationViewController? {
+        let storyboard = UIStoryboard(name: LocationViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
+    }
+    
     private func prepareSubmitButton() {
         submitButton.layer.masksToBounds = false
         submitButton.layer.cornerRadius = 8
@@ -125,7 +130,7 @@ class LocationViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         self.activityIndicatorView.stopAnimating()
-                        guard let homeNavVc = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as? HomeNavigationViewController else { return }
+                        guard let homeNavVc = HomeNavigationViewController.storyboardInstance() else { return }
                         
                         guard let window = UIApplication.shared.windows.first else { return }
                         window.rootViewController = homeNavVc
@@ -196,7 +201,7 @@ class LocationViewController: UIViewController {
 
 extension LocationViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        guard let locationWebVc = UIStoryboard(name: "LocationWeb", bundle: nil).instantiateInitialViewController() as? LocationWebViewController else {
+        guard let locationWebVc = LocationWebViewController.storyboardInstance() else {
             fatalError()
         }
         locationWebVc.completionHandler = setTextFieldFromLocationWeb

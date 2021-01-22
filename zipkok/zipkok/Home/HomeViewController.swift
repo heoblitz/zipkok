@@ -75,7 +75,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func settingBarButtonItemTapped(_ sender: UIBarButtonItem) {
-        guard let settingVc = UIStoryboard(name: "Setting", bundle: nil).instantiateInitialViewController() as? SettingViewController else {
+        guard let settingVc = SettingViewController.storyboardInstance() else {
             fatalError()
         }
         
@@ -116,7 +116,7 @@ extension HomeViewController: CLLocationManagerDelegate {
             
             ZipkokApi.shared.userLocation(jwt: jwtToken, latitude: latitude, longitude: longitude) { userLocationResponse in
                 if userLocationResponse.isSuccess {
-                    guard let selectChallengeVc = UIStoryboard(name: "SelectChallenge", bundle: nil).instantiateInitialViewController() as? SelectChallengeViewController else { fatalError() }
+                    guard let selectChallengeVc = SelectChallengeViewController.storyboardInstance() else { return }
             
                     self.navigationController?.pushViewController(selectChallengeVc, animated: true)
                 } else {

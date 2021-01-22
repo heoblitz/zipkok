@@ -45,6 +45,9 @@
 		3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */; };
 		3CB0617B25AC18A90088ACFD /* TimerSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */; };
 		3CB0618025AC18BF0088ACFD /* TimerSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */; };
+		3CD801DF25BB1606008EA180 /* ClassNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD801DE25BB1606008EA180 /* ClassNameExtension.swift */; };
+		3CD801E725BB24FB008EA180 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CD801E625BB24FB008EA180 /* Splash.storyboard */; };
+		3CD801EB25BB251B008EA180 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD801EA25BB251B008EA180 /* SplashViewController.swift */; };
 		3CDE69AA25B94A890057A415 /* LocationRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDE69A925B94A890057A415 /* LocationRequestType.swift */; };
 		3CDE69AF25B969F70057A415 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDE69AE25B969F70057A415 /* CustomAlertView.swift */; };
 		3CDE69B225B96A120057A415 /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDE69B125B96A120057A415 /* CustomAlertView.xib */; };
@@ -68,7 +71,6 @@
 		3CF8027425B167F700E3A71D /* GeoCodingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8027325B167F700E3A71D /* GeoCodingApi.swift */; };
 		3CF8027E25B2DAD300E3A71D /* ZipkokApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8027D25B2DAD300E3A71D /* ZipkokApi.swift */; };
 		3CF8028325B2F3E700E3A71D /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8028225B2F3E700E3A71D /* Test.storyboard */; };
-		3CF8028F25B339C700E3A71D /* Wireframe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8028E25B339C700E3A71D /* Wireframe.storyboard */; };
 		FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,9 @@
 		3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingNavigatorCell.xib; sourceTree = "<group>"; };
 		3CB0617A25AC18A90088ACFD /* TimerSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingViewController.swift; sourceTree = "<group>"; };
 		3CB0617F25AC18BF0088ACFD /* TimerSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerSetting.storyboard; sourceTree = "<group>"; };
+		3CD801DE25BB1606008EA180 /* ClassNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameExtension.swift; sourceTree = "<group>"; };
+		3CD801E625BB24FB008EA180 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		3CD801EA25BB251B008EA180 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		3CDE69A925B94A890057A415 /* LocationRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestType.swift; sourceTree = "<group>"; };
 		3CDE69AE25B969F70057A415 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		3CDE69B125B96A120057A415 /* CustomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertView.xib; sourceTree = "<group>"; };
@@ -138,7 +143,6 @@
 		3CF8027325B167F700E3A71D /* GeoCodingApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodingApi.swift; sourceTree = "<group>"; };
 		3CF8027D25B2DAD300E3A71D /* ZipkokApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipkokApi.swift; sourceTree = "<group>"; };
 		3CF8028225B2F3E700E3A71D /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
-		3CF8028E25B339C700E3A71D /* Wireframe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wireframe.storyboard; sourceTree = "<group>"; };
 		F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zipkok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -234,7 +238,8 @@
 				3C72DA1025A9F1C4001567B4 /* TestViewController.swift */,
 				3CF8028225B2F3E700E3A71D /* Test.storyboard */,
 				3C72DA1225A9F1C4001567B4 /* Main.storyboard */,
-				3CF8028E25B339C700E3A71D /* Wireframe.storyboard */,
+				3CD801E625BB24FB008EA180 /* Splash.storyboard */,
+				3CD801EA25BB251B008EA180 /* SplashViewController.swift */,
 				3C356DF925AA9BA600629143 /* MainViewController.swift */,
 				3CB0615025ABE4250088ACFD /* Home */,
 				3CE3C1A525B7A6BD003DF328 /* Select */,
@@ -268,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				3C8CDD0E25BA8D4A00F9FBF2 /* DateFormatExtension.swift */,
+				3CD801DE25BB1606008EA180 /* ClassNameExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -485,7 +491,6 @@
 				3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */,
 				3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */,
 				3CDE69B225B96A120057A415 /* CustomAlertView.xib in Resources */,
-				3CF8028F25B339C700E3A71D /* Wireframe.storyboard in Resources */,
 				3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */,
 				3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */,
 				3CEC75D425AD93D90016738F /* Montserrat-Regular.ttf in Resources */,
@@ -504,6 +509,7 @@
 				3CB0618025AC18BF0088ACFD /* TimerSetting.storyboard in Resources */,
 				3C356E0C25AAC78D00629143 /* NotoSansCJKkr-Bold.otf in Resources */,
 				3CB0615F25ABEFB10088ACFD /* Setting.storyboard in Resources */,
+				3CD801E725BB24FB008EA180 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +577,7 @@
 				3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */,
 				3CB0615A25ABEF9D0088ACFD /* SettingViewController.swift in Sources */,
 				3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */,
+				3CD801DF25BB1606008EA180 /* ClassNameExtension.swift in Sources */,
 				3CDE69AF25B969F70057A415 /* CustomAlertView.swift in Sources */,
 				3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */,
 				3CB0614825AB404D0088ACFD /* ChallengeQuitAlertView.swift in Sources */,
@@ -588,6 +595,7 @@
 				3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */,
 				3CB0616425ABFDE80088ACFD /* SettingProfileCell.swift in Sources */,
 				3CE3C1B825B7B524003DF328 /* Observable.swift in Sources */,
+				3CD801EB25BB251B008EA180 /* SplashViewController.swift in Sources */,
 				3C8CDD0F25BA8D4A00F9FBF2 /* DateFormatExtension.swift in Sources */,
 				3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */,
 				3CB0616C25AC08100088ACFD /* SettingNavigatorCell.swift in Sources */,

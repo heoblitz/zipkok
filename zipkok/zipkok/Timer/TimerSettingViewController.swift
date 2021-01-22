@@ -36,6 +36,11 @@ class TimerSettingViewController: UIViewController {
         prepareEndTimeView()
     }
     
+    static func storyboardInstance() -> TimerSettingViewController? {
+        let storyboard = UIStoryboard(name: TimerSettingViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
+    }
+    
     private func prepareStartImageView() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(startImageButtonTapped))
         startImageView.isUserInteractionEnabled = true
@@ -65,13 +70,15 @@ class TimerSettingViewController: UIViewController {
     
     @objc func startImageButtonTapped() {
         guard let jwtToken = keyChainManager.jwtToken, let startTime = startDate, let endTime = endDate else { return }
-        guard let timerVc = UIStoryboard(name: "Timer", bundle: nil).instantiateInitialViewController() as? TimerViewController else { return }
         
         ZipkokApi.shared.registerChallengeTime(jwt: jwtToken, start: startTime.challengeTimeFormat, end: endTime.challengeTimeFormat) { [weak self] registerChallengeTimeResponse in
             guard let self = self else { return }
             
             if registerChallengeTimeResponse.isSuccess {
                 self.keyChainManager.challengeIdx = registerChallengeTimeResponse.result?.challengeIdx
+                
+                guard let timerVc = TimerViewController.storyboardInstance() else { return }
+                
                 timerVc.startDate = startTime
                 timerVc.endDate = endTime
                 self.navigationController?.pushViewController(timerVc, animated: true)

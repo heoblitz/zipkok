@@ -32,6 +32,11 @@ class SettingViewController: UIViewController {
         settingViewModel.requestUserInfo()
     }
     
+    static func storyboardInstance() -> SettingViewController? {
+        let storyboard = UIStoryboard(name: SettingViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
+    }
+    
     private func bind() {
         settingViewModel.userInfo.bind { [weak self] userInfo in
             guard let self = self else { return }
@@ -54,7 +59,7 @@ class SettingViewController: UIViewController {
     }
     
     @objc func resetButtonTapped() {
-        guard let locationVc = UIStoryboard(name: "Location", bundle: nil).instantiateInitialViewController() as? LocationViewController else { fatalError() }
+        guard let locationVc = LocationViewController.storyboardInstance() else { fatalError() }
         
         locationVc.locationPatchCompletionHandler = { [weak self] location in
             guard let self = self else { return }
