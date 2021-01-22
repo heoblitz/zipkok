@@ -18,7 +18,10 @@ class TimerViewController: UIViewController {
     
     @IBOutlet private weak var percentLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
+    @IBOutlet private weak var startDateLabel: UILabel!
+    @IBOutlet private weak var endDateLabel: UILabel!
     
+    private let keyChainManager = KeyChainManager()
     private let dateManager = DateManager()
     private var isActiveFromBackground: Bool = false
     private var timer: Timer?
@@ -42,7 +45,9 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         if let startDate = startDate, let endDate = endDate {
-            self.timeInterval = Int(endDate.timeIntervalSince(startDate))
+            timeInterval = Int(endDate.timeIntervalSince(startDate))
+            startDateLabel.text = startDate.challengeSelectTimeFormat
+            endDateLabel.text = endDate.challengeSelectTimeFormat
         }
         
         prepareCircleProgressBar()
@@ -115,7 +120,7 @@ class TimerViewController: UIViewController {
                 if self.currentTime > self.timeInterval {
                     self.timer?.invalidate()
                     self.timer = nil
-                    self.alertChallengeSuccessAlertView()
+                    self.successChallenge()
                 }
             })
         }
@@ -139,6 +144,22 @@ class TimerViewController: UIViewController {
             share.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
+    
+    private func successChallenge() {
+        guard let jwtToken = keyChainManager.jwtToken, let idx = keyChainManager.challengeIdx else {
+            print("---> jwtToken, idx can't loaded")
+            return
+        }
+                
+        ZipkokApi.shared.successChallenge(jwt: jwtToken, idx: idx) { successChallengeResponse in
+            if successChallengeResponse.isSuccess {
+                // self.successChallenge()
+                self.alertChallengeSuccessAlertView()
+            } else {
+                print("뭔가 에러")
+            }
+        }
+    }
         
     @objc func sceneDidBecomeActive() {
         guard isActiveFromBackground == true, let startDate = dateManager.startDate, let endDate = dateManager.endDate else { return }
@@ -150,7 +171,8 @@ class TimerViewController: UIViewController {
             timeLabel.text = Int(totalTimeInterval).digitalFormat
             percentLabel.text = "100%"
             circleProgressBar.value = 100
-            alertChallengeSuccessAlertView()
+            successChallenge()
+            // alertChallengeSuccessAlertView()
         } else {
             let passedTimeInterval = currentData.timeIntervalSince(startDate)
             let remainTimeInterval = totalTimeInterval - passedTimeInterval

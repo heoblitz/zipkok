@@ -64,6 +64,19 @@ extension SelectChallengeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == challenges.count {
             print("준비중")
+            // for test
+            let startDate = Date()
+            
+            guard let endDate = Calendar.current.date(byAdding: .second, value: 30, to: startDate) else {
+                return
+                
+            }
+            guard let timerSettingVc = UIStoryboard(name: "TimerSetting", bundle: nil).instantiateInitialViewController() as? TimerSettingViewController else { return }
+            
+            timerSettingVc.startDate = startDate
+            timerSettingVc.endDate = endDate
+            
+            navigationController?.pushViewController(timerSettingVc, animated: true)
             return
         }
         
@@ -71,7 +84,6 @@ extension SelectChallengeViewController: UICollectionViewDelegate {
         let dayNumber = challenge.dayNumber
         let startDate = Date()
         
-   
         guard let endDate = Calendar.current.date(byAdding: .day, value: dayNumber, to: startDate) else {
             return
             

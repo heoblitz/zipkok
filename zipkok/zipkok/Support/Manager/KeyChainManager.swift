@@ -35,4 +35,13 @@ class KeyChainManager {
             KeychainWrapper.standard.set(value, forKey: "userId")
         }
     }
+    
+    var challengeIdx: Int? {
+        get {
+            return KeychainWrapper.standard.integer(forKey: "challengeIdx")
+        } set {
+            guard let value = newValue else { return }
+            KeychainWrapper.standard.set(value, forKey: "challengeIdx")
+        }
+    }
 }

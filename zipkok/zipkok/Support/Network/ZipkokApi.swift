@@ -17,7 +17,8 @@ class ZipkokApi {
     private let registerURLString: String = "/users"
     private let locationURLString: String = "/users/locations"
     private let registerChallengeTimeURLString: String = "/users/challenge-times"
-    
+    private let successChallengeURLString: String = "/challenges"
+        
     private init() {}
 
     func kakaoLogin(token accessToken: String, completionHandler: @escaping (KakaoLoginResponse) -> ()) {
@@ -175,6 +176,29 @@ class ZipkokApi {
             completionHandler(value)
         }
     }
+    
+    func successChallenge(jwt jwtToken: String, idx challengeIdx: Int, completionHandler: @escaping (SuccessChallengeResponse) -> ()) {
+        let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
+        
+        let challengeSuccessURLString = baseURLString + successChallengeURLString + "/\(challengeIdx)/" + "success"
+        let request = AF.request(challengeSuccessURLString, method: .post, encoding: Alamofire.JSONEncoding.default, headers: headers)
+         
+        request.responseDecodable(of: SuccessChallengeResponse.self) { response in
+            if let error = response.error {
+                print(error)
+                print(response)
+                return
+            }
+
+            guard let value = response.value else {
+                print("data is nil")
+                return
+            }
+
+            print(value)
+            completionHandler(value)
+        }
+    }
 }
 
 // MARK:- kakaoLogin
@@ -258,18 +282,9 @@ struct RegisterChallengeTimeResult: Codable {
     let challengeIdx: Int
 }
 
-//"{
-//    ""isSuccess"": true,
-//    ""code"": 1000,
-//    ""message"": ""요청에 성공하였습니다."",
-//    ""result"": {
-//        ""challengeIdx"": 3
-//    }
-//}"
-
-            
-            
-            
-            
-            
-            
+// MARK:- SuccessChallenge
+struct SuccessChallengeResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+}
