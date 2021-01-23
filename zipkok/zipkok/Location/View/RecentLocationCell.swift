@@ -23,4 +23,8 @@ class RecentLocationCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func update(by location: RecentLocation) {
+        parcelAddressLabel.text = location.parcelAddressing
+        streetAddressLabel.text = location.streetAddressing
+    }
 }

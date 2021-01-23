@@ -56,11 +56,16 @@ class LocationViewController: UIViewController {
         super.viewDidLoad()
         
         prepareNavigationTitle()
-        prepareViewTapGesture()
         prepareSearchTextField()
         prepareCurrentLocationButtonView()
         prepareSubmitButton()
+        prepareRecentLocationTableView()
+        
         bind()
+        
+        if let jwtToken = keyChainManager.jwtToken {
+            recentLocationViewModel.requestRecentLocations(jwt: jwtToken)
+        }
     }
     
     static func storyboardInstance() -> LocationViewController? {
@@ -74,6 +79,13 @@ class LocationViewController: UIViewController {
             self.recentLocations = recentLocations
             self.recentLocationTableView.reloadData()
         }
+    }
+    
+    private func prepareRecentLocationTableView() {
+        recentLocationTableView.dataSource = self
+        recentLocationTableView.delegate = self
+        recentLocationTableView.register(UINib(nibName: "RecentLocationCell", bundle: nil), forCellReuseIdentifier: "RecentLocationCell")
+        recentLocationTableView.register(UINib(nibName: "RecentLocationHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "RecentLocationHeaderView")
     }
     
     private func prepareSubmitButton() {
@@ -100,16 +112,11 @@ class LocationViewController: UIViewController {
     
     private func prepareCurrentLocationButtonView() {
         let tapGusture = UITapGestureRecognizer(target: self, action: #selector(currentLocationButtonViewTapped))
+        tapGusture.cancelsTouchesInView = false
         currentLocationButtonView.isUserInteractionEnabled = true
         currentLocationButtonView.addGestureRecognizer(tapGusture)
         currentLocationButtonView.layer.masksToBounds = false
         currentLocationButtonView.layer.cornerRadius = 8
-    }
-    
-    private func prepareViewTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
-        view.isUserInteractionEnabled = true
-        view.addGestureRecognizer(tapGesture)
     }
     
     private func prepareNavigationTitle() {
@@ -244,7 +251,7 @@ extension LocationViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             locationManager.stopMonitoringSignificantLocationChanges()
             
-            GeoCodingApi.shared.requestRegioncode(by: (longitude, latitude), completionHandler: {  [weak self] addressName in
+            GeoCodingApi.shared.requestRegioncode(by: (longitude, latitude), completionHandler: { [weak self] addressName in
                 guard let self = self else { return }
                 
                 OperationQueue.main.addOperation {
@@ -268,10 +275,41 @@ extension LocationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let recentLocationCell = tableView.dequeueReusableCell(withIdentifier: "RecentLocationCell", for: indexPath) as? RecentLocationCell else {
+            fatalError()
+        }
+        let location = recentLocations[indexPath.item]
+        recentLocationCell.update(by: location)
+        
+        return recentLocationCell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RecentLocationHeaderView") else {
+            fatalError()
+        }
+        headerView.contentView.backgroundColor = .white
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let separatorView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 1))
+        separatorView.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
+        return separatorView
     }
 }
 
 extension LocationViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let location = recentLocations[indexPath.item]
+        let parcelAddress = location.parcelAddressing
+        
+        GeoCodingApi.shared.requestCoord(by: location.parcelAddressing) { [weak self] (latitude, longitude) in
+            guard let self = self else { return }
+            let locationInfo = LocationInfo(latitude: latitude, longitude: longitude, name: parcelAddress)
+
+            self.locationInfo = locationInfo
+            self.searchTextField.text = parcelAddress
+        }
+    }
 }

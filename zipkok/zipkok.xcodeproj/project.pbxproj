@@ -76,6 +76,7 @@
 		3CF8027425B167F700E3A71D /* GeoCodingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8027325B167F700E3A71D /* GeoCodingApi.swift */; };
 		3CF8027E25B2DAD300E3A71D /* ZipkokApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8027D25B2DAD300E3A71D /* ZipkokApi.swift */; };
 		3CF8028325B2F3E700E3A71D /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8028225B2F3E700E3A71D /* Test.storyboard */; };
+		3CFAA9AB25BC702700292025 /* EventScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAA9AA25BC702700292025 /* EventScrollView.swift */; };
 		FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +155,7 @@
 		3CF8027325B167F700E3A71D /* GeoCodingApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodingApi.swift; sourceTree = "<group>"; };
 		3CF8027D25B2DAD300E3A71D /* ZipkokApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipkokApi.swift; sourceTree = "<group>"; };
 		3CF8028225B2F3E700E3A71D /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		3CFAA9AA25BC702700292025 /* EventScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScrollView.swift; sourceTree = "<group>"; };
 		F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zipkok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -428,6 +430,7 @@
 				3CEF692125BBF5BB00C47255 /* RecentLocationCell.xib */,
 				3CEF692725BBF7B300C47255 /* RecentLocationHeaderView.swift */,
 				3CEF692A25BBF7BC00C47255 /* RecentLocationHeaderView.xib */,
+				3CFAA9AA25BC702700292025 /* EventScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				3CB0615A25ABEF9D0088ACFD /* SettingViewController.swift in Sources */,
 				3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */,
 				3CD801DF25BB1606008EA180 /* ClassNameExtension.swift in Sources */,
+				3CFAA9AB25BC702700292025 /* EventScrollView.swift in Sources */,
 				3CDE69AF25B969F70057A415 /* CustomAlertView.swift in Sources */,
 				3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */,
 				3CB0614825AB404D0088ACFD /* ChallengeQuitAlertView.swift in Sources */,

@@ -4,8 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,30 +14,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecentLocationHeaderView" customModule="zipkok" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="RecentLocationHeaderView" customModule="zipkok" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="406" height="65"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIf-RE-CYD">
-                    <rect key="frame" x="24" y="-10" width="59" height="24"/>
+                    <rect key="frame" x="24" y="16" width="59" height="29"/>
                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                     <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="qMb-C4-UrU"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="top" secondItem="XIf-RE-CYD" secondAttribute="top" constant="10" id="kWm-pa-NwT"/>
+                <constraint firstAttribute="bottom" secondItem="XIf-RE-CYD" secondAttribute="bottom" constant="20" id="fVm-DE-kmB"/>
+                <constraint firstItem="XIf-RE-CYD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="np7-Bk-V7S"/>
                 <constraint firstItem="XIf-RE-CYD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="zNY-I4-5fq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="107.97101449275362" y="189.17410714285714"/>
+            <point key="canvasLocation" x="117.39130434782609" y="183.81696428571428"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
