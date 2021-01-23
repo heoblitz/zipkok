@@ -10,6 +10,6 @@ target 'zipkok' do
   pod 'Alamofire', '~> 5.2'
   pod 'MBCircularProgressBar'
   pod 'SwiftKeychainWrapper'
+  pod 'Toast-Swift', '~> 5.0.1'
   # Pods for zipkok
-
 end

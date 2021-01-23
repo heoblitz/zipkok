@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8BA5E348E64AFAB335EC680A67122E64"
-               BuildableName = "MBCircularProgressBar-MBCircularProgressBar.bundle"
-               BlueprintName = "MBCircularProgressBar-MBCircularProgressBar"
+               BlueprintIdentifier = "B990BD87169C76A3ED3FE8A9258D91A3"
+               BuildableName = "Toast-Swift.framework"
+               BlueprintName = "Toast-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
