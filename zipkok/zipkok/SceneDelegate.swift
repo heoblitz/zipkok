@@ -25,16 +25,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         guard let loginNavVc = LoginNavigationViewController.storyboardInstance(),
               let homeNavVc = HomeNavigationViewController.storyboardInstance(),
-              let splashVc = SplashViewController.storyboardInstance() else {
+              let splashVc = SplashViewController.storyboardInstance(),
+                let testVc = TestViewController.storyboardInstance() else {
             fatalError()
         }
+        
+// for apple login test code
+//        let window = UIWindow(windowScene: windowScene)
+//
+//        window.rootViewController = testVc
+//        window.makeKeyAndVisible()
+//        self.window = window
         
         let keyChainManager = KeyChainManager()
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = splashVc
         window.makeKeyAndVisible()
         self.window = window
-        
+
         if let jwtToken = keyChainManager.jwtToken { // jwt token 이 있을 때
             ZipkokApi.shared.jwtLogin(jwt: jwtToken) { jwtLoginResponse in
                 if jwtLoginResponse.isSuccess {
@@ -52,7 +60,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             loginNavVc.modalPresentationStyle = .fullScreen
             window.rootViewController = loginNavVc
         }
-        
+
         self.window = window
     }
 

@@ -7,14 +7,23 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import AuthenticationServices
 
 class TestViewController: UIViewController {
+    
+    @IBOutlet private weak var signInView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        addButton()
     }
 
+    static func storyboardInstance() -> TestViewController? {
+        let storyboard = UIStoryboard(name: TestViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
+    }
+    
     @IBAction func requestCoordButtonTapped() {
         GeoCodingApi.shared.requestCoord(by: "석계로 49") { x, y in
             print(x, y)
@@ -46,5 +55,36 @@ class TestViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
+    
+    func addButton() {
+        let button = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
+        button.addTarget(self, action: #selector(handleAppleSignInButton), for: .touchUpInside)
+        signInView.addSubview(button)
+    }
+    
+    @objc func handleAppleSignInButton() {
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName, .email]
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self as? ASAuthorizationControllerDelegate
+        controller.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
+        controller.performRequests()
+    }
 }
 
+extension TestViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        
+        if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            let identityToken = String(data: credential.identityToken!, encoding: .utf8)!
+            let authorizationCode = String(data: credential.authorizationCode!, encoding: .utf8)!
+
+            print("identityToken", identityToken)
+            print("authorizationCode", authorizationCode)
+        }
+    }
+}
