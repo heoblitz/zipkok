@@ -15,6 +15,9 @@ class LocationViewController: UIViewController {
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var submitButton: UIButton!
     
+    @IBOutlet private weak var recentLocationTableView: UITableView!
+    @IBOutlet private weak var recentLocationTableViewHeight: NSLayoutConstraint!
+    
     lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -32,6 +35,17 @@ class LocationViewController: UIViewController {
     }
     
     private let keyChainManager = KeyChainManager()
+    private let recentLocationViewModel = RecentLocationViewModel()
+    private var recentLocations: [RecentLocation] = [] {
+        didSet {
+            if recentLocations.count == 0 {
+                recentLocationTableView.isHidden = true
+            } else {
+                recentLocationTableView.isHidden = false
+            }
+        }
+    }
+    
     private var isReceivedCurrentLocation: Bool = false
     
     var locationRequestType: LocationRequestType = .register
@@ -46,11 +60,20 @@ class LocationViewController: UIViewController {
         prepareSearchTextField()
         prepareCurrentLocationButtonView()
         prepareSubmitButton()
+        bind()
     }
     
     static func storyboardInstance() -> LocationViewController? {
         let storyboard = UIStoryboard(name: LocationViewController.storyboardName(), bundle: nil)
         return storyboard.instantiateInitialViewController()
+    }
+    
+    private func bind() {
+        recentLocationViewModel.locations.bind { [weak self] recentLocations in
+            guard let self = self else { return }
+            self.recentLocations = recentLocations
+            self.recentLocationTableView.reloadData()
+        }
     }
     
     private func prepareSubmitButton() {
@@ -237,4 +260,18 @@ extension LocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("error:: \(error.localizedDescription)")
     }
+}
+
+extension LocationViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recentLocations.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+}
+
+extension LocationViewController: UITableViewDelegate {
+    
 }

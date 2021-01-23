@@ -65,6 +65,11 @@
 		3CE3C1D925B8644F003DF328 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE3C1D825B8644F003DF328 /* SettingViewModel.swift */; };
 		3CEC75D425AD93D90016738F /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */; };
 		3CEC75D725AD93E30016738F /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */; };
+		3CEF691B25BBE87300C47255 /* RecentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEF691A25BBE87300C47255 /* RecentLocationViewModel.swift */; };
+		3CEF692225BBF5BB00C47255 /* RecentLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEF692025BBF5BB00C47255 /* RecentLocationCell.swift */; };
+		3CEF692325BBF5BB00C47255 /* RecentLocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CEF692125BBF5BB00C47255 /* RecentLocationCell.xib */; };
+		3CEF692825BBF7B300C47255 /* RecentLocationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEF692725BBF7B300C47255 /* RecentLocationHeaderView.swift */; };
+		3CEF692B25BBF7BC00C47255 /* RecentLocationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CEF692A25BBF7BC00C47255 /* RecentLocationHeaderView.xib */; };
 		3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025025B06ED000E3A71D /* dottedLineView.swift */; };
 		3CF8025525B077F300E3A71D /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025425B077F300E3A71D /* DateManager.swift */; };
 		3CF8025825B125AC00E3A71D /* letterSpacingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025725B125AC00E3A71D /* letterSpacingLabel.swift */; };
@@ -137,6 +142,12 @@
 		3CE3C1D825B8644F003DF328 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		3CEC75D325AD93D90016738F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		3CEC75D625AD93E30016738F /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		3CEF691A25BBE87300C47255 /* RecentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentLocationViewModel.swift; sourceTree = "<group>"; };
+		3CEF692025BBF5BB00C47255 /* RecentLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentLocationCell.swift; sourceTree = "<group>"; };
+		3CEF692125BBF5BB00C47255 /* RecentLocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentLocationCell.xib; sourceTree = "<group>"; };
+		3CEF692725BBF7B300C47255 /* RecentLocationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentLocationHeaderView.swift; sourceTree = "<group>"; };
+		3CEF692A25BBF7BC00C47255 /* RecentLocationHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentLocationHeaderView.xib; sourceTree = "<group>"; };
+		3CEF692D25BBFF2400C47255 /* zipkok.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = zipkok.entitlements; sourceTree = "<group>"; };
 		3CF8025025B06ED000E3A71D /* dottedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dottedLineView.swift; sourceTree = "<group>"; };
 		3CF8025425B077F300E3A71D /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		3CF8025725B125AC00E3A71D /* letterSpacingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterSpacingLabel.swift; sourceTree = "<group>"; };
@@ -184,6 +195,8 @@
 				3C356E1B25AAE20300629143 /* LocationWeb.storyboard */,
 				3C356E1825AAE1F100629143 /* LocationWebViewController.swift */,
 				3CDE69A925B94A890057A415 /* LocationRequestType.swift */,
+				3CEF691D25BBE87A00C47255 /* ViewModel */,
+				3CEF692525BBF5C300C47255 /* View */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -233,6 +246,7 @@
 		3C72DA0B25A9F1C4001567B4 /* zipkok */ = {
 			isa = PBXGroup;
 			children = (
+				3CEF692D25BBFF2400C47255 /* zipkok.entitlements */,
 				3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */,
 				3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */,
 				3C72DA1025A9F1C4001567B4 /* TestViewController.swift */,
@@ -399,6 +413,25 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		3CEF691D25BBE87A00C47255 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3CEF691A25BBE87300C47255 /* RecentLocationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3CEF692525BBF5C300C47255 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CEF692025BBF5BB00C47255 /* RecentLocationCell.swift */,
+				3CEF692125BBF5BB00C47255 /* RecentLocationCell.xib */,
+				3CEF692725BBF7B300C47255 /* RecentLocationHeaderView.swift */,
+				3CEF692A25BBF7BC00C47255 /* RecentLocationHeaderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3CF8027825B1680E00E3A71D /* GeoCoding */ = {
 			isa = PBXGroup;
 			children = (
@@ -494,6 +527,7 @@
 				3CB0615325ABE4330088ACFD /* Home.storyboard in Resources */,
 				3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */,
 				3CEC75D425AD93D90016738F /* Montserrat-Regular.ttf in Resources */,
+				3CEF692325BBF5BB00C47255 /* RecentLocationCell.xib in Resources */,
 				3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */,
 				3CEC75D725AD93E30016738F /* Montserrat-Medium.ttf in Resources */,
 				3CE3C1AD25B7AB70003DF328 /* SelectChallengeCell.xib in Resources */,
@@ -510,6 +544,7 @@
 				3C356E0C25AAC78D00629143 /* NotoSansCJKkr-Bold.otf in Resources */,
 				3CB0615F25ABEFB10088ACFD /* Setting.storyboard in Resources */,
 				3CD801E725BB24FB008EA180 /* Splash.storyboard in Resources */,
+				3CEF692B25BBF7BC00C47255 /* RecentLocationHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C356E1925AAE1F100629143 /* LocationWebViewController.swift in Sources */,
+				3CEF692825BBF7B300C47255 /* RecentLocationHeaderView.swift in Sources */,
 				3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */,
 				3CDE69AA25B94A890057A415 /* LocationRequestType.swift in Sources */,
 				3CF8025525B077F300E3A71D /* DateManager.swift in Sources */,
@@ -599,6 +635,8 @@
 				3C8CDD0F25BA8D4A00F9FBF2 /* DateFormatExtension.swift in Sources */,
 				3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */,
 				3CB0616C25AC08100088ACFD /* SettingNavigatorCell.swift in Sources */,
+				3CEF692225BBF5BB00C47255 /* RecentLocationCell.swift in Sources */,
+				3CEF691B25BBE87300C47255 /* RecentLocationViewModel.swift in Sources */,
 				3CB0614E25ABE41C0088ACFD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -747,6 +785,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = zipkok/zipkok.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				INFOPLIST_FILE = zipkok/Info.plist;
@@ -768,6 +807,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = zipkok/zipkok.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				INFOPLIST_FILE = zipkok/Info.plist;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class SettingViewController: UIViewController {
 
@@ -121,4 +122,9 @@ extension SettingViewController: UITableViewDataSource {
 }
 
 extension SettingViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            view.makeToast("준비중인 기능입니다.")
+        }
+    }
 }

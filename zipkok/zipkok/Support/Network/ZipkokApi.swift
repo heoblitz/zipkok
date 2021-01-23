@@ -12,6 +12,7 @@ class ZipkokApi {
     static let shared: ZipkokApi = ZipkokApi()
 
     private let baseURLString: String = "http://15.164.161.25"
+    
     private let autoLoginURLString: String = "/login/jwt"
     private let kakaoLoginURLString: String = "/login/kakao"
     private let registerURLString: String = "/users"
@@ -19,6 +20,7 @@ class ZipkokApi {
     private let registerChallengeTimeURLString: String = "/users/challenge-times"
     private let successChallengeURLString: String = "/challenges"
     private let jwtLoginURLString: String = "/login/jwt"
+    private let recentLocationURLString: String = "/users/recently-locations"
     
     private init() {}
 
@@ -221,6 +223,27 @@ class ZipkokApi {
             completionHandler(value)
         }
     }
+    
+    func recentLocation(jwt jwtToken: String, completionHandler: @escaping (RecentLocationResponse) -> ()) {
+        let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
+        let request = AF.request(baseURLString + recentLocationURLString, method: .get, encoding: Alamofire.JSONEncoding.default, headers: headers)
+        
+        request.responseDecodable(of: RecentLocationResponse.self) { response in
+            if let error = response.error {
+                print(error)
+                print(response)
+                return
+            }
+            
+            guard let value = response.value else {
+                print("data is nil")
+                return
+            }
+            
+            print(value)
+            completionHandler(value)
+        }
+    }
 }
 
 // MARK:- kakaoLogin
@@ -272,7 +295,6 @@ struct UserInfoResult: Codable {
     }
 }
 
-
 // MARK:- patchUserInfo
 struct PatchUserInfoResponse: Codable {
     let isSuccess: Bool
@@ -292,7 +314,7 @@ struct UserLocationResponse: Codable {
     let message: String
 }
 
-// MARK:- RegisterChallengeTime
+// MARK:- registerChallengeTime
 struct RegisterChallengeTimeResponse: Codable {
     let isSuccess: Bool
     let code: Int
@@ -304,16 +326,31 @@ struct RegisterChallengeTimeResult: Codable {
     let challengeIdx: Int
 }
 
-// MARK:- SuccessChallenge
+// MARK:- successChallenge
 struct SuccessChallengeResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
 }
 
-// MARK:- JwtLogin
+// MARK:- jwtLogin
 struct JwtLoginResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
+}
+
+// MARK:- recentLocations
+struct RecentLocationResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [RecentLocation]?
+}
+
+struct RecentLocation: Codable {
+    let latitude: Double
+    let longitude: Double
+    let parcelAddressing: String
+    let streetAddressing: String
 }

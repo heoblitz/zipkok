@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class SelectChallengeViewController: UIViewController {
 
@@ -69,6 +70,7 @@ extension SelectChallengeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == challenges.count {
             print("준비중")
+            view.makeToast("준비중인 기능입니다.")
             // for test
             let startDate = Date()
             
