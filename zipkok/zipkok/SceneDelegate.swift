@@ -56,11 +56,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                            let endDate = result.endDate { // 챌린지가 있을 때
                             
                             homeNavVc.pushViewController(selectChallengeVc, animated: false)
+                            selectChallengeVc.navigationItem.backButtonTitle = ""
                             timerVc.isActiveFromBackground = true
+                            timerVc.challengeIdx = result.challengeIdx
                             timerVc.startDate = startDate
                             timerVc.endDate = endDate
                             
                             homeNavVc.pushViewController(timerVc, animated: false)
+                            timerVc.navigationItem.backButtonTitle = ""
                             window.rootViewController = homeNavVc
                         } else { // 챌린지가 없을 때
                             homeNavVc.modalPresentationStyle = .fullScreen

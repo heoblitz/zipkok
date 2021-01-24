@@ -22,6 +22,7 @@ class ZipkokApi {
     private let jwtLoginURLString: String = "/login/jwt"
     private let recentLocationURLString: String = "/users/recently-locations"
     private let challengeTimeURLString: String = "/users/challenge-times"
+    private let failChallengeURLString: String = "/challenges"
     
     private init() {}
 
@@ -266,6 +267,29 @@ class ZipkokApi {
             completionHandler(value)
         }
     }
+    
+    func failChallenge(jwt jwtToken: String, idx challengeIdx: Int, completionHandler: @escaping (FailChallengeResponse) -> ()) {
+        let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
+        
+        let challengeSuccessURLString = baseURLString + failChallengeURLString + "/\(challengeIdx)/" + "fail"
+        let request = AF.request(challengeSuccessURLString, method: .post, encoding: Alamofire.JSONEncoding.default, headers: headers)
+        
+        request.responseDecodable(of: FailChallengeResponse.self) { response in
+            if let error = response.error {
+                print(error)
+                print(response)
+                return
+            }
+
+            guard let value = response.value else {
+                print("data is nil")
+                return
+            }
+
+            print(value)
+            completionHandler(value)
+        }
+    }
 }
 
 // MARK:- kakaoLogin
@@ -397,4 +421,11 @@ struct ChallengeTimeResult: Codable {
     var endDate: Date? {
         return endTime.stringToDate
     }
+}
+
+// NARK:- failChallenge
+struct FailChallengeResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
 }

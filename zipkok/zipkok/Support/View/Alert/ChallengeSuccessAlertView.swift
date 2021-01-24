@@ -10,6 +10,7 @@ import UIKit
 class ChallengeSuccessAlertView: UIView {
     @IBOutlet weak var alertContentView: UIView!
     @IBOutlet weak var shareButtonView: UIView!
+    @IBOutlet weak var dismissButton: UIButton!
     
     static func loadViewFromNib() -> ChallengeSuccessAlertView {
         let bundle = Bundle(for: self)

@@ -7,6 +7,7 @@
 
 import UIKit
 import MBCircularProgressBar
+import Toast_Swift
 
 class TimerViewController: UIViewController {
 
@@ -23,6 +24,36 @@ class TimerViewController: UIViewController {
     
     private let keyChainManager = KeyChainManager()
     private let dateManager = DateManager()
+    
+    private lazy var quitAlertView: ChallengeQuitAlertView = {
+        let quitAlertView = ChallengeQuitAlertView.loadViewFromNib()
+        quitAlertView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let quitTapGesture = UITapGestureRecognizer(target: self, action: #selector(quitAlertDissmissButtonTapped))
+        quitAlertView.cancelButtonView.addGestureRecognizer(quitTapGesture)
+        quitAlertView.cancelButtonView.isUserInteractionEnabled = true
+        
+        let failTapGesture = UITapGestureRecognizer(target: self, action: #selector(quitAlertFailButtonTapped))
+        quitAlertView.quitButtonView.addGestureRecognizer(failTapGesture)
+        quitAlertView.quitButtonView.isUserInteractionEnabled = true
+        return quitAlertView
+    }()
+    
+    private lazy var successAlertView: ChallengeSuccessAlertView = {
+        let successAlertView = ChallengeSuccessAlertView.loadViewFromNib()
+        successAlertView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let dismissTapGesture = UITapGestureRecognizer(target: self, action: #selector(successAlertDismissButtonTapped))
+        successAlertView.dismissButton.addGestureRecognizer(dismissTapGesture)
+        successAlertView.dismissButton.isUserInteractionEnabled = true
+        
+        let shareTapGesture = UITapGestureRecognizer(target: self, action: #selector(successAlertShareButtonTapped))
+        successAlertView.shareButtonView.addGestureRecognizer(shareTapGesture)
+        successAlertView.shareButtonView.isUserInteractionEnabled = true
+        
+        return successAlertView
+    }()
+    
     private var timer: Timer?
     
     private var currentTime: Int = 0
@@ -50,7 +81,7 @@ class TimerViewController: UIViewController {
             startDateLabel.text = startDate.challengeSelectTimeFormat
             endDateLabel.text = endDate.challengeSelectTimeFormat
         }
-        
+        setNavigationComponents()
         prepareCircleProgressBar()
         prepareProgressBar()
         prepareStartTimeView()
@@ -69,6 +100,10 @@ class TimerViewController: UIViewController {
     static func storyboardInstance() -> TimerViewController? {
         let storyboard = UIStoryboard(name: TimerViewController.storyboardName(), bundle: nil)
         return storyboard.instantiateInitialViewController()
+    }
+    
+    private func setNavigationComponents() {
+        navigationItem.hidesBackButton = true
     }
     
     private func prepareCircleProgressBar() {
@@ -106,6 +141,9 @@ class TimerViewController: UIViewController {
     }
     
     private func prepareQuitButtonView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(quitButtonViewTapped))
+        quitButtonView.addGestureRecognizer(tapGesture)
+        quitButtonView.isUserInteractionEnabled = true
         quitButtonView.layer.masksToBounds = false
         quitButtonView.layer.cornerRadius = 8
     }
@@ -140,15 +178,13 @@ class TimerViewController: UIViewController {
     }
     
     private func alertChallengeSuccessAlertView() {
-        let share = ChallengeSuccessAlertView.loadViewFromNib()
-        share.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(share)
+        view.addSubview(successAlertView)
         
         NSLayoutConstraint.activate([
-            share.topAnchor.constraint(equalTo: view.topAnchor),
-            share.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            share.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            share.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            successAlertView.topAnchor.constraint(equalTo: view.topAnchor),
+            successAlertView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            successAlertView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            successAlertView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
@@ -207,6 +243,41 @@ class TimerViewController: UIViewController {
         
         circleProgressBar.value = 0
         circleProgressBar.layer.removeAllAnimations()
+    }
+    
+    @objc func quitButtonViewTapped() {
+        view.addSubview(quitAlertView)
+        
+        NSLayoutConstraint.activate([
+            quitAlertView.topAnchor.constraint(equalTo: view.topAnchor),
+            quitAlertView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            quitAlertView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            quitAlertView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+    
+    @objc func quitAlertDissmissButtonTapped() {
+        quitAlertView.removeFromSuperview()
+    }
+    
+    @objc func quitAlertFailButtonTapped() {
+        guard let jwtToken = keyChainManager.jwtToken, let idx = challengeIdx else { return }
+        
+        ZipkokApi.shared.failChallenge(jwt: jwtToken, idx: idx) { failChallengeResponse in
+            if failChallengeResponse.isSuccess {
+                self.navigationController?.popToRootViewController(animated: true)
+            } else {
+                // 예외처리
+            }
+        }
+    }
+    
+    @objc func successAlertShareButtonTapped() {
+        view.makeToast("준비중인 기능입니다.")
+    }
+    
+    @objc func successAlertDismissButtonTapped() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 
