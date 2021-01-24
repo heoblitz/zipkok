@@ -77,10 +77,12 @@ class TimerSettingViewController: UIViewController {
             if registerChallengeTimeResponse.isSuccess {
                 self.keyChainManager.challengeIdx = registerChallengeTimeResponse.result?.challengeIdx
                 
-                guard let timerVc = TimerViewController.storyboardInstance() else { return }
+                guard let timerVc = TimerViewController.storyboardInstance(), let result = registerChallengeTimeResponse.result else { return }
                 
+                timerVc.challengeIdx = result.challengeIdx
                 timerVc.startDate = startTime
                 timerVc.endDate = endTime
+                
                 self.navigationController?.pushViewController(timerVc, animated: true)
             } else {
                 print("---> Challenge Register Error")

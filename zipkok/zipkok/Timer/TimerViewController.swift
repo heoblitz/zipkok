@@ -23,7 +23,6 @@ class TimerViewController: UIViewController {
     
     private let keyChainManager = KeyChainManager()
     private let dateManager = DateManager()
-    private var isActiveFromBackground: Bool = false
     private var timer: Timer?
     
     private var currentTime: Int = 0
@@ -34,6 +33,8 @@ class TimerViewController: UIViewController {
         return String(format: "%2.0f", percent) + "%"
     }
     
+    var isActiveFromBackground: Bool = false
+    var challengeIdx: Int?
     var startDate: Date?
     var endDate: Date?
     
@@ -61,6 +62,7 @@ class TimerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        restoreTimer() // Access from background or sceneDelegate
         animateCircleProgressBar(with: Double(timeInterval))
     }
     
@@ -165,9 +167,9 @@ class TimerViewController: UIViewController {
             }
         }
     }
-        
-    @objc func sceneDidBecomeActive() {
-        guard isActiveFromBackground == true, let startDate = dateManager.startDate, let endDate = dateManager.endDate else { return }
+    
+    private func restoreTimer() {
+        guard isActiveFromBackground == true, let startDate = startDate, let endDate = endDate else { return }
         
         let totalTimeInterval = endDate.timeIntervalSince(startDate)
         let currentData = Date()
@@ -177,7 +179,6 @@ class TimerViewController: UIViewController {
             percentLabel.text = "100%"
             circleProgressBar.value = 100
             successChallenge()
-            // alertChallengeSuccessAlertView()
         } else {
             let passedTimeInterval = currentData.timeIntervalSince(startDate)
             let remainTimeInterval = totalTimeInterval - passedTimeInterval
@@ -190,6 +191,10 @@ class TimerViewController: UIViewController {
             circleProgressBar.layer.removeAllAnimations()
             animateCircleProgressBar(with: remainTimeInterval)
         }
+    }
+        
+    @objc func sceneDidBecomeActive() {
+        restoreTimer()
     }
     
     @objc func didEnterBackgroundNotification() {

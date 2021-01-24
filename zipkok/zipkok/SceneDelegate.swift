@@ -26,8 +26,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let loginNavVc = LoginNavigationViewController.storyboardInstance(),
               let homeNavVc = HomeNavigationViewController.storyboardInstance(),
               let splashVc = SplashViewController.storyboardInstance(),
-                let testVc = TestViewController.storyboardInstance() else {
-            fatalError()
+              let selectChallengeVc = SelectChallengeViewController.storyboardInstance(),
+              let timerSettingVc = TimerSettingViewController.storyboardInstance(),
+              let timerVc = TimerViewController.storyboardInstance(),
+              let testVc = TestViewController.storyboardInstance() else {
+              fatalError()
         }
         
 // for apple login test code
@@ -45,9 +48,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         if let jwtToken = keyChainManager.jwtToken { // jwt token 이 있을 때
             ZipkokApi.shared.jwtLogin(jwt: jwtToken) { jwtLoginResponse in
-                if jwtLoginResponse.isSuccess {
-                    homeNavVc.modalPresentationStyle = .fullScreen
-                    window.rootViewController = homeNavVc
+                if jwtLoginResponse.isSuccess { // jwt token 이 유효할 때
+                    ZipkokApi.shared.challengeTime(jwt: jwtToken) { challengeTimeResponse in
+                        if challengeTimeResponse.code == 1000,
+                           let result = challengeTimeResponse.result,
+                           let startDate = result.startDate,
+                           let endDate = result.endDate { // 챌린지가 있을 때
+                            
+                            homeNavVc.pushViewController(selectChallengeVc, animated: false)
+                            timerVc.isActiveFromBackground = true
+                            timerVc.startDate = startDate
+                            timerVc.endDate = endDate
+                            
+                            homeNavVc.pushViewController(timerVc, animated: false)
+                            window.rootViewController = homeNavVc
+                        } else { // 챌린지가 없을 때
+                            homeNavVc.modalPresentationStyle = .fullScreen
+                            window.rootViewController = homeNavVc
+                        }
+                    }
                 } else { // jwt token 이 유효하지 않을 때
                     loginNavVc.modalPresentationStyle = .fullScreen
                     window.rootViewController = loginNavVc
