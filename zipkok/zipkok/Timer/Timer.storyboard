@@ -197,13 +197,13 @@
                                     <constraint firstItem="lne-p9-HVp" firstAttribute="centerX" secondItem="n8a-uH-Po4" secondAttribute="centerX" id="bwi-4J-UJ8"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" 0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csH-fO-bMO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csH-fO-bMO">
                                 <rect key="frame" x="184" y="474.5" width="46" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" red="0.24313725490196078" green="0.44705882352941173" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.10000000000000001" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GAK-Tr-aXE">
+                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAK-Tr-aXE">
                                 <rect key="frame" x="174" y="470.5" width="66" height="30"/>
                                 <color key="backgroundColor" red="0.24313725490196078" green="0.44705882352941173" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -223,6 +223,7 @@
                             <constraint firstItem="Oaf-tF-Yr5" firstAttribute="centerX" secondItem="nF7-Sw-hMA" secondAttribute="centerX" id="J7x-2g-39P"/>
                             <constraint firstItem="csH-fO-bMO" firstAttribute="trailing" secondItem="GAK-Tr-aXE" secondAttribute="trailing" constant="-10" id="Loa-Vd-zAG"/>
                             <constraint firstItem="But-eM-oQe" firstAttribute="centerX" secondItem="dkc-Ag-BOl" secondAttribute="centerX" id="Uyj-kg-qfl"/>
+                            <constraint firstItem="GAK-Tr-aXE" firstAttribute="top" secondItem="CvS-ck-k0A" secondAttribute="bottom" constant="45" id="b3c-4y-SrS"/>
                             <constraint firstItem="dkc-Ag-BOl" firstAttribute="centerY" secondItem="nF7-Sw-hMA" secondAttribute="centerY" multiplier="0.9" id="d8g-QH-zJA"/>
                             <constraint firstItem="But-eM-oQe" firstAttribute="top" secondItem="dkc-Ag-BOl" secondAttribute="top" constant="51" id="ey3-Hu-hdj"/>
                             <constraint firstItem="F00-HY-xaM" firstAttribute="top" secondItem="nF7-Sw-hMA" secondAttribute="top" constant="27" id="g7o-Jd-f21"/>
