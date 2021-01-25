@@ -11,6 +11,8 @@
 		3C15519B25AD3D010030949D /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C15519A25AD3D010030949D /* Timer.storyboard */; };
 		3C1551A125AD6D260030949D /* ChallengeSuccessAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */; };
 		3C1551A425AD6D5E0030949D /* ChallengeSuccessAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */; };
+		3C2EEF5625BE98B500109537 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C2EEF5525BE98B500109537 /* GoogleService-Info.plist */; };
+		3C2EEF9E25BEA2AE00109537 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C2EEF6C25BE9A5200109537 /* PushKit.framework */; };
 		3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF625AA9A5200629143 /* LoginViewController.swift */; };
 		3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF925AA9BA600629143 /* MainViewController.swift */; };
 		3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C356DFC25AA9F3000629143 /* Location.storyboard */; };
@@ -20,6 +22,7 @@
 		3C356E1C25AAE20300629143 /* LocationWeb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C356E1B25AAE20300629143 /* LocationWeb.storyboard */; };
 		3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E1F25AAEF4B00629143 /* LoginNavigationViewController.swift */; };
 		3C356E2325AAF95C00629143 /* WkWebViewSimpleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356E2225AAF95C00629143 /* WkWebViewSimpleBar.swift */; };
+		3C54A29625BEA098009F4336 /* Pods_zipkok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */; };
 		3C60605125ADF36E0070F58A /* ChallengeTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C60605025ADF36E0070F58A /* ChallengeTimerView.swift */; };
 		3C72DA0D25A9F1C4001567B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */; };
 		3C72DA0F25A9F1C4001567B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */; };
@@ -78,7 +81,6 @@
 		3CF8028325B2F3E700E3A71D /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8028225B2F3E700E3A71D /* Test.storyboard */; };
 		3CFAA9AB25BC702700292025 /* EventScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAA9AA25BC702700292025 /* EventScrollView.swift */; };
 		3CFAA9AF25BC783A00292025 /* StringToDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAA9AE25BC783A00292025 /* StringToDateExtension.swift */; };
-		FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		3C15519A25AD3D010030949D /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
 		3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeSuccessAlertView.swift; sourceTree = "<group>"; };
 		3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeSuccessAlertView.xib; sourceTree = "<group>"; };
+		3C2EEF5525BE98B500109537 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3C2EEF6C25BE9A5200109537 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		3C356DF625AA9A5200629143 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3C356DF925AA9BA600629143 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3C356DFC25AA9F3000629143 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
@@ -166,7 +170,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA166C15DA7242FCC3AE4C49 /* Pods_zipkok.framework in Frameworks */,
+				3C2EEF9E25BEA2AE00109537 /* PushKit.framework in Frameworks */,
+				3C54A29625BEA098009F4336 /* Pods_zipkok.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +181,7 @@
 		0E54305CEF3744EDADB6BFAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C2EEF6C25BE9A5200109537 /* PushKit.framework */,
 				F6EFF5BB33C933D242922653 /* Pods_zipkok.framework */,
 			);
 			name = Frameworks;
@@ -251,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				3CEF692D25BBFF2400C47255 /* zipkok.entitlements */,
+				3C2EEF5525BE98B500109537 /* GoogleService-Info.plist */,
 				3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */,
 				3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */,
 				3C72DA1025A9F1C4001567B4 /* TestViewController.swift */,
@@ -527,6 +534,7 @@
 				3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */,
 				3C1551A425AD6D5E0030949D /* ChallengeSuccessAlertView.xib in Resources */,
 				3CB0614B25AB405E0088ACFD /* ChallengeQuitAlertView.xib in Resources */,
+				3C2EEF5625BE98B500109537 /* GoogleService-Info.plist in Resources */,
 				3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */,
 				3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */,
 				3CDE69B225B96A120057A415 /* CustomAlertView.xib in Resources */,
@@ -802,6 +810,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = heo.zipkok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -824,6 +833,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = heo.zipkok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

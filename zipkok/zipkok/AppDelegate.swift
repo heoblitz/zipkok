@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import UserNotifications
+import Firebase
 import KakaoSDKCommon
 
 @main
@@ -14,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         KakaoSDKCommon.initSDK(appKey: "e373d2a0fe0f2f204d3a1e0e8d00dfd5")
+        FirebaseApp.configure()
+        
+        UNUserNotificationCenter.current().delegate = self
+        Messaging.messaging().delegate = self
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter
+          .current()
+          .requestAuthorization(
+            options: authOptions,completionHandler: { (_, _) in }
+          )
+        application.registerForRemoteNotifications()
+            
         Thread.sleep(forTimeInterval: 2)
         return true
     }
@@ -33,3 +48,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("파이어베이스 토큰: \(String(describing: fcmToken))")
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,willPresent notification: UNNotification,withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter,didReceive response: UNNotificationResponse,withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+}
