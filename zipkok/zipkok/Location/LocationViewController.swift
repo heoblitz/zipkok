@@ -156,20 +156,22 @@ class LocationViewController: UIViewController {
                 ZipkokApi.shared.register(location: locationInfo, user: userInformation) { registerResponse in
                     
                     self.keyChainManager.jwtToken = registerResponse.result?.jwt
-                    self.keyChainManager.userId = registerResponse.result?.userId
+                    self.keyChainManager.userId = registerResponse.result?.userIdx
                     
-                    DispatchQueue.main.async {
-                        self.activityIndicatorView.stopAnimating()
-                        guard let homeNavVc = HomeNavigationViewController.storyboardInstance() else { return }
-                        
-                        guard let window = UIApplication.shared.windows.first else { return }
-                        window.rootViewController = homeNavVc
-                        
-                        let options: UIView.AnimationOptions = .transitionCrossDissolve
-                        let duration: TimeInterval = 0.5
-                        
-                        UIView.transition(with: window, duration: duration, options: options, animations: {}) { completed in
-                            self.dismiss(animated: true, completion: nil)
+                    if registerResponse.isSuccess, registerResponse.code == 1012 {
+                        DispatchQueue.main.async {
+                            self.activityIndicatorView.stopAnimating()
+                            guard let homeNavVc = HomeNavigationViewController.storyboardInstance() else { return }
+                            
+                            guard let window = UIApplication.shared.windows.first else { return }
+                            window.rootViewController = homeNavVc
+                            
+                            let options: UIView.AnimationOptions = .transitionCrossDissolve
+                            let duration: TimeInterval = 0.5
+                            
+                            UIView.transition(with: window, duration: duration, options: options, animations: {}) { completed in
+                                self.dismiss(animated: true, completion: nil)
+                            }
                         }
                     }
                 }
@@ -307,7 +309,7 @@ extension LocationViewController: UITableViewDelegate {
         GeoCodingApi.shared.requestCoord(by: location.parcelAddressing) { [weak self] (latitude, longitude) in
             guard let self = self else { return }
             let locationInfo = LocationInfo(latitude: latitude, longitude: longitude, name: parcelAddress)
-
+            
             self.locationInfo = locationInfo
             self.searchTextField.text = parcelAddress
         }

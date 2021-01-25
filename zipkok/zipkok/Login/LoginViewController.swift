@@ -10,7 +10,7 @@ import KakaoSDKUser
 import KakaoSDKAuth
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet private weak var iconTextLabel: UILabel!
     @IBOutlet private weak var kakaoLoginView: UIView!
     
@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
         prepareKakaoLoginView()
         prepareKakaoLoginViewTapGesture()
     }
-
+    
     func prepareIconTextLabel() {
         iconTextLabel.transform = CGAffineTransform(rotationAngle: -(.pi/8))
     }
@@ -58,19 +58,16 @@ class LoginViewController: UIViewController {
                 // 서버에 Access Token 전달 후 회원가입 확인
                 ZipkokApi.shared.kakaoLogin(token: token.accessToken, completionHandler: { [weak self] response in
                     guard let self = self else { return }
-                    if response.code == 1018 { // 이미 회원가입 되었다면
-                        self.keyChainManager.userId = response.result?.userId
-                        self.keyChainManager.jwtToken = response.result?.jwt
-                    }
                     
-                    if response.isSuccess { // 회원가입 성공
+                    if response.isSuccess {
                         guard let locationVc = LocationViewController.storyboardInstance() else {
                             fatalError()
                         }
-                    
-                        self.navigationController?.pushViewController(locationVc, animated: true)
-                    } else { // 에러처리
                         
+                        self.navigationController?.pushViewController(locationVc, animated: true)
+                    }
+                    else {
+                        print("---> 로그인 카카오 에러")
                     }
                 })
             }

@@ -27,6 +27,15 @@ class KeyChainManager {
         }
     }
     
+    var fcmToken: String? {
+        get {
+            return KeychainWrapper.standard.string(forKey: "fcmToken")
+        } set {
+            guard let value = newValue else { return }
+            KeychainWrapper.standard.set(value, forKey: "fcmToken")
+        }
+    }
+    
     var userId: Int? {
         get {
             return KeychainWrapper.standard.integer(forKey: "userId")

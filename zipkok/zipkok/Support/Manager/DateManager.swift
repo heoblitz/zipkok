@@ -29,4 +29,14 @@ class DateManager {
             return userDefalt?.object(forKey: "endDate") as? Date
         }
     }
+    
+    var isNotAppFirstLaunched: Bool? {
+        set {
+            userDefalt?.set(newValue, forKey: "isNotAppFirstLaunched")
+            userDefalt?.synchronize()
+        }
+        get {
+            return userDefalt?.bool(forKey: "isNotAppFirstLaunched")
+        }
+    }
 }

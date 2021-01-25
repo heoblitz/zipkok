@@ -23,6 +23,7 @@ class ZipkokApi {
     private let recentLocationURLString: String = "/users/recently-locations"
     private let challengeTimeURLString: String = "/users/challenge-times"
     private let failChallengeURLString: String = "/challenges"
+    private let registerFirebaseTokenURLString: String = "/users/tokens"
     
     private init() {}
 
@@ -290,6 +291,30 @@ class ZipkokApi {
             completionHandler(value)
         }
     }
+    
+    func registerFirebaseToken(jwt jwtToken: String, token firebaseToken: String, completionHandler: @escaping (RegisterFirebaseTokenResponse) -> ()) {
+        let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
+        let bodys: Parameters = ["userDeviceToken" : firebaseToken]
+        
+        let challengeSuccessURLString = baseURLString + registerFirebaseTokenURLString
+        let request = AF.request(challengeSuccessURLString, method: .post, parameters: bodys, encoding: Alamofire.JSONEncoding.default, headers: headers)
+        
+        request.responseDecodable(of: RegisterFirebaseTokenResponse.self) { response in
+            if let error = response.error {
+                print(error)
+                print(response)
+                return
+            }
+
+            guard let value = response.value else {
+                print("data is nil")
+                return
+            }
+
+            print(value)
+            completionHandler(value)
+        }
+    }
 }
 
 // MARK:- kakaoLogin
@@ -314,7 +339,7 @@ struct RegisterResponse: Codable {
 }
 
 struct RegisterResult: Codable {
-    let userId: Int
+    let userIdx: Int
     let jwt: String
 }
 
@@ -425,6 +450,13 @@ struct ChallengeTimeResult: Codable {
 
 // NARK:- failChallenge
 struct FailChallengeResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+}
+
+// NARK:- registerFirebaseToken
+struct RegisterFirebaseTokenResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String

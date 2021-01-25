@@ -21,6 +21,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
 
+    // for apple login test code
+    //        let window = UIWindow(windowScene: windowScene)
+    //
+    //        window.rootViewController = testVc
+    //        window.makeKeyAndVisible()
+    //        self.window = window
+            
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         guard let loginNavVc = LoginNavigationViewController.storyboardInstance(),
@@ -33,14 +41,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
               fatalError()
         }
         
-// for apple login test code
-//        let window = UIWindow(windowScene: windowScene)
-//
-//        window.rootViewController = testVc
-//        window.makeKeyAndVisible()
-//        self.window = window
-        
+        let dateManager = DateManager()
         let keyChainManager = KeyChainManager()
+        
+        if dateManager.isNotAppFirstLaunched == false, let fcmToken = keyChainManager.fcmToken, let jwtToken = keyChainManager.jwtToken {
+            ZipkokApi.shared.registerFirebaseToken(jwt: jwtToken, token: fcmToken) { registerFirebaseTokenResponse in
+                if registerFirebaseTokenResponse.isSuccess {
+                    dateManager.isNotAppFirstLaunched = false
+                    print(registerFirebaseTokenResponse.message)
+                }
+            }
+        }
+        
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = splashVc
         window.makeKeyAndVisible()
@@ -48,7 +60,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         if let jwtToken = keyChainManager.jwtToken { // jwt token 이 있을 때
             ZipkokApi.shared.jwtLogin(jwt: jwtToken) { jwtLoginResponse in
-                if jwtLoginResponse.isSuccess { // jwt token 이 유효할 때
+                if jwtLoginResponse.isSuccess, jwtLoginResponse.code == 1014 { // jwt token 이 유효할 때
                     ZipkokApi.shared.challengeTime(jwt: jwtToken) { challengeTimeResponse in
                         if challengeTimeResponse.code == 1000,
                            let result = challengeTimeResponse.result,

@@ -27,7 +27,8 @@ class HomeViewController: UIViewController {
     
     private let keyChainManager = KeyChainManager()
     private var isReceivedCurrentLocation: Bool = false
-
+    private var isStartButtonTapped: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareStartButtonView()
@@ -83,6 +84,10 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func startButtonViewTapped() {
+        guard isStartButtonTapped == false else { return }
+        
+        isStartButtonTapped = true
+        view.makeToastActivity(.center)
         locationManager.requestWhenInUseAuthorization()
 
         switch CLLocationManager.authorizationStatus() {
@@ -115,6 +120,9 @@ extension HomeViewController: CLLocationManagerDelegate {
             locationManager.stopMonitoringSignificantLocationChanges()
             
             ZipkokApi.shared.userLocation(jwt: jwtToken, latitude: latitude, longitude: longitude) { userLocationResponse in
+                self.view.hideToastActivity()
+                self.isStartButtonTapped = false
+                
                 if userLocationResponse.isSuccess {
                     guard let selectChallengeVc = SelectChallengeViewController.storyboardInstance() else { return }
             

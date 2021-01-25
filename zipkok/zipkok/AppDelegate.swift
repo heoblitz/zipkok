@@ -14,12 +14,25 @@ import KakaoSDKCommon
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let keyChainManager = KeyChainManager()
+        
+        // Kakao SDK
         KakaoSDKCommon.initSDK(appKey: "e373d2a0fe0f2f204d3a1e0e8d00dfd5")
+        // Firebase SDK
         FirebaseApp.configure()
         
+        // UserNotifications
         UNUserNotificationCenter.current().delegate = self
-        Messaging.messaging().delegate = self
+        
+        // Firebase FCM token
+        Messaging.messaging().token { token, error in
+          if let error = error {
+            print("Error fetching FCM registration token: \(error)")
+          } else if let token = token {
+            print("FCM registration token: \(token)")
+            keyChainManager.fcmToken = token
+          }
+        }
         
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter
