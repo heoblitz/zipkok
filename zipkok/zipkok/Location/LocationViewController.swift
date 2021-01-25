@@ -299,6 +299,10 @@ extension LocationViewController: UITableViewDataSource {
         separatorView.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
         return separatorView
     }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
+    }
 }
 
 extension LocationViewController: UITableViewDelegate {
