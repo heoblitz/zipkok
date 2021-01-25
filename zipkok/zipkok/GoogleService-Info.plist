@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>796452638060-n1lngnvfh99ga5vemp8ii2kqldn9p23e.apps.googleusercontent.com</string>
+	<string>770617505613-3a57j6rm40borj5k9ajogtsbobdt1ptg.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.796452638060-n1lngnvfh99ga5vemp8ii2kqldn9p23e</string>
+	<string>com.googleusercontent.apps.770617505613-3a57j6rm40borj5k9ajogtsbobdt1ptg</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDPuJ2TntkGxo0n5phKNZLVMg3_0qJJsFw</string>
+	<string>AIzaSyBf09phzz9sFZKWv8gFq3Ce2Bo9xoRDraI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>796452638060</string>
+	<string>770617505613</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>heo.zipkok</string>
 	<key>PROJECT_ID</key>
-	<string>devlog-6a502</string>
+	<string>homealone-9ff45</string>
 	<key>STORAGE_BUCKET</key>
-	<string>devlog-6a502.appspot.com</string>
+	<string>homealone-9ff45.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:796452638060:ios:788be0e7173ab011ec7749</string>
-	<key>DATABASE_URL</key>
-	<string>https://devlog-6a502.firebaseio.com</string>
+	<string>1:770617505613:ios:960509526bae9191f7a904</string>
 </dict>
 </plist>

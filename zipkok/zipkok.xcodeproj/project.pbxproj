@@ -11,8 +11,8 @@
 		3C15519B25AD3D010030949D /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C15519A25AD3D010030949D /* Timer.storyboard */; };
 		3C1551A125AD6D260030949D /* ChallengeSuccessAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */; };
 		3C1551A425AD6D5E0030949D /* ChallengeSuccessAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */; };
-		3C2EEF5625BE98B500109537 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C2EEF5525BE98B500109537 /* GoogleService-Info.plist */; };
 		3C2EEF9E25BEA2AE00109537 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C2EEF6C25BE9A5200109537 /* PushKit.framework */; };
+		3C2EEFB925BEF01000109537 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C2EEFB825BEF01000109537 /* GoogleService-Info.plist */; };
 		3C356DF725AA9A5200629143 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF625AA9A5200629143 /* LoginViewController.swift */; };
 		3C356DFA25AA9BA600629143 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C356DF925AA9BA600629143 /* MainViewController.swift */; };
 		3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C356DFC25AA9F3000629143 /* Location.storyboard */; };
@@ -90,8 +90,8 @@
 		3C15519A25AD3D010030949D /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
 		3C1551A025AD6D260030949D /* ChallengeSuccessAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeSuccessAlertView.swift; sourceTree = "<group>"; };
 		3C1551A325AD6D5D0030949D /* ChallengeSuccessAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeSuccessAlertView.xib; sourceTree = "<group>"; };
-		3C2EEF5525BE98B500109537 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3C2EEF6C25BE9A5200109537 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
+		3C2EEFB825BEF01000109537 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3C356DF625AA9A5200629143 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3C356DF925AA9BA600629143 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3C356DFC25AA9F3000629143 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
@@ -257,9 +257,9 @@
 			isa = PBXGroup;
 			children = (
 				3CEF692D25BBFF2400C47255 /* zipkok.entitlements */,
-				3C2EEF5525BE98B500109537 /* GoogleService-Info.plist */,
 				3C72DA0C25A9F1C4001567B4 /* AppDelegate.swift */,
 				3C72DA0E25A9F1C4001567B4 /* SceneDelegate.swift */,
+				3C2EEFB825BEF01000109537 /* GoogleService-Info.plist */,
 				3C72DA1025A9F1C4001567B4 /* TestViewController.swift */,
 				3CF8028225B2F3E700E3A71D /* Test.storyboard */,
 				3C72DA1225A9F1C4001567B4 /* Main.storyboard */,
@@ -534,7 +534,7 @@
 				3C72DA1925A9F1C5001567B4 /* LaunchScreen.storyboard in Resources */,
 				3C1551A425AD6D5E0030949D /* ChallengeSuccessAlertView.xib in Resources */,
 				3CB0614B25AB405E0088ACFD /* ChallengeQuitAlertView.xib in Resources */,
-				3C2EEF5625BE98B500109537 /* GoogleService-Info.plist in Resources */,
+				3C2EEFB925BEF01000109537 /* GoogleService-Info.plist in Resources */,
 				3C72DA2725A9F5C1001567B4 /* NotoSansCJKkr-Regular.otf in Resources */,
 				3CB0616D25AC08100088ACFD /* SettingNavigatorCell.xib in Resources */,
 				3CDE69B225B96A120057A415 /* CustomAlertView.xib in Resources */,
