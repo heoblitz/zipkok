@@ -87,6 +87,7 @@ class TimerViewController: UIViewController {
         prepareStartTimeView()
         prepareEndTimeView()
         prepareQuitButtonView()
+        prepareTimeLabel() // timer font
         prepareNotification()
         prepareTimer()
     }
@@ -104,6 +105,10 @@ class TimerViewController: UIViewController {
     
     private func setNavigationComponents() {
         navigationItem.hidesBackButton = true
+    }
+    
+    private func prepareTimeLabel() {
+        timeLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 36, weight: .regular)
     }
     
     private func prepareCircleProgressBar() {
@@ -158,6 +163,7 @@ class TimerViewController: UIViewController {
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] _ in
                 guard let self = self else { return }
                 
+                // self.timeLabel.attributedText = NSAttributedString(string: self.currentTime.digitalFormat, attributes: [.kern: 1.4])
                 self.timeLabel.text = self.currentTime.digitalFormat
                 self.percentLabel.text = self.timePecent
                 self.currentTime += 1
@@ -212,6 +218,7 @@ class TimerViewController: UIViewController {
         
         if currentData >= endDate {
             timeLabel.text = Int(totalTimeInterval).digitalFormat
+            // self.timeLabel.attributedText = NSAttributedString(string: Int(totalTimeInterval).digitalFormat, attributes: [.kern: 1.4])
             percentLabel.text = "100%"
             circleProgressBar.value = 100
             successChallenge()
