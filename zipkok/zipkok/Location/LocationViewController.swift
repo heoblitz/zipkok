@@ -77,6 +77,7 @@ class LocationViewController: UIViewController {
         recentLocationViewModel.locations.bind { [weak self] recentLocations in
             guard let self = self else { return }
             self.recentLocations = recentLocations
+            self.recentLocationTableViewHeight.constant = CGFloat(60 + (79 * recentLocations.count))
             self.recentLocationTableView.reloadData()
         }
     }
@@ -315,7 +316,7 @@ extension LocationViewController: UITableViewDelegate {
             let locationInfo = LocationInfo(latitude: latitude, longitude: longitude, name: parcelAddress)
             
             self.locationInfo = locationInfo
-            self.searchTextField.text = parcelAddress
+            self.searchTextField.text = location.streetAddressing
         }
     }
 }

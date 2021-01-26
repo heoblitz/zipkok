@@ -25,10 +25,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yT8-WZ-Ji8" customClass="EventScrollView" customModule="zipkok" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1122"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1156"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0SZ-69-UaK" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1122"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="674.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지번, 도로명, 건물명을 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFN-zk-daL">
                                                 <rect key="frame" x="24" y="32" width="224" height="71.5"/>
@@ -113,6 +113,7 @@
                                             <constraint firstItem="zCj-Pa-red" firstAttribute="leading" secondItem="3og-fc-nWq" secondAttribute="trailing" constant="10" id="UnL-uI-dAZ"/>
                                             <constraint firstItem="t5d-5u-BTV" firstAttribute="top" secondItem="DZK-yX-jpc" secondAttribute="bottom" id="WoU-OS-vc8"/>
                                             <constraint firstAttribute="trailing" secondItem="ssi-yB-aLw" secondAttribute="trailing" constant="24" id="XNn-zs-r6r"/>
+                                            <constraint firstAttribute="bottom" secondItem="t5d-5u-BTV" secondAttribute="bottom" id="adY-aI-UGh"/>
                                             <constraint firstItem="GFN-zk-daL" firstAttribute="top" secondItem="0SZ-69-UaK" secondAttribute="top" constant="32" id="bBl-nS-H4b"/>
                                             <constraint firstAttribute="trailing" secondItem="zCj-Pa-red" secondAttribute="trailing" constant="24" id="db5-en-PE4"/>
                                             <constraint firstItem="ssi-yB-aLw" firstAttribute="top" secondItem="3og-fc-nWq" secondAttribute="bottom" constant="12" id="gLX-P1-2Kh"/>
@@ -147,7 +148,7 @@
                             <constraint firstItem="yT8-WZ-Ji8" firstAttribute="leading" secondItem="1te-qY-9UU" secondAttribute="leading" id="LUi-PL-Nfz"/>
                             <constraint firstItem="1te-qY-9UU" firstAttribute="trailing" secondItem="DjU-uV-PdG" secondAttribute="trailing" id="Zsg-mH-WEf"/>
                             <constraint firstItem="yT8-WZ-Ji8" firstAttribute="top" secondItem="1te-qY-9UU" secondAttribute="top" id="dsF-It-etV"/>
-                            <constraint firstItem="1te-qY-9UU" firstAttribute="bottom" secondItem="yT8-WZ-Ji8" secondAttribute="bottom" id="eR5-eN-J1g"/>
+                            <constraint firstAttribute="bottom" secondItem="yT8-WZ-Ji8" secondAttribute="bottom" id="eR5-eN-J1g"/>
                             <constraint firstItem="DjU-uV-PdG" firstAttribute="top" secondItem="1te-qY-9UU" secondAttribute="top" id="sBk-FY-mSG"/>
                             <constraint firstItem="DjU-uV-PdG" firstAttribute="leading" secondItem="1te-qY-9UU" secondAttribute="leading" id="yVi-d9-2zz"/>
                         </constraints>
