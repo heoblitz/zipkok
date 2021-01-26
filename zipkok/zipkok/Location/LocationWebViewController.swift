@@ -82,10 +82,10 @@ extension LocationWebViewController: WKNavigationDelegate {
         guard let data = message.body as? [String:Any] else { return }
             // address = data["roadAddress"] as? String ?? ""
         
-        if let roadAddress = data["roadAddress"] as? String {
-            GeoCodingApi.shared.requestCoord(by: roadAddress) { [weak self] (latitude, longitude) in
+        if let normalAddress = data["jibunAddress"] as? String, let loadAddress = data["roadAddress"] as? String {
+            GeoCodingApi.shared.requestCoord(by: normalAddress) { [weak self] (latitude, longitude) in
                 guard let self = self else { return }
-                let locationInfo = LocationInfo(latitude: latitude, longitude: longitude, name: roadAddress)
+                let locationInfo = LocationInfo(latitude: latitude, longitude: longitude, normalName: normalAddress, loadName: loadAddress)
 
                 OperationQueue.main.addOperation {
                     self.completionHandler?(locationInfo)

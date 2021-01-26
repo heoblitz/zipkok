@@ -31,9 +31,9 @@ class TestViewController: UIViewController {
     }
     
     @IBAction func requestRegioncode() {
-        GeoCodingApi.shared.requestRegioncode(by: (127.06253874566, 37.6172252018111), completionHandler: { addressName in
-            print(addressName)
-        })
+//        GeoCodingApi.shared.requestRegioncode(by: (127.06253874566, 37.6172252018111), completionHandler: { addressName in
+//            print(addressName)
+//        })
     }
     
     @IBAction func kakaoLogin() {

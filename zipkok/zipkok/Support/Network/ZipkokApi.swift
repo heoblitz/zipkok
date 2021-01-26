@@ -56,8 +56,8 @@ class ZipkokApi {
             "snsId" : userInfo.id,
             "latitude" : locationInfo.latitude,
             "longitude" : locationInfo.longitude,
-            "parcelAddressing" : locationInfo.parcelName,
-            "streetAddressing" : locationInfo.name,
+            "parcelAddressing" : locationInfo.normalName,
+            "streetAddressing" : locationInfo.loadName,
             "loginType" : "KAKAO"
         ]
 
@@ -108,8 +108,8 @@ class ZipkokApi {
             "pushStatus" : isPushStatusEnable == true ? "Y" : "N",
             "latitude" : Double(locationInfo.latitude)!,
             "longitude" : Double(locationInfo.longitude)!,
-            "parcelAddressing" : locationInfo.parcelName,
-            "streetAddressing" : locationInfo.name
+            "parcelAddressing" : locationInfo.normalName,
+            "streetAddressing" : locationInfo.loadName
         ]
         
         let request = AF.request(baseURLString + registerURLString + "/\(userId)", method: .patch, parameters: bodys, encoding: Alamofire.JSONEncoding.default, headers: headers)

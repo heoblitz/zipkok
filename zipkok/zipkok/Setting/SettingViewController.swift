@@ -64,7 +64,7 @@ class SettingViewController: UIViewController {
         
         locationVc.locationPatchCompletionHandler = { [weak self] location in
             guard let self = self else { return }
-            self.userInfo = self.userInfo?.changeAddressName(by: location.name)
+            self.userInfo = self.userInfo?.changeAddressName(by: location.normalName)
             self.settingTableView.reloadData()
         }
         locationVc.locationRequestType = .patch

@@ -38,8 +38,10 @@ class GeoCodingApi {
         }
     }
     
-    func requestRegioncode(by location: (Double, Double), completionHandler: @escaping (String) -> ()) {
-        let parameters: Parameters = ["x" : location.0, "y": location.1] // longitude, latitude
+    func requestRegioncode(by coordinate: (Double, Double), completionHandler: @escaping (String, String) -> ()) {
+        let x = floor(coordinate.0 * 10000)/10000
+        let y = floor(coordinate.1 * 10000)/10000
+        let parameters: Parameters = ["x" : x, "y": y] // longitude, latitude
         let headers: HTTPHeaders = ["Authorization" : "KakaoAK 7ec366f0297ccf8930b9a5288ea66b22"]
         
         let request = AF.request(baseURLString + coord2regioncodeURLString, method: .get, parameters: parameters, headers: headers)
@@ -50,20 +52,21 @@ class GeoCodingApi {
                 return
             }
             
-            guard let value = response.value else {
-                print("response is nil")
+            guard let value = response.value, let location = value.documents.first, let normalAddress = location.normalAddress?.name else {
+                print("---> response is nil")
+                print(response)
+                return
+            }
+                        
+            // 도로명 없이 내보낼 때 예외 처리
+            guard let loadAddressName = location.loadAddress?.name else {
+                completionHandler(normalAddress, normalAddress)
                 return
             }
             
-            print(value)
-            
-            guard let location = value.documents.first, let addressName = location.normalAddress?.name else {
-                print("location is nil")
-                return
-            }
-             
-            print(value)
-            completionHandler(addressName)
+            print(x, y)
+            print(value.documents)
+            completionHandler(normalAddress, loadAddressName)
         }
     }
 }
@@ -117,11 +120,8 @@ struct LoadAddress: Codable {
 struct LocationInfo {
     let latitude: String
     let longitude: String
-    let name: String
-    
-    var parcelName: String {
-        return name.components(separatedBy: " ").first ?? name
-    }
+    let normalName: String
+    let loadName: String
 }
 
 

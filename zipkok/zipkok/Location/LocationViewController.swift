@@ -30,7 +30,7 @@ class LocationViewController: UIViewController {
         guard let self = self else { return }
         OperationQueue.main.addOperation {
             self.locationInfo = info
-            self.searchTextField.text = info.name
+            self.searchTextField.text = info.normalName
         }
     }
     
@@ -254,14 +254,14 @@ extension LocationViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             locationManager.stopMonitoringSignificantLocationChanges()
             
-            GeoCodingApi.shared.requestRegioncode(by: (longitude, latitude), completionHandler: { [weak self] addressName in
+            GeoCodingApi.shared.requestRegioncode(by: (longitude, latitude), completionHandler: { [weak self] normalName, loadName in
                 guard let self = self else { return }
                 
                 OperationQueue.main.addOperation {
                     self.activityIndicatorView.stopAnimating()
-                    self.searchTextField.text = addressName
-                    self.locationInfo = LocationInfo(latitude: "\(latitude)", longitude: "\(longitude)", name: addressName)
-                    print(addressName, latitude, longitude)
+                    self.searchTextField.text = normalName
+                    self.locationInfo = LocationInfo(latitude: "\(latitude)", longitude: "\(longitude)", normalName: normalName, loadName: loadName)
+                    // print(addressName, latitude, longitude)
                 }
             })
         }
@@ -313,7 +313,7 @@ extension LocationViewController: UITableViewDelegate {
         
         GeoCodingApi.shared.requestCoord(by: location.parcelAddressing) { [weak self] (latitude, longitude) in
             guard let self = self else { return }
-            let locationInfo = LocationInfo(latitude: latitude, longitude: longitude, name: parcelAddress)
+            let locationInfo = LocationInfo(latitude: latitude, longitude: longitude, normalName: location.parcelAddressing, loadName: location.streetAddressing)
             
             self.locationInfo = locationInfo
             self.searchTextField.text = location.streetAddressing
