@@ -184,6 +184,7 @@ class TimerViewController: UIViewController {
     }
     
     private func alertChallengeSuccessAlertView() {
+        successAlertView.setUserName(by: keyChainManager.userName)
         view.addSubview(successAlertView)
         
         NSLayoutConstraint.activate([
@@ -253,6 +254,7 @@ class TimerViewController: UIViewController {
     }
     
     @objc func quitButtonViewTapped() {
+        quitAlertView.setUserName(by: keyChainManager.userName)
         view.addSubview(quitAlertView)
         
         NSLayoutConstraint.activate([

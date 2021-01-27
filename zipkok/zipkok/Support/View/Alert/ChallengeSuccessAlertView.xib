@@ -119,6 +119,7 @@
             </constraints>
             <connections>
                 <outlet property="alertContentView" destination="EaH-aF-A0q" id="Jmc-rh-l33"/>
+                <outlet property="contentLabel" destination="JYu-Er-LcE" id="U5I-Nl-V0r"/>
                 <outlet property="dismissButton" destination="afp-b8-tQh" id="GMy-8o-Wve"/>
                 <outlet property="shareButtonView" destination="9TN-0d-CTu" id="nfj-Qt-MjB"/>
             </connections>

@@ -11,6 +11,7 @@ class ChallengeQuitAlertView: UIView {
     @IBOutlet weak var alertContentView: UIView!
     @IBOutlet weak var cancelButtonView: UIView!
     @IBOutlet weak var quitButtonView: UIView!
+    @IBOutlet weak var contentLabel: UILabel!
     
     static func loadViewFromNib() -> ChallengeQuitAlertView {
         let bundle = Bundle(for: self)
@@ -33,5 +34,15 @@ class ChallengeQuitAlertView: UIView {
         quitButtonView.layer.cornerRadius = 8
         quitButtonView.layer.borderWidth = 1
         quitButtonView.layer.borderColor = CGColor(red: 255/255, green: 105/255, blue: 28/255, alpha: 1)
+    }
+    
+    func setUserName(by name: String?) {
+        var nickName: String = "톡 아이디"
+        
+        if let name = name {
+            nickName = name
+        }
+        
+        contentLabel.text = "\(nickName)님, 챌린지를 정말 종료하시나요? 그 동안의 타이머 기록이 삭제됩니다"
     }
 }

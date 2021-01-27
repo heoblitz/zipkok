@@ -155,11 +155,11 @@ class LocationViewController: UIViewController {
         DispatchQueue.global().async {
             KakaoApi.shared.getUserInformation(token: accessToken) { userInformation in
                 ZipkokApi.shared.register(location: locationInfo, user: userInformation) { registerResponse in
-                    
-                    self.keyChainManager.jwtToken = registerResponse.result?.jwt
-                    self.keyChainManager.userId = registerResponse.result?.userIdx
-                    
                     if registerResponse.isSuccess, registerResponse.code == 1012 {
+                        self.keyChainManager.jwtToken = registerResponse.result?.jwt
+                        self.keyChainManager.userId = registerResponse.result?.userIdx
+                        self.keyChainManager.userName = userInformation.kakaoAccount.profile.nickname
+                        
                         DispatchQueue.main.async {
                             self.activityIndicatorView.stopAnimating()
                             guard let homeNavVc = HomeNavigationViewController.storyboardInstance() else { return }

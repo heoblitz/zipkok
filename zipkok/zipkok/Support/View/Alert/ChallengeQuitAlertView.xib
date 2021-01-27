@@ -132,6 +132,7 @@
             <connections>
                 <outlet property="alertContentView" destination="2Q1-6Q-nBB" id="iZB-54-k6Q"/>
                 <outlet property="cancelButtonView" destination="PSr-L4-uGS" id="77s-9j-1DG"/>
+                <outlet property="contentLabel" destination="UGw-7o-pTN" id="Vfm-dS-27r"/>
                 <outlet property="quitButtonView" destination="DwS-QK-E0n" id="zaI-sg-KvE"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="73.660714285714278"/>

@@ -45,6 +45,16 @@ class KeyChainManager {
         }
     }
     
+    var userName: String? {
+        get {
+            return KeychainWrapper.standard.string(forKey: "userName")
+        }
+        set {
+            guard let value = newValue else { return }
+            KeychainWrapper.standard.set(value, forKey: "userName")
+        }
+    }
+    
     var challengeIdx: Int? {
         get {
             return KeychainWrapper.standard.integer(forKey: "challengeIdx")
