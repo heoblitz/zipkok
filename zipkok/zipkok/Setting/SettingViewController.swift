@@ -13,7 +13,8 @@ class SettingViewController: UIViewController {
     @IBOutlet private weak var settingTableView: UITableView!
     
     private let settingViewModel = SettingViewModel()
-    
+    private let keyChainManager = KeyChainManager()
+
     private var settingNavigaterTitles: [String] = [
         "푸쉬알림", "인증 달력 보기", "타임라인 전체보기", "도움말"
     ]
@@ -70,6 +71,24 @@ class SettingViewController: UIViewController {
         locationVc.locationRequestType = .patch
         navigationController?.pushViewController(locationVc, animated: true)
     }
+    
+    @objc func pushSwitchButtonTapped(_ sender: UITapGestureRecognizer) {
+        guard let jwtToken = keyChainManager.jwtToken, let userId = keyChainManager.userId else { return }
+
+        guard let pushSwitchButton = sender.view as? UIButton else {
+            return
+        }
+        
+        ZipkokApi.shared.patchPushStatus(jwt: jwtToken, id: userId, isPushStatusEnable: !pushSwitchButton.isSelected) { patchUserInfoResponse in
+            
+            if patchUserInfoResponse.isSuccess {
+                pushSwitchButton.isSelected = !pushSwitchButton.isSelected
+            }
+        }
+        
+//        pushSwitchButton.isSelected = !pushSwitchButton.isSelected
+//        print(pushSwitchButton.isSelected)
+    }
 }
 
 extension SettingViewController: UITableViewDataSource {
@@ -92,7 +111,9 @@ extension SettingViewController: UITableViewDataSource {
         case 1:
             guard let settingNavigatorCell = tableView.dequeueReusableCell(withIdentifier: "SettingNavigatorCell", for: indexPath) as? SettingNavigatorCell else { fatalError() }
             if indexPath.row == 0 {
-                settingNavigatorCell.swtichButton.isSelected = userInfo?.isPushStatusEnable ?? false
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(pushSwitchButtonTapped(_:)))
+                settingNavigatorCell.pushSwitchButton.isSelected = userInfo?.isPushStatusEnable ?? false
+                settingNavigatorCell.pushSwitchButton.addGestureRecognizer(tapGesture)
                 settingNavigatorCell.prepareSwitchButton()
             }
             settingNavigatorCell.titleLabel.text = settingNavigaterTitles[indexPath.row]
@@ -123,7 +144,7 @@ extension SettingViewController: UITableViewDataSource {
 
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
+        if indexPath.section == 1, indexPath.item != 0 {
             view.makeToast("준비중인 기능입니다.")
         }
     }

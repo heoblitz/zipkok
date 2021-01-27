@@ -11,14 +11,14 @@ class SettingNavigatorCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
-    let swtichButton: UIButton = {
+    let pushSwitchButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.imageView?.contentMode = .scaleAspectFit
         button.imageView?.clipsToBounds = true
         button.setImage(UIImage(named: "그룹 1429"), for: .selected)
         button.setImage(UIImage(named: "그룹 1433"), for: .normal)
-        button.isSelected = true
+        // button.isSelected = true
         return button
     }()
     
@@ -33,13 +33,13 @@ class SettingNavigatorCell: UITableViewCell {
     }
     
     func prepareSwitchButton() {
-        contentView.addSubview(swtichButton)
+        contentView.addSubview(pushSwitchButton)
         
         NSLayoutConstraint.activate([
-            swtichButton.widthAnchor.constraint(equalToConstant: 65),
-            swtichButton.heightAnchor.constraint(equalToConstant: 30),
-            swtichButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            swtichButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24)
+            pushSwitchButton.widthAnchor.constraint(equalToConstant: 65),
+            pushSwitchButton.heightAnchor.constraint(equalToConstant: 30),
+            pushSwitchButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            pushSwitchButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24)
         ])
     }
 }

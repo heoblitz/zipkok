@@ -315,6 +315,31 @@ class ZipkokApi {
             completionHandler(value)
         }
     }
+        
+    func patchPushStatus(jwt jwtToken: String, id userId: Int, isPushStatusEnable: Bool, completionHandler: @escaping (PatchUserInfoResponse) -> ()) {
+        let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
+        let bodys: Parameters = [
+            "pushStatus" : isPushStatusEnable == true ? "Y" : "N",
+        ]
+        
+        let request = AF.request(baseURLString + registerURLString + "/\(userId)", method: .patch, parameters: bodys, encoding: Alamofire.JSONEncoding.default, headers: headers)
+         
+        request.responseDecodable(of: PatchUserInfoResponse.self) { response in
+            if let error = response.error {
+                print(error)
+                print(response)
+                return
+            }
+
+            guard let value = response.value else {
+                print("data is nil")
+                return
+            }
+
+            print(value)
+            completionHandler(value)
+        }
+    }
 }
 
 // MARK:- kakaoLogin
