@@ -20,27 +20,38 @@ class TimerSettingViewController: UIViewController {
     private let keyChainManager = KeyChainManager()
 
     var dayNumber: Int?
-    var startDate: Date?
-    var endDate: Date?
+//    var startDate: Date?
+//    var endDate: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let startDate = startDate, let endDate = endDate {
-            startDateLabel.text = startDate.challengeSelectTimeFormat
-            endDateLabel.text = endDate.challengeSelectTimeFormat
-        }
         
         prepareStartImageView()
         prepareStartButtonView()
         prepareStartTimeView()
         prepareEndTimeView()
         setNavigationComponents()
+        prepareNavigationBarItems()
     }
     
     static func storyboardInstance() -> TimerSettingViewController? {
         let storyboard = UIStoryboard(name: TimerSettingViewController.storyboardName(), bundle: nil)
         return storyboard.instantiateInitialViewController()
+    }
+    
+    
+    private func prepareNavigationBarItems() {
+        let profileBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 114")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
+        profileBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+        
+        let shareBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
+        shareBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
+        
+        let settingBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 113")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(settingBarButtonItemTapped))
+        settingBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
+        
+        navigationItem.leftBarButtonItem = profileBarButtonItem
+        navigationItem.rightBarButtonItems = [settingBarButtonItem, shareBarButtonItem]
     }
     
     private func setNavigationComponents() {
@@ -75,7 +86,11 @@ class TimerSettingViewController: UIViewController {
     }
     
     @objc func startImageButtonTapped() {
-        guard let jwtToken = keyChainManager.jwtToken, let startTime = startDate, let endTime = endDate else { return }
+        guard let jwtToken = keyChainManager.jwtToken else { return }
+        
+        let startTime = Date()
+        
+        guard let dayNumber = dayNumber, let endTime = Calendar.current.date(byAdding: .day, value: dayNumber, to: startTime) else { return }
         
         ZipkokApi.shared.registerChallengeTime(jwt: jwtToken, start: startTime.challengeTimeFormat, end: endTime.challengeTimeFormat) { [weak self] registerChallengeTimeResponse in
             guard let self = self else { return }
@@ -94,5 +109,13 @@ class TimerSettingViewController: UIViewController {
                 print("---> Challenge Register Error")
             }
         }
+    }
+    
+    @objc func settingBarButtonItemTapped() {
+        guard let settingVc = SettingViewController.storyboardInstance() else {
+            fatalError()
+        }
+        
+        navigationController?.pushViewController(settingVc, animated: true)
     }
 }

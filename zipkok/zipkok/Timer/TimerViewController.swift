@@ -87,6 +87,7 @@ class TimerViewController: UIViewController {
         prepareStartTimeView()
         prepareEndTimeView()
         prepareQuitButtonView()
+        prepareNavigationBarItems()
         prepareTimeLabel() // timer font
         prepareNotification()
         prepareTimer()
@@ -129,6 +130,20 @@ class TimerViewController: UIViewController {
         circleProgressBar.emptyLineStrokeColor = UIColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 1)
         circleProgressBar.emptyCapType = 1
         circleProgressBar.emptyLineWidth = 10
+    }
+    
+    private func prepareNavigationBarItems() {
+        let profileBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 114")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
+        profileBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+        
+        let shareBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
+        shareBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
+        
+        let settingBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 113")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(settingBarButtonItemTapped))
+        settingBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
+        
+        navigationItem.leftBarButtonItem = profileBarButtonItem
+        navigationItem.rightBarButtonItems = [settingBarButtonItem, shareBarButtonItem]
     }
     
     private func prepareStartTimeView() {
@@ -236,7 +251,7 @@ class TimerViewController: UIViewController {
             animateCircleProgressBar(with: remainTimeInterval)
         }
     }
-        
+    
     @objc func sceneDidBecomeActive() {
         restoreTimer()
     }
@@ -287,6 +302,14 @@ class TimerViewController: UIViewController {
     
     @objc func successAlertDismissButtonTapped() {
         navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @objc func settingBarButtonItemTapped() {
+        guard let settingVc = SettingViewController.storyboardInstance() else {
+            fatalError()
+        }
+        
+        navigationController?.pushViewController(settingVc, animated: true)
     }
 }
 

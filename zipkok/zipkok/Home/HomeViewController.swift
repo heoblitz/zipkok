@@ -13,9 +13,9 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var startButtonView: UIView!
     @IBOutlet private weak var iconTextLabel: UILabel!
     
-    @IBOutlet private weak var profileBarButtonItem: UIBarButtonItem!
-    @IBOutlet private weak var shareBarButtonItem: UIBarButtonItem!
-    @IBOutlet private weak var settingBarButtonItem: UIBarButtonItem!
+//    @IBOutlet private weak var profileBarButtonItem: UIBarButtonItem!
+//    @IBOutlet private weak var shareBarButtonItem: UIBarButtonItem!
+//    @IBOutlet private weak var settingBarButtonItem: UIBarButtonItem!
     
     lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
@@ -33,11 +33,25 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         prepareStartButtonView()
         prepareIconTextLabel()
-        prepareBarButtonItems()
+        prepareNavigationBarItems()
     }
     
     private func prepareIconTextLabel() {
         iconTextLabel.transform = CGAffineTransform(rotationAngle: -(.pi/8))
+    }
+    
+    private func prepareNavigationBarItems() {
+        let profileBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 114")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
+        profileBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+        
+        let shareBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
+        shareBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
+        
+        let settingBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 113")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(settingBarButtonItemTapped))
+        settingBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
+        
+        navigationItem.leftBarButtonItem = profileBarButtonItem
+        navigationItem.rightBarButtonItems = [settingBarButtonItem, shareBarButtonItem]
     }
     
     private func prepareStartButtonView() {
@@ -69,13 +83,7 @@ class HomeViewController: UIViewController {
         ])
     }
     
-    private func prepareBarButtonItems() {
-        profileBarButtonItem.image = UIImage(named: "그룹 114")?.withRenderingMode(.alwaysOriginal)
-        shareBarButtonItem.image = UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal)
-        settingBarButtonItem.image = UIImage(named: "그룹 113")?.withRenderingMode(.alwaysOriginal)
-    }
-    
-    @IBAction func settingBarButtonItemTapped(_ sender: UIBarButtonItem) {
+    @objc func settingBarButtonItemTapped(_ sender: UIBarButtonItem) {
         guard let settingVc = SettingViewController.storyboardInstance() else {
             fatalError()
         }
