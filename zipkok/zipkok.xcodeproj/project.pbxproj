@@ -73,6 +73,8 @@
 		3CEF692325BBF5BB00C47255 /* RecentLocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CEF692125BBF5BB00C47255 /* RecentLocationCell.xib */; };
 		3CEF692825BBF7B300C47255 /* RecentLocationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEF692725BBF7B300C47255 /* RecentLocationHeaderView.swift */; };
 		3CEF692B25BBF7BC00C47255 /* RecentLocationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CEF692A25BBF7BC00C47255 /* RecentLocationHeaderView.xib */; };
+		3CF5ADD025C1BC4200F1E45E /* ChallengeConfirmAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF5ADCF25C1BC4200F1E45E /* ChallengeConfirmAlertView.swift */; };
+		3CF5ADD325C1BC5200F1E45E /* ChallengeConfirmAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF5ADD225C1BC5200F1E45E /* ChallengeConfirmAlertView.xib */; };
 		3CF8025125B06ED000E3A71D /* dottedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025025B06ED000E3A71D /* dottedLineView.swift */; };
 		3CF8025525B077F300E3A71D /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025425B077F300E3A71D /* DateManager.swift */; };
 		3CF8025825B125AC00E3A71D /* letterSpacingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8025725B125AC00E3A71D /* letterSpacingLabel.swift */; };
@@ -154,6 +156,8 @@
 		3CEF692725BBF7B300C47255 /* RecentLocationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentLocationHeaderView.swift; sourceTree = "<group>"; };
 		3CEF692A25BBF7BC00C47255 /* RecentLocationHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentLocationHeaderView.xib; sourceTree = "<group>"; };
 		3CEF692D25BBFF2400C47255 /* zipkok.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = zipkok.entitlements; sourceTree = "<group>"; };
+		3CF5ADCF25C1BC4200F1E45E /* ChallengeConfirmAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeConfirmAlertView.swift; sourceTree = "<group>"; };
+		3CF5ADD225C1BC5200F1E45E /* ChallengeConfirmAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeConfirmAlertView.xib; sourceTree = "<group>"; };
 		3CF8025025B06ED000E3A71D /* dottedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dottedLineView.swift; sourceTree = "<group>"; };
 		3CF8025425B077F300E3A71D /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		3CF8025725B125AC00E3A71D /* letterSpacingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterSpacingLabel.swift; sourceTree = "<group>"; };
@@ -356,6 +360,8 @@
 				3CB0614A25AB405E0088ACFD /* ChallengeQuitAlertView.xib */,
 				3CDE69AE25B969F70057A415 /* CustomAlertView.swift */,
 				3CDE69B125B96A120057A415 /* CustomAlertView.xib */,
+				3CF5ADCF25C1BC4200F1E45E /* ChallengeConfirmAlertView.swift */,
+				3CF5ADD225C1BC5200F1E45E /* ChallengeConfirmAlertView.xib */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -544,6 +550,7 @@
 				3CEF692325BBF5BB00C47255 /* RecentLocationCell.xib in Resources */,
 				3C72DA3025A9FC49001567B4 /* THEFACESHOP+INKLIPQUID.otf in Resources */,
 				3CEC75D725AD93E30016738F /* Montserrat-Medium.ttf in Resources */,
+				3CF5ADD325C1BC5200F1E45E /* ChallengeConfirmAlertView.xib in Resources */,
 				3CE3C1AD25B7AB70003DF328 /* SelectChallengeCell.xib in Resources */,
 				3C356DFD25AA9F3000629143 /* Location.storyboard in Resources */,
 				3C72DA2D25A9FAE1001567B4 /* Login.storyboard in Resources */,
@@ -625,6 +632,7 @@
 				3C1551A125AD6D260030949D /* ChallengeSuccessAlertView.swift in Sources */,
 				3CE3C1CC25B82691003DF328 /* KakaoApi.swift in Sources */,
 				3C356E2025AAEF4B00629143 /* LoginNavigationViewController.swift in Sources */,
+				3CF5ADD025C1BC4200F1E45E /* ChallengeConfirmAlertView.swift in Sources */,
 				3CB0615A25ABEF9D0088ACFD /* SettingViewController.swift in Sources */,
 				3C356E0225AAA1F300629143 /* LocationViewController.swift in Sources */,
 				3CD801DF25BB1606008EA180 /* ClassNameExtension.swift in Sources */,

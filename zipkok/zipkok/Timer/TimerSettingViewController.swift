@@ -19,6 +19,7 @@ class TimerSettingViewController: UIViewController {
     
     private let keyChainManager = KeyChainManager()
 
+    var dayNumber: Int?
     var startDate: Date?
     var endDate: Date?
     
@@ -34,11 +35,16 @@ class TimerSettingViewController: UIViewController {
         prepareStartButtonView()
         prepareStartTimeView()
         prepareEndTimeView()
+        setNavigationComponents()
     }
     
     static func storyboardInstance() -> TimerSettingViewController? {
         let storyboard = UIStoryboard(name: TimerSettingViewController.storyboardName(), bundle: nil)
         return storyboard.instantiateInitialViewController()
+    }
+    
+    private func setNavigationComponents() {
+        navigationItem.hidesBackButton = true
     }
     
     private func prepareStartImageView() {
