@@ -99,6 +99,17 @@ class TimerViewController: UIViewController {
         animateCircleProgressBar(with: Double(timeInterval))
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        isActiveFromBackground = true
+        
+        timer?.invalidate()
+        timer = nil
+        
+        circleProgressBar.value = 0
+        circleProgressBar.layer.removeAllAnimations()
+    }
+    
     static func storyboardInstance() -> TimerViewController? {
         let storyboard = UIStoryboard(name: TimerViewController.storyboardName(), bundle: nil)
         return storyboard.instantiateInitialViewController()
@@ -257,8 +268,6 @@ class TimerViewController: UIViewController {
     }
     
     @objc func didEnterBackgroundNotification() {
-        dateManager.startDate = self.startDate
-        dateManager.endDate = self.endDate
         isActiveFromBackground = true
         
         timer?.invalidate()
