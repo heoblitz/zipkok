@@ -64,7 +64,14 @@ class TimerViewController: UIViewController {
         return String(format: "%2.0f", percent) + "%"
     }
     
+    // timer restore properties
+    private var remainTimeInterval: Double = 0
+    private var isProgressAnimated: Bool = false
+    
+    // timer restore flag
     var isActiveFromBackground: Bool = false
+    
+    // Dependency injection from other vc
     var challengeIdx: Int?
     var startDate: Date?
     var endDate: Date?
@@ -95,13 +102,18 @@ class TimerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        restoreTimer() // Access from background or sceneDelegate
-        animateCircleProgressBar(with: Double(timeInterval))
+        
+        if isActiveFromBackground {
+            restoreTimer() // Access from background or sceneDelegate
+        } else {
+            animateCircleProgressBar(with: Double(timeInterval))
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         isActiveFromBackground = true
+        isProgressAnimated = false
         
         timer?.invalidate()
         timer = nil
@@ -199,11 +211,18 @@ class TimerViewController: UIViewController {
                     self.timer = nil
                     self.successChallenge()
                 }
+                
+                print(self.isProgressAnimated)
+                if !self.isProgressAnimated, self.remainTimeInterval != 0.0 {
+                    self.isProgressAnimated = true
+                    self.animateCircleProgressBar(with: self.remainTimeInterval)
+                }
             })
         }
     }
     
     private func animateCircleProgressBar(with time: TimeInterval) {
+        isProgressAnimated = true
         UIView.animate(withDuration: time * 1.1, animations: {
             self.circleProgressBar.value = 100
         })
@@ -251,15 +270,16 @@ class TimerViewController: UIViewController {
             successChallenge()
         } else {
             let passedTimeInterval = currentData.timeIntervalSince(startDate)
-            let remainTimeInterval = totalTimeInterval - passedTimeInterval
+            self.remainTimeInterval = totalTimeInterval - passedTimeInterval
             let percent = (passedTimeInterval / totalTimeInterval) * 100
             
             currentTime = Int(passedTimeInterval)
-            prepareTimer()
 
             circleProgressBar.value = CGFloat(percent)
             circleProgressBar.layer.removeAllAnimations()
-            animateCircleProgressBar(with: remainTimeInterval)
+            
+            prepareTimer()
+            // animateCircleProgressBar(with: remainTimeInterval)
         }
     }
     
@@ -269,6 +289,7 @@ class TimerViewController: UIViewController {
     
     @objc func didEnterBackgroundNotification() {
         isActiveFromBackground = true
+        isProgressAnimated = false
         
         timer?.invalidate()
         timer = nil
