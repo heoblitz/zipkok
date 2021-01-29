@@ -34,6 +34,7 @@ class LocationViewController: UIViewController {
         }
     }
     
+    private let dateManager = DateManager()
     private let keyChainManager = KeyChainManager()
     private let recentLocationViewModel = RecentLocationViewModel()
     private var recentLocations: [RecentLocation] = [] {
@@ -154,11 +155,23 @@ class LocationViewController: UIViewController {
         
         DispatchQueue.global().async {
             KakaoApi.shared.getUserInformation(token: accessToken) { userInformation in
-                ZipkokApi.shared.register(location: locationInfo, user: userInformation) { registerResponse in
+                ZipkokApi.shared.register(location: locationInfo, user: userInformation) { [weak self] registerResponse in
+                    guard let self = self else { return }
+                    
                     if registerResponse.isSuccess, registerResponse.code == 1012 {
                         self.keyChainManager.jwtToken = registerResponse.result?.jwt
                         self.keyChainManager.userId = registerResponse.result?.userIdx
                         self.keyChainManager.userName = userInformation.kakaoAccount.profile.nickname
+                        
+                        // firebase token 지정
+                        if let fcmToken = self.keyChainManager.fcmToken, let jwtToken = self.keyChainManager.jwtToken {
+                            ZipkokApi.shared.registerFirebaseToken(jwt: jwtToken, token: fcmToken) { registerFirebaseTokenResponse in
+                                if registerFirebaseTokenResponse.isSuccess {
+                                    // dateManager.isNotAppFirstLaunched = true
+                                    print(registerFirebaseTokenResponse.message)
+                                }
+                            }
+                        }
                         
                         DispatchQueue.main.async {
                             self.activityIndicatorView.stopAnimating()

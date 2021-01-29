@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let keyChainManager = KeyChainManager()
         
         // Kakao SDK
-        KakaoSDKCommon.initSDK(appKey: "e373d2a0fe0f2f204d3a1e0e8d00dfd5")
+        KakaoSDKCommon.initSDK(appKey: "f6ed7a173632bdd826ec213d2c35ac29")
         // Firebase SDK
         FirebaseApp.configure()
         

@@ -53,10 +53,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let dateManager = DateManager()
             let keyChainManager = KeyChainManager()
             
-            if dateManager.isNotAppFirstLaunched == false, let fcmToken = keyChainManager.fcmToken, let jwtToken = keyChainManager.jwtToken {
+            // firebase token 지정
+            if let fcmToken = keyChainManager.fcmToken, let jwtToken = keyChainManager.jwtToken {
                 ZipkokApi.shared.registerFirebaseToken(jwt: jwtToken, token: fcmToken) { registerFirebaseTokenResponse in
                     if registerFirebaseTokenResponse.isSuccess {
-                        dateManager.isNotAppFirstLaunched = false
+                        // dateManager.isNotAppFirstLaunched = true
                         print(registerFirebaseTokenResponse.message)
                     }
                 }

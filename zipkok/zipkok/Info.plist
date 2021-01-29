@@ -23,14 +23,14 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>kakaoe373d2a0fe0f2f204d3a1e0e8d00dfd5</string>
+				<string>kakaof6ed7a173632bdd826ec213d2c35ac29</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>KAKAO_APP_KEY</key>
-	<string>e373d2a0fe0f2f204d3a1e0e8d00dfd5</string>
+	<string>f6ed7a173632bdd826ec213d2c35ac29</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaokompassauth</string>
