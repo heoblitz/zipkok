@@ -229,8 +229,10 @@ class TimerViewController: UIViewController {
     }
     
     private func alertChallengeSuccessAlertView() {
+        guard let navVc = navigationController else { return }
+
         successAlertView.setUserName(by: keyChainManager.userName)
-        view.addSubview(successAlertView)
+        navVc.view.addSubview(successAlertView)
         
         NSLayoutConstraint.activate([
             successAlertView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -299,8 +301,10 @@ class TimerViewController: UIViewController {
     }
     
     @objc func quitButtonViewTapped() {
+        guard let navVc = navigationController else { return }
+
         quitAlertView.setUserName(by: keyChainManager.userName)
-        view.addSubview(quitAlertView)
+        navVc.view.addSubview(quitAlertView)
         
         NSLayoutConstraint.activate([
             quitAlertView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -319,6 +323,7 @@ class TimerViewController: UIViewController {
         
         ZipkokApi.shared.failChallenge(jwt: jwtToken, idx: idx) { failChallengeResponse in
             if failChallengeResponse.isSuccess {
+                self.quitAlertView.removeFromSuperview()
                 self.navigationController?.popToRootViewController(animated: true)
             } else {
                 // 예외처리
@@ -331,6 +336,7 @@ class TimerViewController: UIViewController {
     }
     
     @objc func successAlertDismissButtonTapped() {
+        successAlertView.removeFromSuperview()
         navigationController?.popToRootViewController(animated: true)
     }
     

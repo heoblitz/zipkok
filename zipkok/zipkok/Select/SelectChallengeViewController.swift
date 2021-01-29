@@ -114,7 +114,7 @@ extension SelectChallengeViewController: UICollectionViewDelegate {
             let keyChainManager = KeyChainManager()
             let jwt = keyChainManager.jwtToken!
             let startDate = Date()
-            let endDate = startDate.addingTimeInterval(120)
+            let endDate = startDate.addingTimeInterval(30)
             ZipkokApi.shared.registerChallengeTime(jwt: jwt, start: startDate.challengeTimeFormat, end: endDate.challengeTimeFormat) { [weak self] registerChallengeTimeResponse in
                 guard let self = self else { return }
                 
