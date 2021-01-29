@@ -83,6 +83,7 @@ extension TestViewController: ASAuthorizationControllerDelegate {
             let identityToken = String(data: credential.identityToken!, encoding: .utf8)!
             let authorizationCode = String(data: credential.authorizationCode!, encoding: .utf8)!
 
+            print("user", credential.user)
             print("identityToken", identityToken)
             print("authorizationCode", authorizationCode)
         }

@@ -41,7 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             fatalError()
         }
         
-        let isTestMode = false
+        let isTestMode = true
         
         if isTestMode {
             let window = UIWindow(windowScene: windowScene)

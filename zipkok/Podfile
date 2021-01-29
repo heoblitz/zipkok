@@ -7,6 +7,7 @@ target 'zipkok' do
   pod 'KakaoSDKCommon'  # 필수 요소를 담은 공통 모듈
   pod 'KakaoSDKAuth'  # 카카오 로그인
   pod 'KakaoSDKUser'  # 사용자 관리
+  pod 'KakaoSDKLink'  # 메시지(카카오링크)
   pod 'Firebase/Analytics', '7.2-M1'
   pod 'Firebase/Messaging', '7.2-M1'
   pod 'Alamofire', '~> 5.2'
