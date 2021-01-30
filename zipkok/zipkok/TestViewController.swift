@@ -57,7 +57,7 @@ class TestViewController: UIViewController {
     }
     
     func addButton() {
-        let button = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
+        let button = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .whiteOutline)
         button.addTarget(self, action: #selector(handleAppleSignInButton), for: .touchUpInside)
         signInView.addSubview(button)
     }

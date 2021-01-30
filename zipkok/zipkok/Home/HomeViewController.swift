@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
         let profileBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 114")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
         profileBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
         
-        let shareBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
+        let shareBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(shareBarButtonItemTapped))
         shareBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         
         let settingBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 113")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(settingBarButtonItemTapped))
@@ -89,6 +89,10 @@ class HomeViewController: UIViewController {
         }
         
         navigationController?.pushViewController(settingVc, animated: true)
+    }
+    
+    @objc func shareBarButtonItemTapped() {
+        KakaoApi.shared.sendRecommendTemplate()
     }
     
     @objc private func startButtonViewTapped() {

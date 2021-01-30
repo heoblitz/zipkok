@@ -21,14 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    //     for apple login test code
-    //            let window = UIWindow(windowScene: windowScene)
-    //
-    //            window.rootViewController = testVc
-    //            window.makeKeyAndVisible()
-    //            self.window = window
-    
-    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         guard let loginNavVc = LoginNavigationViewController.storyboardInstance(),
@@ -41,11 +33,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             fatalError()
         }
         
-        let isTestMode = true
+        let isTestMode = false
         
         if isTestMode {
             let window = UIWindow(windowScene: windowScene)
-
+            
             window.rootViewController = testVc
             window.makeKeyAndVisible()
             self.window = window
@@ -76,14 +68,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                let result = challengeTimeResponse.result,
                                let startDate = result.startDate,
                                let endDate = result.endDate { // 챌린지가 있을 때
-                                
+
                                 homeNavVc.pushViewController(selectChallengeVc, animated: false)
                                 selectChallengeVc.navigationItem.backButtonTitle = ""
                                 timerVc.isActiveFromBackground = true
                                 timerVc.challengeIdx = result.challengeIdx
                                 timerVc.startDate = startDate
                                 timerVc.endDate = endDate
-                                
+
                                 homeNavVc.pushViewController(timerVc, animated: false)
                                 timerVc.navigationItem.backButtonTitle = ""
                                 window.rootViewController = homeNavVc

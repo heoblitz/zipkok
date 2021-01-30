@@ -40,7 +40,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZU-gI-eSh">
-                                <rect key="frame" x="24" y="756" width="380" height="56"/>
+                                <rect key="frame" x="24" y="734" width="380" height="56"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="free-icon-kakao-talk-2111466" translatesAutoresizingMaskIntoConstraints="NO" id="B3i-sg-fW2">
                                         <rect key="frame" x="96" y="13" width="30" height="30"/>
@@ -71,23 +71,33 @@
                                 <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fvo-nN-TBq">
+                                <rect key="frame" x="24" y="810" width="380" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="bs3-45-f59"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ecx-ug-X8E"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ecx-ug-X8E" firstAttribute="bottom" secondItem="oZU-gI-eSh" secondAttribute="bottom" constant="80" id="BRc-aO-7q3"/>
+                            <constraint firstItem="fvo-nN-TBq" firstAttribute="top" secondItem="oZU-gI-eSh" secondAttribute="bottom" constant="20" id="22Q-Kc-B9k"/>
+                            <constraint firstItem="fvo-nN-TBq" firstAttribute="leading" secondItem="Ecx-ug-X8E" secondAttribute="leading" constant="24" id="DzU-MK-fod"/>
                             <constraint firstItem="Swu-pJ-Bfl" firstAttribute="trailing" secondItem="94m-cR-Z9c" secondAttribute="leading" constant="87.299999999999997" id="HpL-wF-YHv"/>
                             <constraint firstItem="cWG-7g-T2b" firstAttribute="leading" secondItem="Ecx-ug-X8E" secondAttribute="leading" constant="24" id="IZq-F0-bKO"/>
+                            <constraint firstAttribute="bottom" secondItem="fvo-nN-TBq" secondAttribute="bottom" constant="60" id="M2F-WP-yRD"/>
                             <constraint firstItem="Ecx-ug-X8E" firstAttribute="trailing" secondItem="94m-cR-Z9c" secondAttribute="trailing" constant="24" id="OS3-T2-HG1"/>
                             <constraint firstItem="Ecx-ug-X8E" firstAttribute="trailing" secondItem="oZU-gI-eSh" secondAttribute="trailing" constant="24" id="Qhg-83-0HH"/>
                             <constraint firstItem="94m-cR-Z9c" firstAttribute="top" secondItem="Swu-pJ-Bfl" secondAttribute="bottom" constant="6" id="eXM-NF-TPv"/>
                             <constraint firstItem="cWG-7g-T2b" firstAttribute="top" secondItem="Ecx-ug-X8E" secondAttribute="top" constant="100" id="gsG-Fq-Y6f"/>
-                            <constraint firstItem="oZU-gI-eSh" firstAttribute="top" secondItem="94m-cR-Z9c" secondAttribute="bottom" constant="60.799999999999997" id="lqI-pr-hzg"/>
+                            <constraint firstItem="oZU-gI-eSh" firstAttribute="top" secondItem="94m-cR-Z9c" secondAttribute="bottom" constant="38.666666666666629" id="qkG-pS-xTu"/>
+                            <constraint firstItem="Ecx-ug-X8E" firstAttribute="trailing" secondItem="fvo-nN-TBq" secondAttribute="trailing" constant="24" id="uoT-SM-rdt"/>
                             <constraint firstItem="oZU-gI-eSh" firstAttribute="leading" secondItem="Ecx-ug-X8E" secondAttribute="leading" constant="24" id="uzK-IM-2p5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ugv-MQ-SWh"/>
                     <connections>
+                        <outlet property="appleLoginStackView" destination="fvo-nN-TBq" id="kgC-15-Ujt"/>
                         <outlet property="iconTextLabel" destination="Swu-pJ-Bfl" id="m6s-05-Yak"/>
                         <outlet property="kakaoLoginView" destination="oZU-gI-eSh" id="xNm-8S-KYG"/>
                     </connections>

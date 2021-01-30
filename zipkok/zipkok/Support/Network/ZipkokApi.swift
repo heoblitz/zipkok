@@ -8,6 +8,12 @@
 import Foundation
 import Alamofire
 
+@frozen
+public enum LoginType {
+    case apple
+    case kakao
+}
+
 class ZipkokApi {
     static let shared: ZipkokApi = ZipkokApi()
 
@@ -15,6 +21,7 @@ class ZipkokApi {
     
     private let autoLoginURLString: String = "/login/jwt"
     private let kakaoLoginURLString: String = "/login/kakao"
+    private let appleLoginURLString: String = "/login/apple"
     private let registerURLString: String = "/users"
     private let locationURLString: String = "/users/locations"
     private let registerChallengeTimeURLString: String = "/users/challenge-times"
@@ -49,16 +56,47 @@ class ZipkokApi {
         }
     }
     
-    func register(location locationInfo: LocationInfo, user userInfo: ResponseUserInformation, completionHandler: @escaping (RegisterResponse) -> ()) {
+    func appleLogin(token identityToken: String, code authorizationCode: String, user: String, completionHandler: @escaping (AppleLoginResponse) -> ()) {
         let bodys: Parameters = [
-            "userName" : userInfo.kakaoAccount.profile.nickname,
-            "userEmail" : userInfo.kakaoAccount.email ?? "test@test.com",
-            "snsId" : userInfo.id,
+            "identityToken" : identityToken,
+            "authorizationCode" : authorizationCode,
+            "user" : user
+        ]
+
+        let request = AF.request(baseURLString + appleLoginURLString, method: .post, parameters: bodys, encoding: Alamofire.JSONEncoding.default)
+
+        request.responseString(completionHandler: { response in
+            print(response)
+        })
+        
+        request.responseDecodable(of: AppleLoginResponse.self) { response in
+            if let error = response.error {
+                print(error)
+                print(response)
+                return
+            }
+
+            guard let value = response.value else {
+                print("data is nil")
+                return
+            }
+
+            print(value)
+            completionHandler(value)
+        }
+    }
+    
+    func register(location locationInfo: LocationInfo, name userName: String, email userEmail: String, id snsId: String, type loginType: LoginType, completionHandler: @escaping (RegisterResponse) -> ()) {
+        
+        let bodys: Parameters = [
+            "userName" : userName,
+            "userEmail" : userEmail,
+            "snsId" : snsId,
             "latitude" : locationInfo.latitude,
             "longitude" : locationInfo.longitude,
             "parcelAddressing" : locationInfo.normalName,
             "streetAddressing" : locationInfo.loadName,
-            "loginType" : "KAKAO"
+            "loginType" : loginType == .apple ? "APPLE" : "KAKAO"
         ]
 
         let request = AF.request(baseURLString + registerURLString, method: .post, parameters: bodys, encoding: Alamofire.JSONEncoding.default)
@@ -355,6 +393,19 @@ struct KakaologinResult: Codable {
     let jwt: String
 }
 
+// MARK:- appleLogin
+struct AppleLoginResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: AppleloginResult?
+}
+
+struct AppleloginResult: Codable {
+    let userId: Int
+    let jwt: String
+}
+
 // MARK:- register
 struct RegisterResponse: Codable {
     let isSuccess: Bool
@@ -451,7 +502,7 @@ struct RecentLocation: Codable {
     let streetAddressing: String
 }
 
-// NARK:- challengeTime
+// MARK:- challengeTime
 struct ChallengeTimeResponse: Codable {
     let isSuccess: Bool
     let code: Int
@@ -473,16 +524,24 @@ struct ChallengeTimeResult: Codable {
     }
 }
 
-// NARK:- failChallenge
+// MARK:- failChallenge
 struct FailChallengeResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
 }
 
-// NARK:- registerFirebaseToken
+// MARK:- registerFirebaseToken
 struct RegisterFirebaseTokenResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
 }
+
+// MARK:- Apple Login Info
+struct AppleLoginInfo {
+    let id: String
+    let email: String
+    let fullName: String
+}
+

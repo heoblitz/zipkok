@@ -48,8 +48,13 @@ class LocationViewController: UIViewController {
     }
     
     private var isReceivedCurrentLocation: Bool = false
-    
     var locationRequestType: LocationRequestType = .register
+
+    // regsiter
+    var loginType: LoginType?
+    var appleLoginInfo: AppleLoginInfo?
+    
+    // location
     var locationPatchCompletionHandler: ((LocationInfo) -> ())?
     var locationInfo: LocationInfo?
     
@@ -146,8 +151,18 @@ class LocationViewController: UIViewController {
     }
     
     private func register() {
+        guard let loginType = loginType else { return }
+        
+        switch loginType {
+        case .kakao:
+            kakaoRegister()
+        case .apple:
+            appleRegister()
+        }
+    }
+    
+    private func kakaoRegister() {
         guard let locationInfo = locationInfo, let accessToken = keyChainManager.accessToken else {
-            print("---> register location, accessToken can't loaded")
             return
         }
         
@@ -155,14 +170,19 @@ class LocationViewController: UIViewController {
         
         DispatchQueue.global().async {
             KakaoApi.shared.getUserInformation(token: accessToken) { userInformation in
-                ZipkokApi.shared.register(location: locationInfo, user: userInformation) { [weak self] registerResponse in
+                
+                let name = userInformation.kakaoAccount.profile.nickname
+                let email = userInformation.kakaoAccount.email ?? "notRegisted@test.com"
+                let id = String(userInformation.id)
+                
+                ZipkokApi.shared.register(location: locationInfo, name: name, email: email, id: id, type: .kakao) { [weak self] registerResponse in
                     guard let self = self else { return }
-                    
+
                     if registerResponse.isSuccess, registerResponse.code == 1012 {
                         self.keyChainManager.jwtToken = registerResponse.result?.jwt
                         self.keyChainManager.userId = registerResponse.result?.userIdx
                         self.keyChainManager.userName = userInformation.kakaoAccount.profile.nickname
-                        
+
                         // firebase token 지정
                         if let fcmToken = self.keyChainManager.fcmToken, let jwtToken = self.keyChainManager.jwtToken {
                             ZipkokApi.shared.registerFirebaseToken(jwt: jwtToken, token: fcmToken) { registerFirebaseTokenResponse in
@@ -172,17 +192,17 @@ class LocationViewController: UIViewController {
                                 }
                             }
                         }
-                        
+
                         DispatchQueue.main.async {
                             self.activityIndicatorView.stopAnimating()
                             guard let homeNavVc = HomeNavigationViewController.storyboardInstance() else { return }
-                            
+
                             guard let window = UIApplication.shared.windows.first else { return }
                             window.rootViewController = homeNavVc
-                            
+
                             let options: UIView.AnimationOptions = .transitionCrossDissolve
                             let duration: TimeInterval = 0.5
-                            
+
                             UIView.transition(with: window, duration: duration, options: options, animations: {}) { completed in
                                 self.dismiss(animated: true, completion: nil)
                             }
@@ -192,6 +212,54 @@ class LocationViewController: UIViewController {
             }
         }
     }
+    
+    private func appleRegister() {
+        guard let locationInfo = locationInfo, let appleLoginInfo = appleLoginInfo  else {
+            return
+        }
+        
+        activityIndicatorView.startAnimating()
+        
+        let id = appleLoginInfo.id
+        let email = appleLoginInfo.email
+        let name = appleLoginInfo.fullName
+        
+        ZipkokApi.shared.register(location: locationInfo, name: name, email: email, id: id, type: .apple) { [weak self] registerResponse in
+            guard let self = self else { return }
+            
+            if registerResponse.isSuccess, registerResponse.code == 1012 {
+                self.keyChainManager.jwtToken = registerResponse.result?.jwt
+                self.keyChainManager.userId = registerResponse.result?.userIdx
+                self.keyChainManager.userName = name
+                
+                // firebase token 지정
+                if let fcmToken = self.keyChainManager.fcmToken, let jwtToken = self.keyChainManager.jwtToken {
+                    ZipkokApi.shared.registerFirebaseToken(jwt: jwtToken, token: fcmToken) { registerFirebaseTokenResponse in
+                        if registerFirebaseTokenResponse.isSuccess {
+                            // dateManager.isNotAppFirstLaunched = true
+                            print(registerFirebaseTokenResponse.message)
+                        }
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    self.activityIndicatorView.stopAnimating()
+                    guard let homeNavVc = HomeNavigationViewController.storyboardInstance() else { return }
+                    
+                    guard let window = UIApplication.shared.windows.first else { return }
+                    window.rootViewController = homeNavVc
+                    
+                    let options: UIView.AnimationOptions = .transitionCrossDissolve
+                    let duration: TimeInterval = 0.5
+                    
+                    UIView.transition(with: window, duration: duration, options: options, animations: {}) { completed in
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+    }
+    
     
     private func patchUserInfo() {
         guard let locationInfo = locationInfo, let jwt = keyChainManager.jwtToken, let userId = keyChainManager.userId else {

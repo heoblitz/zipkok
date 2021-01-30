@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import KakaoSDKLink
 
 class KakaoApi {
     static let shared = KakaoApi()
@@ -34,6 +35,22 @@ class KakaoApi {
             
             print(value)
             completionHandler(value)
+        }
+    }
+    
+    func sendRecommendTemplate() {
+        let templateId = 44860
+            
+        LinkApi.shared.customLink(templateId: Int64(templateId), templateArgs: nil) {(linkResult, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("customLink() success.")
+                if let linkResult = linkResult {
+                    UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+                }
+            }
         }
     }
 }
