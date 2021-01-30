@@ -87,8 +87,7 @@ class LoginViewController: UIViewController {
                 ZipkokApi.shared.kakaoLogin(token: token.accessToken, completionHandler: { [weak self] response in
                     guard let self = self else { return }
                     
-                    if response.isSuccess, let result = response.result {
-                        self.keyChainManager.jwtToken = result.jwt
+                    if response.isSuccess {
                         
                         guard let locationVc = LocationViewController.storyboardInstance() else {
                             fatalError()
