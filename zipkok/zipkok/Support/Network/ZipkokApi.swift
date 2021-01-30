@@ -244,7 +244,7 @@ class ZipkokApi {
         }
     }
     
-    func jwtLogin(jwt jwtToken: String, completionHandler: @escaping (JwtLoginResponse) -> ()) {
+    func jwtLogin(jwt jwtToken: String, errorHandler: (() -> ())? = nil, completionHandler: @escaping (JwtLoginResponse) -> ()) {
         let headers: HTTPHeaders = ["X-ACCESS-TOKEN" : jwtToken]
         let request = AF.request(baseURLString + jwtLoginURLString, method: .get, encoding: Alamofire.JSONEncoding.default, headers: headers)
         
@@ -252,6 +252,7 @@ class ZipkokApi {
             if let error = response.error {
                 print(error)
                 print(response)
+                errorHandler?()
                 return
             }
 

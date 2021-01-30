@@ -21,83 +21,94 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
+    //    let isTestMode = false
+    //
+    //    if isTestMode {
+    //        let window = UIWindow(windowScene: windowScene)
+    //
+    //        window.rootViewController = testVc
+    //        window.makeKeyAndVisible()
+    //        self.window = window
+    //    } else {
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        guard let loginNavVc = LoginNavigationViewController.storyboardInstance(),
-              let homeNavVc = HomeNavigationViewController.storyboardInstance(),
+        guard let homeNavVc = HomeNavigationViewController.storyboardInstance(),
               let splashVc = SplashViewController.storyboardInstance(),
               let selectChallengeVc = SelectChallengeViewController.storyboardInstance(),
-              let timerSettingVc = TimerSettingViewController.storyboardInstance(),
-              let timerVc = TimerViewController.storyboardInstance(),
-              let testVc = TestViewController.storyboardInstance() else {
+              let timerVc = TimerViewController.storyboardInstance() else {
             fatalError()
         }
         
-        let isTestMode = false
+        let keyChainManager = KeyChainManager()
+        prepareFirebaseToken()
         
-        if isTestMode {
-            let window = UIWindow(windowScene: windowScene)
-            
-            window.rootViewController = testVc
-            window.makeKeyAndVisible()
-            self.window = window
-        } else {
-            let dateManager = DateManager()
-            let keyChainManager = KeyChainManager()
-            
-            // firebase token 지정
-            if let fcmToken = keyChainManager.fcmToken, let jwtToken = keyChainManager.jwtToken {
-                ZipkokApi.shared.registerFirebaseToken(jwt: jwtToken, token: fcmToken) { registerFirebaseTokenResponse in
-                    if registerFirebaseTokenResponse.isSuccess {
-                        // dateManager.isNotAppFirstLaunched = true
-                        print(registerFirebaseTokenResponse.message)
-                    }
-                }
-            }
-            
-            let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = splashVc
-            window.makeKeyAndVisible()
-            self.window = window
-            
-            if let jwtToken = keyChainManager.jwtToken { // jwt token 이 있을 때
-                ZipkokApi.shared.jwtLogin(jwt: jwtToken) { jwtLoginResponse in
-                    if jwtLoginResponse.isSuccess, jwtLoginResponse.code == 1014 { // jwt token 이 유효할 때
-                        ZipkokApi.shared.challengeTime(jwt: jwtToken) { challengeTimeResponse in
-                            if challengeTimeResponse.code == 1000,
-                               let result = challengeTimeResponse.result,
-                               let startDate = result.startDate,
-                               let endDate = result.endDate { // 챌린지가 있을 때
-
-                                homeNavVc.pushViewController(selectChallengeVc, animated: false)
-                                selectChallengeVc.navigationItem.backButtonTitle = ""
-                                timerVc.isActiveFromBackground = true
-                                timerVc.challengeIdx = result.challengeIdx
-                                timerVc.startDate = startDate
-                                timerVc.endDate = endDate
-
-                                homeNavVc.pushViewController(timerVc, animated: false)
-                                timerVc.navigationItem.backButtonTitle = ""
-                                window.rootViewController = homeNavVc
-                            } else { // 챌린지가 없을 때
-                                homeNavVc.modalPresentationStyle = .fullScreen
-                                window.rootViewController = homeNavVc
-                            }
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = splashVc
+        window.makeKeyAndVisible()
+        self.window = window
+        
+        if let jwtToken = keyChainManager.jwtToken { // jwt token 이 있을 때
+            ZipkokApi.shared.jwtLogin(jwt: jwtToken, errorHandler: {
+                self.setLogin(window)
+                return
+            }) { jwtLoginResponse in
+                if jwtLoginResponse.isSuccess, jwtLoginResponse.code == 1014 { // jwt token 이 유효할 때
+                    ZipkokApi.shared.challengeTime(jwt: jwtToken) { challengeTimeResponse in
+                        if challengeTimeResponse.code == 1000,
+                           let result = challengeTimeResponse.result,
+                           let startDate = result.startDate,
+                           let endDate = result.endDate { // 챌린지가 있을 때
+                            
+                            homeNavVc.pushViewController(selectChallengeVc, animated: false)
+                            selectChallengeVc.navigationItem.backButtonTitle = ""
+                            timerVc.isActiveFromBackground = true
+                            timerVc.challengeIdx = result.challengeIdx
+                            timerVc.startDate = startDate
+                            timerVc.endDate = endDate
+                            
+                            homeNavVc.pushViewController(timerVc, animated: false)
+                            timerVc.navigationItem.backButtonTitle = ""
+                            window.rootViewController = homeNavVc
+                            return
+                        } else { // 챌린지가 없을 때
+                            self.setHome(window)
+                            return
                         }
-                    } else { // jwt token 이 유효하지 않을 때
-                        loginNavVc.modalPresentationStyle = .fullScreen
-                        window.rootViewController = loginNavVc
                     }
                 }
-            } else { // jwt token 이 없으면
-                guard let loginNavVc = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as? UINavigationController else {
-                    fatalError()
-                }
-                loginNavVc.modalPresentationStyle = .fullScreen
-                window.rootViewController = loginNavVc
             }
-            
-            self.window = window
+        }
+        
+        setLogin(window)
+    }
+    
+    func setHome(_ window: UIWindow) {
+        guard let homeNavVc = HomeNavigationViewController.storyboardInstance() else { return }
+        
+        homeNavVc.modalPresentationStyle = .fullScreen
+        window.rootViewController = homeNavVc
+        self.window = window
+    }
+    
+    func setLogin(_ window: UIWindow) {
+        guard let loginNavVc = LoginNavigationViewController.storyboardInstance() else { return }
+        
+        loginNavVc.modalPresentationStyle = .fullScreen
+        window.rootViewController = loginNavVc
+        self.window = window
+    }
+    
+    func prepareFirebaseToken() {
+        let keyChainManager = KeyChainManager()
+        // firebase token 지정
+        if let fcmToken = keyChainManager.fcmToken, let jwtToken = keyChainManager.jwtToken {
+            ZipkokApi.shared.registerFirebaseToken(jwt: jwtToken, token: fcmToken) { registerFirebaseTokenResponse in
+                if registerFirebaseTokenResponse.isSuccess {
+                    // dateManager.isNotAppFirstLaunched = true
+                    print(registerFirebaseTokenResponse.message)
+                }
+            }
         }
     }
     
