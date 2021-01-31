@@ -118,7 +118,11 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
            let identityToken = String(data: identityTokenData, encoding: .utf8),
            let authorizationCode = String(data: authorizationCodeData, encoding: .utf8) {
             
+            var name: String = "익명"
             
+            if let familyName = credential.fullName?.familyName, let givenName = credential.fullName?.givenName {
+                name = "\(familyName) \(givenName)"
+            }
             
             print("email", credential.email)
             print("user", credential.user)
@@ -133,7 +137,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                         fatalError()
                     }
                     
-                    locationVc.appleLoginInfo = AppleLoginInfo(id: credential.user, email: credential.email ?? "notRegistered", fullName: credential.fullName?.nickname ?? "익명")
+                    locationVc.appleLoginInfo = AppleLoginInfo(id: credential.user, email: credential.email ?? "", fullName: name)
                     locationVc.loginType = .apple
                     self.navigationController?.pushViewController(locationVc, animated: true)
                 } else {
