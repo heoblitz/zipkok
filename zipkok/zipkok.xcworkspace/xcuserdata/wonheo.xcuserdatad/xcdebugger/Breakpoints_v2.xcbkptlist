@@ -622,8 +622,8 @@
             filePath = "zipkok/Timer/TimerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -663,22 +663,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1A2A218B-C26D-49ED-A101-32AE7E8470D0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "zipkok/Timer/TimerViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
-            landmarkName = "restoreTimer()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C50FDE6D-5B65-423C-BC23-17AD5B4B5456"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -686,8 +670,8 @@
             filePath = "zipkok/Timer/TimerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "restoreTimer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -702,8 +686,8 @@
             filePath = "zipkok/Timer/TimerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "restoreTimer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -718,8 +702,8 @@
             filePath = "zipkok/Timer/TimerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "sceneDidBecomeActive()"
             landmarkType = "7">
          </BreakpointContent>
@@ -734,8 +718,8 @@
             filePath = "zipkok/Timer/TimerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "animateCircleProgressBar(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -750,8 +734,8 @@
             filePath = "zipkok/Timer/TimerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "animateCircleProgressBar(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -766,8 +750,8 @@
             filePath = "zipkok/Timer/TimerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "restoreTimer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -887,22 +871,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E8ACF9FC-91E8-4F90-8E8E-62B45D800DC6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "zipkok/Setting/SettingViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "pushSwitchButtonTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7ABA0EBA-8940-42DE-862C-6B0E6E0EB627"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -910,8 +878,8 @@
             filePath = "zipkok/Timer/TimerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "prepareTimer()"
             landmarkType = "7">
          </BreakpointContent>

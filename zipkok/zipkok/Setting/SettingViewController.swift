@@ -85,9 +85,6 @@ class SettingViewController: UIViewController {
                 pushSwitchButton.isSelected = !pushSwitchButton.isSelected
             }
         }
-        
-//        pushSwitchButton.isSelected = !pushSwitchButton.isSelected
-//        print(pushSwitchButton.isSelected)
     }
 }
 

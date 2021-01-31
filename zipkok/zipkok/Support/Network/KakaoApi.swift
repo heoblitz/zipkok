@@ -17,6 +17,8 @@ class KakaoApi {
     
     private let recommendTemplateId: Int64 = 44860
     private let startWithFriendTemplateId: Int64 = 44881
+    private let sendChallengeTimeTemplateId: Int64 = 44882
+    private let sendChallengeSuccedTemplateId: Int64 = 44884
     
     private init() {}
     
@@ -57,6 +59,45 @@ class KakaoApi {
     
     func sendStartWithFriendTemplate(name userName: String) {
         LinkApi.shared.customLink(templateId: startWithFriendTemplateId, templateArgs: ["user_name" : userName]) {(linkResult, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("customLink() success.")
+                if let linkResult = linkResult {
+                    UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+                }
+            }
+        }
+    }
+    
+    func sendChallengeTime(name userName: String, hour hourNumber: Int, minute minuteNumber: Int) {
+        let args = [
+            "user_name" : userName,
+            "time_hour" : String(hourNumber),
+            "time_min" : String(minuteNumber)
+        ]
+        
+        LinkApi.shared.customLink(templateId: sendChallengeTimeTemplateId, templateArgs: args) {(linkResult, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("customLink() success.")
+                if let linkResult = linkResult {
+                    UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+                }
+            }
+        }
+    }
+    
+    func sendChallengeSucced(name userName: String, day dayNumber: Int) {
+        let args = [
+            "user_name" : userName,
+            "time_day" : String(dayNumber)
+        ]
+        
+        LinkApi.shared.customLink(templateId: sendChallengeSuccedTemplateId, templateArgs: args) {(linkResult, error) in
             if let error = error {
                 print(error)
             }

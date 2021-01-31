@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QQD-sv-SMf">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,11 +22,11 @@
             <objects>
                 <viewController id="QQD-sv-SMf" customClass="TimerSettingViewController" customModule="zipkok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fxl-LW-v4E">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-HU-OBG" userLabel="titleStackView">
-                                <rect key="frame" x="173.5" y="27" width="253" height="59"/>
+                                <rect key="frame" x="61" y="27" width="253" height="59"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="집콕을 시작해볼까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsS-5H-xaV">
                                         <rect key="frame" x="23" y="0.0" width="207" height="28"/>
@@ -41,17 +43,17 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="그룹 1443" translatesAutoresizingMaskIntoConstraints="NO" id="5BT-HG-RSP">
-                                <rect key="frame" x="185" y="155" width="230" height="230"/>
+                                <rect key="frame" x="72.5" y="185" width="230" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="mmj-RC-kG9"/>
                                     <constraint firstAttribute="height" constant="230" id="wBo-Ne-liU"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adw-Ox-w9j" userLabel="StartButtonView">
-                                <rect key="frame" x="24" y="504" width="552" height="56"/>
+                                <rect key="frame" x="24" y="571" width="327" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구랑 같이 시작하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abw-nE-Eq2">
-                                        <rect key="frame" x="213.5" y="19.5" width="125.5" height="17.5"/>
+                                        <rect key="frame" x="101" y="19.5" width="125.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
                                         <color key="textColor" red="0.13333333333333333" green="0.56862745098039214" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -65,7 +67,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="O40-pe-qd7" userLabel="setTimeStackView">
-                                <rect key="frame" x="136.5" y="396" width="327.5" height="84"/>
+                                <rect key="frame" x="24" y="463" width="327.5" height="84"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YB1-GC-21y" userLabel="startStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="327.5" height="30"/>

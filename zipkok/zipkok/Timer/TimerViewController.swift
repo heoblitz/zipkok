@@ -47,7 +47,7 @@ class TimerViewController: UIViewController {
         successAlertView.dismissButton.addGestureRecognizer(dismissTapGesture)
         successAlertView.dismissButton.isUserInteractionEnabled = true
         
-        let shareTapGesture = UITapGestureRecognizer(target: self, action: #selector(successAlertShareButtonTapped))
+        let shareTapGesture = UITapGestureRecognizer(target: self, action: #selector(shareChallegeSuccedButtonTapped))
         successAlertView.shareButtonView.addGestureRecognizer(shareTapGesture)
         successAlertView.shareButtonView.isUserInteractionEnabled = true
         
@@ -72,6 +72,7 @@ class TimerViewController: UIViewController {
     var isActiveFromBackground: Bool = false
     
     // Dependency injection from other vc
+    var dayNumber: Int?
     var challengeIdx: Int?
     var startDate: Date?
     var endDate: Date?
@@ -159,7 +160,7 @@ class TimerViewController: UIViewController {
         let profileBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 114")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
         profileBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
         
-        let shareBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
+        let shareBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(shareBarButtonItemTapped))
         shareBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         
         let settingBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 113")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(settingBarButtonItemTapped))
@@ -200,8 +201,7 @@ class TimerViewController: UIViewController {
         if timer == nil {
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] _ in
                 guard let self = self else { return }
-                
-                // self.timeLabel.attributedText = NSAttributedString(string: self.currentTime.digitalFormat, attributes: [.kern: 1.4])
+    
                 self.timeLabel.text = self.currentTime.digitalFormat
                 self.percentLabel.text = self.timePecent
                 self.currentTime += 1
@@ -212,7 +212,6 @@ class TimerViewController: UIViewController {
                     self.successChallenge()
                 }
                 
-                print(self.isProgressAnimated)
                 if !self.isProgressAnimated, self.remainTimeInterval != 0.0 {
                     self.isProgressAnimated = true
                     self.animateCircleProgressBar(with: self.remainTimeInterval)
@@ -250,10 +249,9 @@ class TimerViewController: UIViewController {
                 
         ZipkokApi.shared.successChallenge(jwt: jwtToken, idx: idx) { successChallengeResponse in
             if successChallengeResponse.isSuccess {
-                // self.successChallenge()
                 self.alertChallengeSuccessAlertView()
             } else {
-                print("뭔가 에러")
+                print("---> challenge success error")
             }
         }
     }
@@ -266,7 +264,6 @@ class TimerViewController: UIViewController {
         
         if currentData >= endDate {
             timeLabel.text = Int(totalTimeInterval).digitalFormat
-            // self.timeLabel.attributedText = NSAttributedString(string: Int(totalTimeInterval).digitalFormat, attributes: [.kern: 1.4])
             percentLabel.text = "100%"
             circleProgressBar.value = 100
             successChallenge()
@@ -281,7 +278,6 @@ class TimerViewController: UIViewController {
             circleProgressBar.layer.removeAllAnimations()
             
             prepareTimer()
-            // animateCircleProgressBar(with: remainTimeInterval)
         }
     }
     
@@ -331,10 +327,6 @@ class TimerViewController: UIViewController {
         }
     }
     
-    @objc func successAlertShareButtonTapped() {
-        view.makeToast("준비중인 기능입니다.")
-    }
-    
     @objc func successAlertDismissButtonTapped() {
         successAlertView.removeFromSuperview()
         navigationController?.popToRootViewController(animated: true)
@@ -346,6 +338,25 @@ class TimerViewController: UIViewController {
         }
         
         navigationController?.pushViewController(settingVc, animated: true)
+    }
+    
+    @objc func shareBarButtonItemTapped() {
+        guard let name = keyChainManager.userName else { return }
+        
+        var secondInterval = currentTime
+        
+        let hour = secondInterval / 3600
+        secondInterval %= 3600
+        
+        let min = secondInterval / 60
+        
+        KakaoApi.shared.sendChallengeTime(name: name, hour: hour, minute: min)
+    }
+    
+    @objc func shareChallegeSuccedButtonTapped() {
+        guard let name = keyChainManager.userName, let day = dayNumber else { return }
+        
+        KakaoApi.shared.sendChallengeSucced(name: name, day: day)
     }
 }
 

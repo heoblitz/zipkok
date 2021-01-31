@@ -102,6 +102,7 @@ class TimerSettingViewController: UIViewController {
                 
                 guard let timerVc = TimerViewController.storyboardInstance(), let result = registerChallengeTimeResponse.result else { return }
                 
+                timerVc.dayNumber = dayNumber
                 timerVc.challengeIdx = result.challengeIdx
                 timerVc.startDate = startTime
                 timerVc.endDate = endTime

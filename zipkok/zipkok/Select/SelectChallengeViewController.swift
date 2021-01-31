@@ -123,6 +123,7 @@ extension SelectChallengeViewController: UICollectionViewDelegate {
                     
                     guard let timerVc = TimerViewController.storyboardInstance(), let result = registerChallengeTimeResponse.result else { return }
                     
+                    timerVc.dayNumber = 1
                     timerVc.challengeIdx = result.challengeIdx
                     timerVc.startDate = startDate
                     timerVc.endDate = endDate
