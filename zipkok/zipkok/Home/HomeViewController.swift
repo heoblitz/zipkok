@@ -13,10 +13,6 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var startButtonView: UIView!
     @IBOutlet private weak var iconTextLabel: UILabel!
     
-//    @IBOutlet private weak var profileBarButtonItem: UIBarButtonItem!
-//    @IBOutlet private weak var shareBarButtonItem: UIBarButtonItem!
-//    @IBOutlet private weak var settingBarButtonItem: UIBarButtonItem!
-    
     lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters

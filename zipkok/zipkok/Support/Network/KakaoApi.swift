@@ -15,6 +15,9 @@ class KakaoApi {
     private let baseURLString: String = "https://kapi.kakao.com/v2"
     private let userInfoURLString: String = "/user/me"
     
+    private let recommendTemplateId: Int64 = 44860
+    private let startWithFriendTemplateId: Int64 = 44881
+    
     private init() {}
     
     func getUserInformation(token accessToken: String, completionHandler: @escaping (ResponseUserInformation) -> ()) {
@@ -39,9 +42,21 @@ class KakaoApi {
     }
     
     func sendRecommendTemplate() {
-        let templateId = 44860
-            
-        LinkApi.shared.customLink(templateId: Int64(templateId), templateArgs: nil) {(linkResult, error) in
+        LinkApi.shared.customLink(templateId: recommendTemplateId, templateArgs: nil) {(linkResult, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("customLink() success.")
+                if let linkResult = linkResult {
+                    UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+                }
+            }
+        }
+    }
+    
+    func sendStartWithFriendTemplate(name userName: String) {
+        LinkApi.shared.customLink(templateId: startWithFriendTemplateId, templateArgs: ["user_name" : userName]) {(linkResult, error) in
             if let error = error {
                 print(error)
             }

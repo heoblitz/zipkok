@@ -9,7 +9,7 @@ import UIKit
 
 class TimerSettingViewController: UIViewController {
 
-    @IBOutlet private weak var startButtonView: UIView!
+    @IBOutlet private weak var startWithFriendButtonView: UIView!
     @IBOutlet private weak var startImageView: UIImageView!
     @IBOutlet private weak var startTimeView: UIView!
     @IBOutlet private weak var endTimeView: UIView!
@@ -20,14 +20,12 @@ class TimerSettingViewController: UIViewController {
     private let keyChainManager = KeyChainManager()
 
     var dayNumber: Int?
-//    var startDate: Date?
-//    var endDate: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         prepareStartImageView()
-        prepareStartButtonView()
+        prepareStartWithFriendButtonView()
         prepareStartTimeView()
         prepareEndTimeView()
         setNavigationComponents()
@@ -64,11 +62,15 @@ class TimerSettingViewController: UIViewController {
         startImageView.addGestureRecognizer(tapGesture)
     }
     
-    private func prepareStartButtonView() {
-        startButtonView.layer.masksToBounds = false
-        startButtonView.layer.cornerRadius = 8
-        startButtonView.layer.borderColor = CGColor(red: 62/255, green: 115/255, blue: 255/255, alpha: 1)
-        startButtonView.layer.borderWidth = 1
+    private func prepareStartWithFriendButtonView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(startWithFriendButtonViewTapped))
+        startWithFriendButtonView.addGestureRecognizer(tapGesture)
+        startWithFriendButtonView.isUserInteractionEnabled = true
+        
+        startWithFriendButtonView.layer.masksToBounds = false
+        startWithFriendButtonView.layer.cornerRadius = 8
+        startWithFriendButtonView.layer.borderColor = CGColor(red: 62/255, green: 115/255, blue: 255/255, alpha: 1)
+        startWithFriendButtonView.layer.borderWidth = 1
     }
 
     private func prepareStartTimeView() {
@@ -117,5 +119,10 @@ class TimerSettingViewController: UIViewController {
         }
         
         navigationController?.pushViewController(settingVc, animated: true)
+    }
+    
+    @objc func startWithFriendButtonViewTapped() {
+        guard let name = keyChainManager.userName else { return }
+        KakaoApi.shared.sendStartWithFriendTemplate(name: name)
     }
 }
