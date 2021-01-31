@@ -111,29 +111,30 @@ extension SelectChallengeViewController: UICollectionViewDataSource {
 extension SelectChallengeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == challenges.count {
-            let keyChainManager = KeyChainManager()
-            let jwt = keyChainManager.jwtToken!
-            let startDate = Date()
-            let endDate = startDate.addingTimeInterval(30)
-            ZipkokApi.shared.registerChallengeTime(jwt: jwt, start: startDate.challengeTimeFormat, end: endDate.challengeTimeFormat) { [weak self] registerChallengeTimeResponse in
-                guard let self = self else { return }
-                
-                if registerChallengeTimeResponse.isSuccess {
-                    keyChainManager.challengeIdx = registerChallengeTimeResponse.result?.challengeIdx
-                    
-                    guard let timerVc = TimerViewController.storyboardInstance(), let result = registerChallengeTimeResponse.result else { return }
-                    
-                    timerVc.dayNumber = 1
-                    timerVc.challengeIdx = result.challengeIdx
-                    timerVc.startDate = startDate
-                    timerVc.endDate = endDate
-                    
-                    self.navigationController?.pushViewController(timerVc, animated: true)
-                } else {
-                    print("---> Challenge Register Error")
-                }
-            }
+//            let keyChainManager = KeyChainManager()
+//            let jwt = keyChainManager.jwtToken!
+//            let startDate = Date()
+//            let endDate = startDate.addingTimeInterval(30)
+//            ZipkokApi.shared.registerChallengeTime(jwt: jwt, start: startDate.challengeTimeFormat, end: endDate.challengeTimeFormat) { [weak self] registerChallengeTimeResponse in
+//                guard let self = self else { return }
+//
+//                if registerChallengeTimeResponse.isSuccess {
+//                    keyChainManager.challengeIdx = registerChallengeTimeResponse.result?.challengeIdx
+//
+//                    guard let timerVc = TimerViewController.storyboardInstance(), let result = registerChallengeTimeResponse.result else { return }
+//
+//                    timerVc.dayNumber = 1
+//                    timerVc.challengeIdx = result.challengeIdx
+//                    timerVc.startDate = startDate
+//                    timerVc.endDate = endDate
+//
+//                    self.navigationController?.pushViewController(timerVc, animated: true)
+//                } else {
+//                    print("---> Challenge Register Error")
+//                }
+//            }
             
+            view.makeToast("준비중인 기능입니다.")
             return
         }
         let challenge = challenges[indexPath.item]
