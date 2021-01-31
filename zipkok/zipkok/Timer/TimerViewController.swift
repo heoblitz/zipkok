@@ -16,6 +16,7 @@ class TimerViewController: UIViewController {
     @IBOutlet private weak var startTimeView: UIView!
     @IBOutlet private weak var endTimeView: UIView!
     @IBOutlet private weak var quitButtonView: UIView!
+    @IBOutlet private weak var subTitleLabel: UILabel!
     
     @IBOutlet private weak var percentLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
@@ -95,6 +96,7 @@ class TimerViewController: UIViewController {
         prepareStartTimeView()
         prepareEndTimeView()
         prepareQuitButtonView()
+        prepareSubTitleLabel()
         prepareNavigationBarItems()
         prepareTimeLabel() // timer font
         prepareNotification()
@@ -130,6 +132,11 @@ class TimerViewController: UIViewController {
     
     private func setNavigationComponents() {
         navigationItem.hidesBackButton = true
+    }
+    
+    private func prepareSubTitleLabel() {
+        guard let name = keyChainManager.userName else { return }
+        subTitleLabel.text = "\(name)님, 아주 잘하고 있어요!"
     }
     
     private func prepareTimeLabel() {

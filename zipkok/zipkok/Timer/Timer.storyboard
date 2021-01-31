@@ -243,6 +243,7 @@
                         <outlet property="quitButtonView" destination="n8a-uH-Po4" id="Llz-O1-KT4"/>
                         <outlet property="startDateLabel" destination="iLv-0J-PQg" id="xeM-K9-uF7"/>
                         <outlet property="startTimeView" destination="2V6-Rb-ZYp" id="i4o-PP-HIi"/>
+                        <outlet property="subTitleLabel" destination="ou5-wd-FBd" id="wPD-4F-mGo"/>
                         <outlet property="timeLabel" destination="CvS-ck-k0A" id="o8R-Qv-Dp0"/>
                     </connections>
                 </viewController>
