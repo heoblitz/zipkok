@@ -478,10 +478,10 @@
             filePath = "zipkok/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
-            landmarkType = "7">
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   uuid = "F3FAD18E-B2AD-4EFC-89D2-F65542682726 - eb3d33e01163953d"
@@ -558,10 +558,10 @@
             filePath = "zipkok/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
-            landmarkType = "7">
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -654,8 +654,8 @@
             filePath = "zipkok/Location/LocationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "submitButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -958,10 +958,10 @@
             filePath = "zipkok/Login/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "authorizationController(controller:didCompleteWithAuthorization:)"
-            landmarkType = "7">
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "LoginViewController"
+            landmarkType = "21">
             <Locations>
                <Location
                   uuid = "E920A14E-2514-45D8-AD0E-3C7BA73C5A41 - 27d3a92bc20dbd2e"

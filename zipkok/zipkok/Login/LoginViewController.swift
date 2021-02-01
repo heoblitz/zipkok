@@ -101,6 +101,34 @@ class LoginViewController: UIViewController {
                     }
                 })
             }
+        } else {
+            AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                guard let token = oauthToken else { return }
+                
+                self.keyChainManager.accessToken = token.accessToken
+                print(token)
+                
+                // 서버에 Access Token 전달 후 회원가입 확인
+                ZipkokApi.shared.kakaoLogin(token: token.accessToken, completionHandler: { [weak self] response in
+                    guard let self = self else { return }
+                    
+                    if response.isSuccess {
+                        
+                        guard let locationVc = LocationViewController.storyboardInstance() else {
+                            fatalError()
+                        }
+                        
+                        locationVc.loginType = .kakao
+                        self.navigationController?.pushViewController(locationVc, animated: true)
+                    }
+                    else {
+                        print("---> 로그인 카카오 에러")
+                    }
+                })
+            }
         }
     }
 }

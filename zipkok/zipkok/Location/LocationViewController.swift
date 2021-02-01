@@ -286,12 +286,9 @@ class LocationViewController: UIViewController {
         
         switch CLLocationManager.authorizationStatus() {
         case .restricted, .denied:
-            print("no permisson")
-            // 위치 요청 alert 뷰 올리기
             activityIndicatorView.stopAnimating()
             alertLocationAuthView()
         default:
-            // locationManager.requestLocation()
             isReceivedCurrentLocation = false
             locationManager.startUpdatingLocation()
         }
@@ -342,7 +339,6 @@ extension LocationViewController: CLLocationManagerDelegate {
                     self.activityIndicatorView.stopAnimating()
                     self.searchTextField.text = normalName
                     self.locationInfo = LocationInfo(latitude: "\(latitude)", longitude: "\(longitude)", normalName: normalName, loadName: loadName)
-                    // print(addressName, latitude, longitude)
                 }
             })
         }
@@ -390,7 +386,6 @@ extension LocationViewController: UITableViewDataSource {
 extension LocationViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let location = recentLocations[indexPath.item]
-        let parcelAddress = location.parcelAddressing
         
         GeoCodingApi.shared.requestCoord(by: location.parcelAddressing) { [weak self] (latitude, longitude) in
             guard let self = self else { return }

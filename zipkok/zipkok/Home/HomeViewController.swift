@@ -100,7 +100,8 @@ class HomeViewController: UIViewController {
 
         switch CLLocationManager.authorizationStatus() {
         case .restricted, .denied:
-            print("권한 없음")
+            isStartButtonTapped = false
+            view.hideToastActivity()
             alertLocationAuthView(message: """
                                 집콕 챌린지를 시작하기 위해서는 사용자의 위치 권한이 필요합니다. \n
                                 설정 > 개인 정보 보호 > 위치 서비스에서 집콕 앱을 활성화해주세요.
