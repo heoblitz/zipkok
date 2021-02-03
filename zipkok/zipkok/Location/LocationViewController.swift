@@ -236,7 +236,6 @@ class LocationViewController: UIViewController {
                 if let fcmToken = self.keyChainManager.fcmToken, let jwtToken = self.keyChainManager.jwtToken {
                     ZipkokApi.shared.registerFirebaseToken(jwt: jwtToken, token: fcmToken) { registerFirebaseTokenResponse in
                         if registerFirebaseTokenResponse.isSuccess {
-                            // dateManager.isNotAppFirstLaunched = true
                             print(registerFirebaseTokenResponse.message)
                         }
                     }
@@ -332,7 +331,14 @@ extension LocationViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             locationManager.stopMonitoringSignificantLocationChanges()
             
-            GeoCodingApi.shared.requestRegioncode(by: (longitude, latitude), completionHandler: { [weak self] normalName, loadName in
+            GeoCodingApi.shared.requestRegioncode(by: (longitude, latitude), errorHandler: { [weak self] in
+                guard let self = self else { return }
+
+                OperationQueue.main.addOperation {
+                    self.activityIndicatorView.stopAnimating()
+                    self.alertLocationAuthView()
+                }
+            },completionHandler: { [weak self] normalName, loadName in
                 guard let self = self else { return }
                 
                 OperationQueue.main.addOperation {

@@ -38,7 +38,7 @@ class GeoCodingApi {
         }
     }
     
-    func requestRegioncode(by coordinate: (Double, Double), completionHandler: @escaping (String, String) -> ()) {
+    func requestRegioncode(by coordinate: (Double, Double), errorHandler: (() -> ())? = nil, completionHandler: @escaping (String, String) -> ()) {
         let x = floor(coordinate.0 * 10000)/10000
         let y = floor(coordinate.1 * 10000)/10000
         let parameters: Parameters = ["x" : x, "y": y] // longitude, latitude
@@ -49,12 +49,14 @@ class GeoCodingApi {
         request.responseDecodable(of: Coord2regioncode.self) { response in
             if let error = response.error {
                 print(error)
+                errorHandler?()
                 return
             }
             
             guard let value = response.value, let location = value.documents.first, let normalAddress = location.normalAddress?.name else {
                 print("---> response is nil")
                 print(response)
+                errorHandler?()
                 return
             }
                         
