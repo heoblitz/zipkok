@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChallengeSuccessAlertView: UIView {
+final class ChallengeSuccessAlertView: UIView {
     @IBOutlet weak var alertContentView: UIView!
     @IBOutlet weak var shareButtonView: UIView!
     @IBOutlet weak var dismissButton: UIButton!

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SelectChallengeViewModel {
+final class SelectChallengeViewModel {
     var challenges: Observable<[Challenge]> = Observable([])
     
     init() {

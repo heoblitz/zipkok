@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RecentLocationViewModel {
+final class RecentLocationViewModel {
     var locations: Observable<[RecentLocation]> = Observable([])
     
     func requestRecentLocations(jwt jwtToken: String) {

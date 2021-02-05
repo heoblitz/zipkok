@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomSelectChallengeCell: UICollectionViewCell {
+final class CustomSelectChallengeCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

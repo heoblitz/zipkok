@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingProfileCell: UITableViewCell {
+final class SettingProfileCell: UITableViewCell {
 
     @IBOutlet weak var resetButtonLabel: UILabel!
     @IBOutlet weak var addressTextField: UITextField!
@@ -16,7 +16,6 @@ class SettingProfileCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         setComponetsStyle()
     }
     

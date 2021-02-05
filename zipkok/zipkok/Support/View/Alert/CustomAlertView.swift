@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomAlertView: UIView {
+final class CustomAlertView: UIView {
     @IBOutlet weak var alertContentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!

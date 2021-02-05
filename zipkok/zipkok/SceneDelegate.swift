@@ -21,16 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    //    let isTestMode = false
-    //
-    //    if isTestMode {
-    //        let window = UIWindow(windowScene: windowScene)
-    //
-    //        window.rootViewController = testVc
-    //        window.makeKeyAndVisible()
-    //        self.window = window
-    //    } else {
-    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         guard let homeNavVc = HomeNavigationViewController.storyboardInstance(),

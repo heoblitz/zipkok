@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectChallengeCell: UICollectionViewCell {
+final class SelectChallengeCell: UICollectionViewCell {
 
     @IBOutlet weak var difficultyIconStackView: UIStackView!
     @IBOutlet weak var dayNumberLabel: UILabel!

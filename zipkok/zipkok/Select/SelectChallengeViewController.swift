@@ -8,7 +8,7 @@
 import UIKit
 import Toast_Swift
 
-class SelectChallengeViewController: UIViewController {
+final class SelectChallengeViewController: UIViewController {
 
     @IBOutlet private weak var selectCollectionView: UICollectionView!
     
@@ -91,14 +91,14 @@ class SelectChallengeViewController: UIViewController {
 
 extension SelectChallengeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return challenges.count + 1
+        return challenges.count // + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.item {
-        case challenges.count:
-            guard let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomSelectChallengeCell", for: indexPath) as? CustomSelectChallengeCell else { fatalError() }
-            return customCell
+//        case challenges.count:
+//            guard let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomSelectChallengeCell", for: indexPath) as? CustomSelectChallengeCell else { fatalError() }
+//            return customCell
         default:
             guard let selectCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectChallengeCell", for: indexPath) as? SelectChallengeCell else { fatalError() }
             let challenge = challenges[indexPath.item]
@@ -110,7 +110,7 @@ extension SelectChallengeViewController: UICollectionViewDataSource {
 
 extension SelectChallengeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item == challenges.count {
+//        if indexPath.item == challenges.count {
 //            let keyChainManager = KeyChainManager()
 //            let jwt = keyChainManager.jwtToken!
 //            let startDate = Date()
@@ -134,9 +134,9 @@ extension SelectChallengeViewController: UICollectionViewDelegate {
 //                }
 //            }
             
-            view.makeToast("준비중인 기능입니다.")
-            return
-        }
+//            view.makeToast("준비중인 기능입니다.")
+//            return
+//        }
         let challenge = challenges[indexPath.item]
         let dayNumber = challenge.dayNumber
         

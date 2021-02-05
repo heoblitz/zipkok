@@ -9,7 +9,7 @@ import UIKit
 import MBCircularProgressBar
 import Toast_Swift
 
-class TimerViewController: UIViewController {
+final class TimerViewController: UIViewController {
 
     @IBOutlet private weak var circleProgressBar: MBCircularProgressBarView!
     @IBOutlet private weak var percentView: UIView!
@@ -357,13 +357,25 @@ class TimerViewController: UIViewController {
         
         let min = secondInterval / 60
         
-        KakaoApi.shared.sendChallengeTime(name: name, hour: hour, minute: min)
+        KakaoApi.shared.sendChallengeTime(name: name, hour: hour, minute: min, errorHandler: { [weak self] in
+            guard let self = self, let shareRecommandImage = UIImage(named: "Group 10") else { return }
+            
+            let activityController = UIActivityViewController(activityItems: [shareRecommandImage], applicationActivities: nil)
+            activityController.excludedActivityTypes = [.saveToCameraRoll, .print, .assignToContact, .addToReadingList]
+            self.present(activityController, animated: true, completion: nil)
+        })
     }
     
     @objc func shareChallegeSuccedButtonTapped() {
         guard let name = keyChainManager.userName, let day = dayNumber else { return }
         
-        KakaoApi.shared.sendChallengeSucced(name: name, day: day)
+        KakaoApi.shared.sendChallengeSucced(name: name, day: day, errorHandler: { [weak self] in
+            guard let self = self, let shareRecommandImage = UIImage(named: "Group 11") else { return }
+            
+            let activityController = UIActivityViewController(activityItems: [shareRecommandImage], applicationActivities: nil)
+            activityController.excludedActivityTypes = [.saveToCameraRoll, .print, .assignToContact, .addToReadingList]
+            self.present(activityController, animated: true, completion: nil)
+        })
     }
 }
 

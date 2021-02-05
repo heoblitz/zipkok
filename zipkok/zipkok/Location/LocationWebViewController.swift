@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class LocationWebViewController: UIViewController {
+final class LocationWebViewController: UIViewController {
     
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     

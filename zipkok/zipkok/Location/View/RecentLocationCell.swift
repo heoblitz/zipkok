@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecentLocationCell: UITableViewCell {
+final class RecentLocationCell: UITableViewCell {
 
     @IBOutlet private weak var parcelAddressLabel: UILabel!
     @IBOutlet private weak var streetAddressLabel: UILabel!

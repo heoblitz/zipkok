@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class GeoCodingApi {
+final class GeoCodingApi {
     static let shared = GeoCodingApi()
     
     private let baseURLString = "https://dapi.kakao.com"

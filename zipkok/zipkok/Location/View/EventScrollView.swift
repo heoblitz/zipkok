@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EventScrollView: UIScrollView {
+final class EventScrollView: UIScrollView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.isDragging {

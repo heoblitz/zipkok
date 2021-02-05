@@ -7,10 +7,11 @@
 
 import UIKit
 
-class HomeNavigationViewController: UINavigationController {
+final class HomeNavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         delegate = self
         prepareNavigationBar()
     }

@@ -8,8 +8,9 @@
 import Foundation
 import Alamofire
 import KakaoSDKLink
+import KakaoSDKAuth
 
-class KakaoApi {
+final class KakaoApi {
     static let shared = KakaoApi()
     
     private let baseURLString: String = "https://kapi.kakao.com/v2"
@@ -43,70 +44,88 @@ class KakaoApi {
         }
     }
     
-    func sendRecommendTemplate() {
-        LinkApi.shared.customLink(templateId: recommendTemplateId, templateArgs: nil) {(linkResult, error) in
-            if let error = error {
-                print(error)
-            }
-            else {
-                print("customLink() success.")
-                if let linkResult = linkResult {
-                    UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+    func sendRecommendTemplate(errorHandler: (() -> ())? = nil) {
+        if (AuthApi.isKakaoTalkLoginAvailable()) {
+            LinkApi.shared.customLink(templateId: recommendTemplateId, templateArgs: nil) {(linkResult, error) in
+                if let error = error {
+                    print(error)
+                    print("error")
+                }
+                else {
+                    print("customLink() success.")
+                    if let linkResult = linkResult {
+                        UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+                    }
                 }
             }
+        } else {
+            errorHandler?()
         }
     }
     
-    func sendStartWithFriendTemplate(name userName: String) {
-        LinkApi.shared.customLink(templateId: startWithFriendTemplateId, templateArgs: ["user_name" : userName]) {(linkResult, error) in
-            if let error = error {
-                print(error)
-            }
-            else {
-                print("customLink() success.")
-                if let linkResult = linkResult {
-                    UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+    func sendStartWithFriendTemplate(name userName: String, errorHandler: (() -> ())? = nil) {
+        if (AuthApi.isKakaoTalkLoginAvailable()) {
+            LinkApi.shared.customLink(templateId: startWithFriendTemplateId, templateArgs: ["user_name" : userName]) {(linkResult, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("customLink() success.")
+                    if let linkResult = linkResult {
+                        UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+                    }
                 }
             }
+        } else {
+            errorHandler?()
         }
     }
     
-    func sendChallengeTime(name userName: String, hour hourNumber: Int, minute minuteNumber: Int) {
+    func sendChallengeTime(name userName: String, hour hourNumber: Int, minute minuteNumber: Int, errorHandler: (() -> ())? = nil) {
+        
         let args = [
             "user_name" : userName,
             "time_hour" : String(hourNumber),
             "time_min" : String(minuteNumber)
         ]
         
-        LinkApi.shared.customLink(templateId: sendChallengeTimeTemplateId, templateArgs: args) {(linkResult, error) in
-            if let error = error {
-                print(error)
-            }
-            else {
-                print("customLink() success.")
-                if let linkResult = linkResult {
-                    UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+        if (AuthApi.isKakaoTalkLoginAvailable()) {
+            LinkApi.shared.customLink(templateId: sendChallengeTimeTemplateId, templateArgs: args) {(linkResult, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("customLink() success.")
+                    if let linkResult = linkResult {
+                        UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+                    }
                 }
             }
+        } else {
+            errorHandler?()
         }
     }
     
-    func sendChallengeSucced(name userName: String, day dayNumber: Int) {
+    func sendChallengeSucced(name userName: String, day dayNumber: Int, errorHandler: (() -> ())? = nil) {
+        
         let args = [
             "user_name" : userName,
             "time_day" : String(dayNumber)
         ]
-        
-        LinkApi.shared.customLink(templateId: sendChallengeSuccedTemplateId, templateArgs: args) {(linkResult, error) in
-            if let error = error {
-                print(error)
-            }
-            else {
-                print("customLink() success.")
-                if let linkResult = linkResult {
-                    UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+        if (AuthApi.isKakaoTalkLoginAvailable()) {
+            LinkApi.shared.customLink(templateId: sendChallengeSuccedTemplateId, templateArgs: args) {(linkResult, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("customLink() success.")
+                    if let linkResult = linkResult {
+                        UIApplication.shared.open(linkResult.url, options: [:], completionHandler: nil)
+                    }
                 }
             }
+        } else {
+            errorHandler?()
         }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftKeychainWrapper
 
-class KeyChainManager {
+final class KeyChainManager {
     var accessToken: String? {
         get {
             return KeychainWrapper.standard.string(forKey: "accessToken")

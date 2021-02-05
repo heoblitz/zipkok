@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 
-class LocationViewController: UIViewController {
+final class LocationViewController: UIViewController {
     
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet private weak var currentLocationButtonView: UIView!

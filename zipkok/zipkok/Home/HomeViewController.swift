@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     @IBOutlet private weak var startButtonView: UIView!
     @IBOutlet private weak var iconTextLabel: UILabel!
@@ -88,7 +88,12 @@ class HomeViewController: UIViewController {
     }
     
     @objc func shareBarButtonItemTapped() {
-        KakaoApi.shared.sendRecommendTemplate()
+        KakaoApi.shared.sendRecommendTemplate(errorHandler: { [weak self] in
+            guard let self = self, let shareRecommandImage = UIImage(named: "Group 2") else { return }
+            let activityController = UIActivityViewController(activityItems: [shareRecommandImage], applicationActivities: nil)
+            activityController.excludedActivityTypes = [.saveToCameraRoll, .print, .assignToContact, .addToReadingList]
+            self.present(activityController, animated: true, completion: nil)
+        })
     }
     
     @objc private func startButtonViewTapped() {

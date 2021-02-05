@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChallengeConfirmAlertView: UIView {
+final class ChallengeConfirmAlertView: UIView {
     
     @IBOutlet weak var alertContentView: UIView!
     @IBOutlet weak var cancelButtonView: UIView!

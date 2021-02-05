@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import Toast_Swift
 
-class SettingViewController: UIViewController {
+final class SettingViewController: UIViewController {
 
     @IBOutlet private weak var settingTableView: UITableView!
     
@@ -50,7 +49,7 @@ class SettingViewController: UIViewController {
     private func prepareSettingTableView() {
         settingTableView.delegate = self
         settingTableView.dataSource = self
-        settingTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 1)) // remove extra, last separator line
+        settingTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 1))
         settingTableView.register(UINib(nibName: "SettingProfileCell", bundle: nil), forCellReuseIdentifier: "SettingProfileCell")
         settingTableView.register(UINib(nibName: "SettingNavigatorCell", bundle: nil), forCellReuseIdentifier: "SettingNavigatorCell")
     }
@@ -141,8 +140,5 @@ extension SettingViewController: UITableViewDataSource {
 
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.section == 1, indexPath.item != 0 {
-//            view.makeToast("준비중인 기능입니다.")
-//        }
     }
 }

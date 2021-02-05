@@ -7,14 +7,13 @@
 
 import Foundation
 
-class SettingViewModel {
+final class SettingViewModel {
     private let keyChainManager = KeyChainManager()
         
     var userInfo: Observable<UserInfoResult> = Observable(UserInfoResult(userName: "", addressName: "", pushStatus: ""))
     
     func requestUserInfo() {
         guard let jwt = keyChainManager.jwtToken, let userId = keyChainManager.userId else {
-            print("---> jwt, userId can't loaded")
             return
         }
         

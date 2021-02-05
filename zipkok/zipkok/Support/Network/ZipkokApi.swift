@@ -14,10 +14,10 @@ public enum LoginType {
     case kakao
 }
 
-class ZipkokApi {
+final class ZipkokApi {
     static let shared: ZipkokApi = ZipkokApi()
 
-    private let baseURLString: String = "http://15.164.161.25"
+    private let baseURLString: String = PrivateKey.serverURL
     
     private let autoLoginURLString: String = "/login/jwt"
     private let kakaoLoginURLString: String = "/login/kakao"

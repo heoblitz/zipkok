@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TimerSettingViewController: UIViewController {
+final class TimerSettingViewController: UIViewController {
 
     @IBOutlet private weak var startWithFriendButtonView: UIView!
     @IBOutlet private weak var startImageView: UIImageView!
@@ -42,7 +42,7 @@ class TimerSettingViewController: UIViewController {
 //        let profileBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 114")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
 //        profileBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
         
-        let shareBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
+        let shareBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(shareBarButtonItemTapped))
         shareBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         
         let settingBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 113")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(settingBarButtonItemTapped))
@@ -114,6 +114,15 @@ class TimerSettingViewController: UIViewController {
         }
     }
     
+    @objc func shareBarButtonItemTapped() {
+        KakaoApi.shared.sendRecommendTemplate(errorHandler: { [weak self] in
+            guard let self = self, let shareRecommandImage = UIImage(named: "Group 2") else { return }
+            let activityController = UIActivityViewController(activityItems: [shareRecommandImage], applicationActivities: nil)
+            activityController.excludedActivityTypes = [.saveToCameraRoll, .print, .assignToContact, .addToReadingList]
+            self.present(activityController, animated: true, completion: nil)
+        })
+    }
+    
     @objc func settingBarButtonItemTapped() {
         guard let settingVc = SettingViewController.storyboardInstance() else {
             fatalError()
@@ -124,6 +133,12 @@ class TimerSettingViewController: UIViewController {
     
     @objc func startWithFriendButtonViewTapped() {
         guard let name = keyChainManager.userName else { return }
-        KakaoApi.shared.sendStartWithFriendTemplate(name: name)
+        KakaoApi.shared.sendStartWithFriendTemplate(name: name, errorHandler: { [weak self] in
+            guard let self = self, let shareRecommandImage = UIImage(named: "Group 12") else { return }
+            
+            let activityController = UIActivityViewController(activityItems: [shareRecommandImage], applicationActivities: nil)
+            activityController.excludedActivityTypes = [.saveToCameraRoll, .print, .assignToContact, .addToReadingList]
+            self.present(activityController, animated: true, completion: nil)
+        })
     }
 }

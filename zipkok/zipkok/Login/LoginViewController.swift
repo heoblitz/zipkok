@@ -10,7 +10,7 @@ import AuthenticationServices
 import KakaoSDKUser
 import KakaoSDKAuth
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     @IBOutlet private weak var iconTextLabel: UILabel!
     @IBOutlet private weak var kakaoLoginView: UIView!
@@ -151,12 +151,6 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             if let familyName = credential.fullName?.familyName, let givenName = credential.fullName?.givenName {
                 name = "\(familyName) \(givenName)"
             }
-            
-            print("email", credential.email)
-            print("user", credential.user)
-            print("user", credential.fullName)
-            print("identityToken", identityToken)
-            print("authorizationCode", authorizationCode)
             
             ZipkokApi.shared.appleLogin(token: identityToken, code: authorizationCode, user: credential.user) { appleLoginResponse in
                 

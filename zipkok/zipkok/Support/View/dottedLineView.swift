@@ -7,7 +7,7 @@
 
 import UIKit
 
-class dottedLineView: UIView {
+final class dottedLineView: UIView {
     override func draw(_ rect: CGRect) {
         let start = CGPoint(x: bounds.minX, y: bounds.minY)
         let end = CGPoint(x: bounds.maxX, y: bounds.minY)

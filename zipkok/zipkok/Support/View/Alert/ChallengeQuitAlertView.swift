@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChallengeQuitAlertView: UIView {
+final class ChallengeQuitAlertView: UIView {
     @IBOutlet weak var alertContentView: UIView!
     @IBOutlet weak var cancelButtonView: UIView!
     @IBOutlet weak var quitButtonView: UIView!

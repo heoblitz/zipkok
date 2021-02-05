@@ -7,6 +7,6 @@
 
 import UIKit
 
-class RecentLocationHeaderView: UITableViewHeaderFooterView {
+final class RecentLocationHeaderView: UITableViewHeaderFooterView {
     
 }

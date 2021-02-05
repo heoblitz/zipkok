@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingNavigatorCell: UITableViewCell {
+final class SettingNavigatorCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -18,18 +18,15 @@ class SettingNavigatorCell: UITableViewCell {
         button.imageView?.clipsToBounds = true
         button.setImage(UIImage(named: "그룹 1429"), for: .selected)
         button.setImage(UIImage(named: "그룹 1433"), for: .normal)
-        // button.isSelected = true
         return button
     }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     func prepareSwitchButton() {
