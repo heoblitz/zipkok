@@ -7,12 +7,18 @@
 
 import UIKit
 
-class HomeNavigationViewController: UINavigationController {
+final class HomeNavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         delegate = self
         prepareNavigationBar()
+    }
+    
+    static func storyboardInstance() -> HomeNavigationViewController? {
+        let storyboard = UIStoryboard(name: HomeViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
     }
     
     private func prepareNavigationBar() {

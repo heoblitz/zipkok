@@ -7,7 +7,7 @@
 
 import WebKit
 
-class WkWebViewSimpleBar: WKWebView {
+final class WkWebViewSimpleBar: WKWebView {
     var accessoryView: UIView?
 
     override var inputAccessoryView: UIView? {

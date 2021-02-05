@@ -6,14 +6,42 @@
 //
 
 import UIKit
+import UserNotifications
+import Firebase
+import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let keyChainManager = KeyChainManager()
+        
+        // Kakao SDK
+        KakaoSDKCommon.initSDK(appKey: "f6ed7a173632bdd826ec213d2c35ac29")
+        // Firebase SDK
+        FirebaseApp.configure()
+        
+        // UserNotifications
+        UNUserNotificationCenter.current().delegate = self
+        
+        // Firebase FCM token
+        Messaging.messaging().token { token, error in
+          if let error = error {
+            print("Error fetching FCM registration token: \(error)")
+          } else if let token = token {
+            print("FCM registration token: \(token)")
+            keyChainManager.fcmToken = token
+          }
+        }
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter
+          .current()
+          .requestAuthorization(
+            options: authOptions,completionHandler: { (_, _) in }
+          )
+        application.registerForRemoteNotifications()
+            
         Thread.sleep(forTimeInterval: 2)
         return true
     }
@@ -31,7 +59,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("파이어베이스 토큰: \(String(describing: fcmToken))")
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,willPresent notification: UNNotification,withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter,didReceive response: UNNotificationResponse,withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+}

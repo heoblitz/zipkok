@@ -7,12 +7,17 @@
 
 import UIKit
 
-class LoginNavigationViewController: UINavigationController {
+final class LoginNavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
         prepareNavigationBar()
+    }
+    
+    static func storyboardInstance() -> LoginNavigationViewController? {
+        let storyboard = UIStoryboard(name: LoginViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
     }
     
     private func prepareNavigationBar() {

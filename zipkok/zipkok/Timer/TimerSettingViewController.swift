@@ -7,19 +7,53 @@
 
 import UIKit
 
-class TimerSettingViewController: UIViewController {
+final class TimerSettingViewController: UIViewController {
 
-    @IBOutlet private weak var startButtonView: UIView!
+    @IBOutlet private weak var startWithFriendButtonView: UIView!
     @IBOutlet private weak var startImageView: UIImageView!
     @IBOutlet private weak var startTimeView: UIView!
     @IBOutlet private weak var endTimeView: UIView!
     
+    @IBOutlet private weak var startDateLabel: UILabel!
+    @IBOutlet private weak var endDateLabel: UILabel!
+    
+    private let keyChainManager = KeyChainManager()
+
+    var dayNumber: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         prepareStartImageView()
-        prepareStartButtonView()
+        prepareStartWithFriendButtonView()
         prepareStartTimeView()
         prepareEndTimeView()
+        setNavigationComponents()
+        prepareNavigationBarItems()
+    }
+    
+    static func storyboardInstance() -> TimerSettingViewController? {
+        let storyboard = UIStoryboard(name: TimerSettingViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
+    }
+    
+    
+    private func prepareNavigationBarItems() {
+//        let profileBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 114")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
+//        profileBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+        
+        let shareBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 116")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(shareBarButtonItemTapped))
+        shareBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
+        
+        let settingBarButtonItem = UIBarButtonItem(image: UIImage(named: "그룹 113")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(settingBarButtonItemTapped))
+        settingBarButtonItem.imageInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
+        
+//          navigationItem.leftBarButtonItem = profileBarButtonItem
+        navigationItem.rightBarButtonItems = [settingBarButtonItem, shareBarButtonItem]
+    }
+    
+    private func setNavigationComponents() {
+        navigationItem.hidesBackButton = true
     }
     
     private func prepareStartImageView() {
@@ -28,11 +62,15 @@ class TimerSettingViewController: UIViewController {
         startImageView.addGestureRecognizer(tapGesture)
     }
     
-    private func prepareStartButtonView() {
-        startButtonView.layer.masksToBounds = false
-        startButtonView.layer.cornerRadius = 8
-        startButtonView.layer.borderColor = CGColor(red: 62/255, green: 115/255, blue: 255/255, alpha: 1)
-        startButtonView.layer.borderWidth = 1
+    private func prepareStartWithFriendButtonView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(startWithFriendButtonViewTapped))
+        startWithFriendButtonView.addGestureRecognizer(tapGesture)
+        startWithFriendButtonView.isUserInteractionEnabled = true
+        
+        startWithFriendButtonView.layer.masksToBounds = false
+        startWithFriendButtonView.layer.cornerRadius = 8
+        startWithFriendButtonView.layer.borderColor = CGColor(red: 62/255, green: 115/255, blue: 255/255, alpha: 1)
+        startWithFriendButtonView.layer.borderWidth = 1
     }
 
     private func prepareStartTimeView() {
@@ -50,10 +88,57 @@ class TimerSettingViewController: UIViewController {
     }
     
     @objc func startImageButtonTapped() {
-        guard let timerVc = UIStoryboard(name: "Timer", bundle: nil).instantiateInitialViewController() as? TimerViewController else { fatalError() }
-        timerVc.startDate = Date()
-        timerVc.endDate = Date(timeIntervalSinceNow: 10)
+        guard let jwtToken = keyChainManager.jwtToken else { return }
         
-        navigationController?.pushViewController(timerVc, animated: true)
+        let startTime = Date()
+        
+        guard let dayNumber = dayNumber, let endTime = Calendar.current.date(byAdding: .day, value: dayNumber, to: startTime) else { return }
+        
+        ZipkokApi.shared.registerChallengeTime(jwt: jwtToken, start: startTime.challengeTimeFormat, end: endTime.challengeTimeFormat) { [weak self] registerChallengeTimeResponse in
+            guard let self = self else { return }
+            
+            if registerChallengeTimeResponse.isSuccess {
+                self.keyChainManager.challengeIdx = registerChallengeTimeResponse.result?.challengeIdx
+                
+                guard let timerVc = TimerViewController.storyboardInstance(), let result = registerChallengeTimeResponse.result else { return }
+                
+                timerVc.dayNumber = dayNumber
+                timerVc.challengeIdx = result.challengeIdx
+                timerVc.startDate = startTime
+                timerVc.endDate = endTime
+                
+                self.navigationController?.pushViewController(timerVc, animated: true)
+            } else {
+                print("---> Challenge Register Error")
+            }
+        }
+    }
+    
+    @objc func shareBarButtonItemTapped() {
+        KakaoApi.shared.sendRecommendTemplate(errorHandler: { [weak self] in
+            guard let self = self, let shareRecommandImage = UIImage(named: "Group 2") else { return }
+            let activityController = UIActivityViewController(activityItems: [shareRecommandImage], applicationActivities: nil)
+            activityController.excludedActivityTypes = [.saveToCameraRoll, .print, .assignToContact, .addToReadingList]
+            self.present(activityController, animated: true, completion: nil)
+        })
+    }
+    
+    @objc func settingBarButtonItemTapped() {
+        guard let settingVc = SettingViewController.storyboardInstance() else {
+            fatalError()
+        }
+        
+        navigationController?.pushViewController(settingVc, animated: true)
+    }
+    
+    @objc func startWithFriendButtonViewTapped() {
+        guard let name = keyChainManager.userName else { return }
+        KakaoApi.shared.sendStartWithFriendTemplate(name: name, errorHandler: { [weak self] in
+            guard let self = self, let shareRecommandImage = UIImage(named: "Group 12") else { return }
+            
+            let activityController = UIActivityViewController(activityItems: [shareRecommandImage], applicationActivities: nil)
+            activityController.excludedActivityTypes = [.saveToCameraRoll, .print, .assignToContact, .addToReadingList]
+            self.present(activityController, animated: true, completion: nil)
+        })
     }
 }

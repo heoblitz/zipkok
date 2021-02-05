@@ -58,7 +58,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="그룹 125" translatesAutoresizingMaskIntoConstraints="NO" id="g6o-dE-JFk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="그룹 125" translatesAutoresizingMaskIntoConstraints="NO" id="g6o-dE-JFk">
                                 <rect key="frame" x="208" y="565" width="182" height="144.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="144.30000000000001" id="Rd4-uU-9gc"/>
@@ -103,27 +103,9 @@
                             <constraint firstItem="g6o-dE-JFk" firstAttribute="top" secondItem="iyS-wL-7ws" secondAttribute="bottom" constant="10.800000000000001" id="uiJ-nW-lZZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9qU-JT-Wux">
-                        <barButtonItem key="leftBarButtonItem" image="그룹 114" id="css-zN-gYy">
-                            <inset key="imageInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem image="그룹 113" id="KNl-y2-MDP">
-                                <inset key="imageInsets" minX="-10" minY="0.0" maxX="10" maxY="0.0"/>
-                                <connections>
-                                    <action selector="settingBarButtonItemTapped:" destination="Lgg-ij-xP0" id="pah-pu-gUU"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="그룹 116" id="okg-VW-mDh">
-                                <inset key="imageInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="9qU-JT-Wux"/>
                     <connections>
                         <outlet property="iconTextLabel" destination="iyS-wL-7ws" id="kMn-x2-xzN"/>
-                        <outlet property="profileBarButtonItem" destination="css-zN-gYy" id="uVi-Kk-pTP"/>
-                        <outlet property="settingBarButtonItem" destination="KNl-y2-MDP" id="DoV-WA-q5h"/>
-                        <outlet property="shareBarButtonItem" destination="okg-VW-mDh" id="3M9-SK-ZHj"/>
                         <outlet property="startButtonView" destination="Djy-nc-pDU" id="ai5-1a-1qj"/>
                     </connections>
                 </viewController>
@@ -152,10 +134,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="그룹 113" width="32" height="32"/>
-        <image name="그룹 114" width="32" height="32"/>
-        <image name="그룹 116" width="32" height="32"/>
-        <image name="그룹 125" width="192.5" height="156.5"/>
+        <image name="그룹 125" width="192.5" height="156.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

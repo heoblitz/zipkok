@@ -8,18 +8,25 @@
 import UIKit
 import WebKit
 
-class LocationWebViewController: UIViewController {
+final class LocationWebViewController: UIViewController {
     
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
+    private let postcodeURLString: String = "https://heoblitz.github.io/Kakao_postcode/"
     private var webView: WkWebViewSimpleBar?
-    var address: String = "https://heoblitz.github.io/Kakao_postcode/"
+    
+    var completionHandler: ((LocationInfo) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareWebView()
         setConstraints()
         prepareNavigationTitle()
+    }
+    
+    static func storyboardInstance() -> LocationWebViewController? {
+        let storyboard = UIStoryboard(name: LocationWebViewController.storyboardName(), bundle: nil)
+        return storyboard.instantiateInitialViewController()
     }
     
     private func prepareWebView() {
@@ -34,7 +41,7 @@ class LocationWebViewController: UIViewController {
         webView?.scrollView.contentInsetAdjustmentBehavior = .never
         webView?.scrollView.backgroundColor = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1)
         
-        guard let url = URL(string: address) else { return }
+        guard let url = URL(string: postcodeURLString) else { return }
         let request = URLRequest(url: url)
         webView?.load(request)
     }
@@ -61,7 +68,7 @@ class LocationWebViewController: UIViewController {
     private func alertMessage(for message: String) {
         let alert = UIAlertController(title: "test", message: message, preferredStyle: .alert)
         let admit = UIAlertAction(title: "확인", style: .default, handler: { _ in
-            self.dismiss(animated: true, completion: nil)
+            //self.dismiss(animated: true, completion: nil)
         })
         
         alert.addAction(admit)
@@ -72,13 +79,22 @@ class LocationWebViewController: UIViewController {
 extension LocationWebViewController: WKNavigationDelegate {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
-        if let data = message.body as? [String: Any] {
-            print(data)
-            address = data["roadAddress"] as? String ?? ""
-        }
-        // guard let previousVC = presentingViewController as? ViewController else { return }
+        guard let data = message.body as? [String:Any] else { return }
+            // address = data["roadAddress"] as? String ?? ""
         
-        alertMessage(for: address)
+        if let normalAddress = data["jibunAddress"] as? String, let loadAddress = data["roadAddress"] as? String {
+            GeoCodingApi.shared.requestCoord(by: normalAddress) { [weak self] (latitude, longitude) in
+                guard let self = self else { return }
+                let locationInfo = LocationInfo(latitude: latitude, longitude: longitude, normalName: normalAddress, loadName: loadAddress)
+
+                OperationQueue.main.addOperation {
+                    self.completionHandler?(locationInfo)
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
+
+        // guard let previousVC = presentingViewController as? ViewController else { return }
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
