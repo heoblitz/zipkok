@@ -51,6 +51,7 @@
 		3CD801DF25BB1606008EA180 /* ClassNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD801DE25BB1606008EA180 /* ClassNameExtension.swift */; };
 		3CD801E725BB24FB008EA180 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CD801E625BB24FB008EA180 /* Splash.storyboard */; };
 		3CD801EB25BB251B008EA180 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD801EA25BB251B008EA180 /* SplashViewController.swift */; };
+		3CDCFD4B25CCE1ED00B0F6E0 /* SettingProfileUpdate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDCFD4A25CCE1ED00B0F6E0 /* SettingProfileUpdate.xib */; };
 		3CDE69AA25B94A890057A415 /* LocationRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDE69A925B94A890057A415 /* LocationRequestType.swift */; };
 		3CDE69AF25B969F70057A415 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDE69AE25B969F70057A415 /* CustomAlertView.swift */; };
 		3CDE69B225B96A120057A415 /* CustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDE69B125B96A120057A415 /* CustomAlertView.xib */; };
@@ -133,6 +134,7 @@
 		3CD801DE25BB1606008EA180 /* ClassNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameExtension.swift; sourceTree = "<group>"; };
 		3CD801E625BB24FB008EA180 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		3CD801EA25BB251B008EA180 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		3CDCFD4A25CCE1ED00B0F6E0 /* SettingProfileUpdate.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingProfileUpdate.xib; sourceTree = "<group>"; };
 		3CDE69A925B94A890057A415 /* LocationRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestType.swift; sourceTree = "<group>"; };
 		3CDE69AE25B969F70057A415 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		3CDE69B125B96A120057A415 /* CustomAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertView.xib; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				3CB0616325ABFDE80088ACFD /* SettingProfileCell.xib */,
 				3CB0616A25AC08100088ACFD /* SettingNavigatorCell.swift */,
 				3CB0616B25AC08100088ACFD /* SettingNavigatorCell.xib */,
+				3CDCFD4A25CCE1ED00B0F6E0 /* SettingProfileUpdate.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				3CB0615F25ABEFB10088ACFD /* Setting.storyboard in Resources */,
 				3CD801E725BB24FB008EA180 /* Splash.storyboard in Resources */,
 				3CEF692B25BBF7BC00C47255 /* RecentLocationHeaderView.xib in Resources */,
+				3CDCFD4B25CCE1ED00B0F6E0 /* SettingProfileUpdate.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,7 +815,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = zipkok/zipkok.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				INFOPLIST_FILE = zipkok/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -823,7 +827,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = heo.zipkok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -835,7 +839,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = zipkok/zipkok.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = HK54HM2TC6;
 				INFOPLIST_FILE = zipkok/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -847,7 +851,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = heo.zipkok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

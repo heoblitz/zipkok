@@ -46,7 +46,9 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>사용자의 위치 확인을 위해서 필요합니다. </string>
+	<string>챌린지 시작에 필요한 사용자 위치를 파악하기 위해서 필요합니다. 서버에 대략적인 사용자 위치가 저장되며, 본 앱 기능외에는 사용되지 않습니다.
+
+위치는 ㅇㅇ시 ㅇㅇ동 단위이며, 사용자의 위치를 대략적으로 추정하는 데이터로 저장됩니다.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Regular.ttf</string>

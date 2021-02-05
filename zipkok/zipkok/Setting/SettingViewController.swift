@@ -16,7 +16,7 @@ class SettingViewController: UIViewController {
     private let keyChainManager = KeyChainManager()
 
     private var settingNavigaterTitles: [String] = [
-        "푸쉬알림", "인증 달력 보기", "타임라인 전체보기", "도움말"
+        "푸쉬알림", "" // , "인증 달력 보기", "타임라인 전체보기", "도움말"
     ]
     
     private var userInfo: UserInfoResult?
@@ -141,8 +141,8 @@ extension SettingViewController: UITableViewDataSource {
 
 extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1, indexPath.item != 0 {
-            view.makeToast("준비중인 기능입니다.")
-        }
+//        if indexPath.section == 1, indexPath.item != 0 {
+//            view.makeToast("준비중인 기능입니다.")
+//        }
     }
 }
