@@ -2,7 +2,7 @@
 
 > 집에 머무르는 시간을 체크하는 챌린지형 서비스입니다.
 
-![](images/header.jpeg)
+![](zipkok/images/header.jpeg)
 
 ## 사용 프레임 워크 및 라이브러리
 - UIKit
