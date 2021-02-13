@@ -281,15 +281,16 @@ final class LocationViewController: UIViewController {
     
     @objc private func currentLocationButtonViewTapped() {
         locationManager.requestWhenInUseAuthorization()
-        activityIndicatorView.startAnimating()
         
         switch CLLocationManager.authorizationStatus() {
         case .restricted, .denied:
-            activityIndicatorView.stopAnimating()
             alertLocationAuthView()
-        default:
+        case .authorizedAlways, .authorizedWhenInUse:
+            activityIndicatorView.startAnimating()
             isReceivedCurrentLocation = false
             locationManager.startUpdatingLocation()
+        default:
+            break
         }
     }
     
@@ -323,24 +324,35 @@ extension LocationViewController: UITextFieldDelegate {
 
 extension LocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let coor = manager.location?.coordinate, !isReceivedCurrentLocation {
+        if let coor = manager.location?.coordinate,
+           !isReceivedCurrentLocation,
+           let location = manager.location {
+            
             let latitude = coor.latitude
             let longitude = coor.longitude
             
             isReceivedCurrentLocation = true
             locationManager.stopUpdatingLocation()
             locationManager.stopMonitoringSignificantLocationChanges()
-            
+
             GeoCodingApi.shared.requestRegioncode(by: (longitude, latitude), errorHandler: { [weak self] in
                 guard let self = self else { return }
-
-                OperationQueue.main.addOperation {
-                    self.activityIndicatorView.stopAnimating()
-                    self.alertLocationAuthView()
-                }
-            },completionHandler: { [weak self] normalName, loadName in
-                guard let self = self else { return }
                 
+                GeoCodingApi.shared.geoLocation(location: location, errorHandler: {
+                    OperationQueue.main.addOperation {
+                        self.activityIndicatorView.stopAnimating()
+                        self.alertLocationAuthView()
+                    }
+                }, completionHandler: { address in
+                    OperationQueue.main.addOperation {
+                        self.activityIndicatorView.stopAnimating()
+                        self.searchTextField.text = address
+                        self.locationInfo = LocationInfo(latitude: "\(latitude)", longitude: "\(longitude)", normalName: address, loadName: address)
+                    }
+                })
+            }, completionHandler: { [weak self] normalName, loadName in
+                guard let self = self else { return }
+
                 OperationQueue.main.addOperation {
                     self.activityIndicatorView.stopAnimating()
                     self.searchTextField.text = normalName
@@ -393,12 +405,9 @@ extension LocationViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let location = recentLocations[indexPath.item]
         
-        GeoCodingApi.shared.requestCoord(by: location.parcelAddressing) { [weak self] (latitude, longitude) in
-            guard let self = self else { return }
-            let locationInfo = LocationInfo(latitude: latitude, longitude: longitude, normalName: location.parcelAddressing, loadName: location.streetAddressing)
-            
-            self.locationInfo = locationInfo
-            self.searchTextField.text = location.streetAddressing
-        }
+        let locationInfo = LocationInfo(latitude: "\(location.latitude)", longitude: "\(location.longitude)", normalName: location.parcelAddressing, loadName: location.streetAddressing)
+        
+        self.locationInfo = locationInfo
+        self.searchTextField.text = location.streetAddressing
     }
 }

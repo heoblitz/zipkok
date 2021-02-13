@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 import Alamofire
 
 final class GeoCodingApi {
@@ -70,6 +71,21 @@ final class GeoCodingApi {
             print(value.documents)
             completionHandler(normalAddress, loadAddressName)
         }
+    }
+    
+    func geoLocation(location clLocation: CLLocation, errorHandler: (() -> ())? = nil, completionHandler: @escaping (String) -> ()) {
+        let geo = CLGeocoder()
+        
+        geo.reverseGeocodeLocation(clLocation, completionHandler: { (placemarks, error) in
+            if error == nil, let last = placemarks?.last {                
+                let city: String = last.subAdministrativeArea ?? ""
+                // let town: String = last.locality ?? ""
+                let name: String = last.name ?? ""
+
+                let address: String = "\(name), \(city)"
+                completionHandler(address)
+            }
+        })
     }
 }
 
