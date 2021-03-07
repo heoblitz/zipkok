@@ -15,7 +15,7 @@ final class SettingViewController: UIViewController {
     private let keyChainManager = KeyChainManager()
 
     private var settingNavigaterTitles: [String] = [
-        "푸쉬알림", "" // , "인증 달력 보기", "타임라인 전체보기", "도움말"
+        "푸쉬알림", "인증 달력 보기", "타임라인 전체보기", "로그아웃", "회원 탈퇴" // , "인증 달력 보기", "타임라인 전체보기", "도움말"
     ]
     
     private var userInfo: UserInfoResult?
@@ -49,7 +49,7 @@ final class SettingViewController: UIViewController {
     private func prepareSettingTableView() {
         settingTableView.delegate = self
         settingTableView.dataSource = self
-        settingTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 1))
+        // settingTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 1))
         settingTableView.register(UINib(nibName: "SettingProfileCell", bundle: nil), forCellReuseIdentifier: "SettingProfileCell")
         settingTableView.register(UINib(nibName: "SettingNavigatorCell", bundle: nil), forCellReuseIdentifier: "SettingNavigatorCell")
     }
